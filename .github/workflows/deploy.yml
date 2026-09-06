@@ -1,0 +1,117 @@
+name: Deploy calculator-free.com
+
+# Push to main = deploy to production. This is the ONLY path to production.
+# This pipeline belongs to calculator-free.com ALONE. Each site deploys independently so
+# one can never break another.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-calculator-free
+  cancel-in-progress: false
+
+env:
+  PROJECT: calculator-free
+  CANON: calculator-free.com
+  BASE: https://calculator-free.com
+  ADSENSE: ca-pub-5798786176755576
+  GA4: G-Q7VYR4L8Z7
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build ID
+        id: build
+        run: echo "id=$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_OUTPUT"
+
+      - name: Stage clean copy
+        run: |
+          set -euo pipefail
+          rm -rf _stage && mkdir -p _stage
+          rsync -a ./ _stage/ \
+            --exclude '.git' --exclude '.github' --exclude '_stage' \
+            --exclude '*.bak' --exclude 'node_modules' --exclude '.wrangler'
+          echo "  staged $(find _stage -type f | wc -l) files"
+
+      - name: Preflight checks
+        run: |
+          set -uo pipefail
+          fail=0
+
+          # 1) Binary assets must not contain HTML (a mirror script once wrote the
+          #    homepage over favicon/og images on three sites and shipped).
+          for f in favicon.ico favicon.png og-image.png og.png apple-touch-icon.png; do
+            p="_stage/$f"; [ -f "$p" ] || continue
+            head -c 20 "$p" | grep -qiE '<!doctype|<html' && { echo "::error::$f contains HTML"; fail=1; }
+          done
+
+          # 2) 404 page: no ads (Google policy forbids ads on error pages), must be noindex.
+          if [ -f _stage/404.html ]; then
+            grep -qE '<ins[^>]*adsbygoogle|googlesyndication' _stage/404.html \
+              && { echo "::error::404.html carries AdSense - breaches Google programme policy"; fail=1; }
+            grep -qi 'noindex' _stage/404.html || echo "::warning::404.html missing noindex"
+          fi
+
+          # 3) Every real page must carry monetisation + THIS SITE'S analytics.
+          missing_ads=0; missing_ga=0; n=0
+          while IFS= read -r f; do
+            b=$(basename "$f"); [ "$b" = "404.html" ] && continue
+            n=$((n+1))
+            grep -q "$ADSENSE" "$f" || missing_ads=$((missing_ads+1))
+            grep -q "$GA4"     "$f" || missing_ga=$((missing_ga+1))
+          done < <(find _stage -name '*.html')
+          echo "  html pages: $n   missing AdSense: $missing_ads   missing GA4: $missing_ga"
+          [ "$missing_ads" -eq 0 ] || { echo "::error::$missing_ads page(s) missing AdSense"; fail=1; }
+          [ "$missing_ga"  -eq 0 ] || { echo "::error::$missing_ga page(s) missing GA4 $GA4"; fail=1; }
+
+          # 4) ads.txt must name our publisher id.
+          if [ -f _stage/ads.txt ]; then
+            grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong"; fail=1; }
+          else
+            echo "::warning::no ads.txt"
+          fi
+
+          # 5) The canonical-host middleware must be present and point at this host.
+          [ -f _stage/functions/_middleware.js ] || { echo "::error::functions/_middleware.js missing"; fail=1; }
+          grep -q "CANONICAL_HOST = '$CANON'" _stage/functions/_middleware.js \
+            || { echo "::error::middleware canonical host is not $CANON"; fail=1; }
+
+          [ "$fail" -eq 0 ] || exit 1
+          echo "  all preflight checks passed"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _stage --project-name=${{ env.PROJECT }} --branch=main --commit-dirty=true
+
+      - name: Verify live
+        run: |
+          set -uo pipefail
+          B="${{ env.BASE }}"; V="${{ steps.build.outputs.id }}"; fail=0
+          chk(){ printf '  %-46s' "$1"; }
+          sleep 12
+
+          code=$(curl -sL -o /tmp/h.html -w '%{http_code}' "$B/?v=$V")
+          chk "homepage 200"; [ "$code" = 200 ] && echo OK || { echo "FAIL ($code)"; fail=1; }
+          chk "homepage AdSense"; grep -q "$ADSENSE" /tmp/h.html && echo OK || { echo FAIL; fail=1; }
+          chk "homepage GA4 ($GA4)"; grep -q "$GA4" /tmp/h.html && echo OK || { echo FAIL; fail=1; }
+
+          # The whole point of the middleware: pages.dev must not serve the site.
+          chk "pages.dev 301s to $CANON"
+          c=$(curl -s -o /dev/null -w '%{http_code}' "https://$PROJECT.pages.dev/")
+          l=$(curl -s -o /dev/null -w '%{redirect_url}' "https://$PROJECT.pages.dev/")
+          if [ "$c" = "301" ] && [ "${l#https://$CANON}" != "$l" ]; then echo OK
+          else echo "FAIL ($c -> ${l:-none})"; fail=1; fi
+
+          [ "$fail" -eq 0 ] || { echo "::error::live verification failed"; exit 1; }
+          echo ""
+          echo "  build $V verified live on $CANON"
