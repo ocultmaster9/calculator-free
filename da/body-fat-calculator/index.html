@@ -184,12 +184,12 @@ function bfCalc(){
   var bf;
   if(g==='male'){bf=86.010*Math.log10(w-n)-70.041*Math.log10(h)+36.76;}
   else{var hip=+document.getElementById('bfhip').value||1;bf=163.205*Math.log10(w+hip-n)-97.684*Math.log10(h)-78.387;}
-  if(isNaN(bf)||!isFinite(bf)||bf<0){document.getElementById('bfResult').textContent='Check measurements';return;}
+  if(isNaN(bf)||!isFinite(bf)||bf<0){document.getElementById('bfResult').textContent='Tjek målene';return;}
   bf=Math.round(bf*10)/10;
   var cat,col;
-  if(g==='male'){cat=bf<6?'Essential fat':bf<14?'Athletic':bf<18?'Fitness':bf<25?'Average':'Obese';col=bf<6?'#3b82f6':bf<14?'#10b981':bf<18?'#84cc16':bf<25?'#f59e0b':'#ef4444';}
-  else{cat=bf<14?'Essential fat':bf<21?'Athletic':bf<25?'Fitness':bf<32?'Average':'Obese';col=bf<14?'#3b82f6':bf<21?'#10b981':bf<25?'#84cc16':bf<32?'#f59e0b':'#ef4444';}
-  document.getElementById('bfResult').innerHTML='Body Fat: <strong style="color:'+col+'">'+bf+'%</strong> — '+cat;
+  if(g==='male'){cat=bf<6?'Essentielt fedt':bf<14?'Athletic':bf<18?'Fitness':bf<25?'Average':'Obese';col=bf<6?'#3b82f6':bf<14?'#10b981':bf<18?'#84cc16':bf<25?'#f59e0b':'#ef4444';}
+  else{cat=bf<14?'Essentielt fedt':bf<21?'Athletic':bf<25?'Fitness':bf<32?'Average':'Obese';col=bf<14?'#3b82f6':bf<21?'#10b981':bf<25?'#84cc16':bf<32?'#f59e0b':'#ef4444';}
+  document.getElementById('bfResult').innerHTML='Fedtprocent: <strong style="color:'+col+'">'+bf+'%</strong> — '+cat;
 }
 bfCalc();
 </script></div></div><div class="seo-section"><h2>Sådan måler du fedtprocenten</h2><p>Denne beregner bruger <strong>US Navy-formlen til fedtprocent</strong> — en af de mest praktiske metoder til at anslå fedtprocenten derhjemme. Den blev udviklet af Hodgdon og Beckett ved Naval Health Research Center og bruges af det amerikanske forsvar til konditionskrav.</p>

@@ -191,7 +191,7 @@ function kcal(){
   if(!age||!w||!h){document.getElementById('kcalResult').textContent='—';return;}
   var bmr=g==='male'?10*w+6.25*h-5*age+5:10*w+6.25*h-5*age-161;
   var tdee=Math.round(bmr*act);bmr=Math.round(bmr);
-  document.getElementById('kcalResult').innerHTML='BMR: <strong>'+bmr+'</strong> cal/day<br>Maintenance (TDEE): <strong>'+tdee+'</strong> cal/day<br>Weight loss (−500): '+(tdee-500)+' cal/day<br>Weight gain (+500): '+(tdee+500)+' cal/day';
+  document.getElementById('kcalResult').innerHTML='Basalstofskifte: <strong>'+bmr+'</strong> kcal/dag<br>Vedligehold (TDEE): <strong>'+tdee+'</strong> kcal/dag<br>Vægttab (−500): '+(tdee-500)+' kcal/dag<br>Vægtøgning (+500): '+(tdee+500)+' kcal/dag';
 }
 kcal();
 </script></div></div><div class="seo-section"><h2>Hvor mange kalorier bør du spise om dagen?</h2><p>Dit daglige kaloriebehov afhænger af dit basalstofskifte (BMR) — de kalorier, kroppen har brug for i fuldstændig hvile — ganget med en aktivitetsfaktor for at give dit samlede daglige energiforbrug (TDEE). Vi bruger <strong>Mifflin-St Jeor-ligningen</strong>, den mest præcise formel for de fleste:</p>

@@ -193,12 +193,12 @@ function pcCalc(){
   var totalDed=fedPerPeriod+ss+medicare+ded;
   var net=gross-totalDed;
   document.getElementById('pcResult').innerHTML=
-    'Gross Pay: <strong>'+fmt$(gross)+'</strong><br>'+
-    'Federal Tax: −'+fmt$(fedPerPeriod)+'<br>'+
-    'Social Security (6.2%): −'+fmt$(ss)+'<br>'+
-    'Medicare (1.45%): −'+fmt$(medicare)+'<br>'+
-    '<strong>Take-Home Pay: '+fmt$(net)+'</strong> per period<br>'+
-    'Annual Net: '+fmt$(net*periods);
+    'Bruttoløn: <strong>'+fmt$(gross)+'</strong><br>'+
+    'Føderal indkomstskat: −'+fmt$(fedPerPeriod)+'<br>'+
+    'Social Security (6,2 %): −'+fmt$(ss)+'<br>'+
+    'Medicare (1,45 %): −'+fmt$(medicare)+'<br>'+
+    '<strong>Nettoløn: '+fmt$(net)+'</strong> pr. periode<br>'+
+    'Netto pr. år: '+fmt$(net*periods);
 }
 pcCalc();
 </script></div></div><div class="seo-section"><h2>Sådan beregner du din nettoløn</h2><p>Din nettoløn er bruttolønnen minus føderal indkomstskat, Social Security-skat, Medicare-skat, delstatlig indkomstskat og eventuelle fradrag før skat (sundhedsforsikring, indbetalinger til 401k). Denne beregner fokuserer på føderale skatter for 2025.</p>

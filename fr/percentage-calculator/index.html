@@ -162,26 +162,26 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
   </div>
 </div>
-</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">%</div></div><div><span class="badge">FREE CALCULATOR</span><h1>Calculatrice de Pourcentage</h1><p>Calculez les pourcentages instantanément — pourcentage d'un nombre, variation, remises.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
+</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">%</div></div><div><span class="badge">CALCULATEUR GRATUIT</span><h1>Calculatrice de Pourcentage</h1><p>Calculez les pourcentages instantanément — pourcentage d'un nombre, variation, remises.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Publicité</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">%</span><span class="calc-title">Calculatrice de Pourcentage</span></div><div class="calc-body">
 <div class="tabs">
-  <button class="tab active" onclick="setTab(0,this)">X% of Y</button>
+  <button class="tab active" onclick="setTab(0,this)">X % de Y</button>
   <button class="tab" onclick="setTab(1,this)">X représente quel % de Y</button>
-  <button class="tab" onclick="setTab(2,this)">% Change</button>
-  <button class="tab" onclick="setTab(3,this)">Discount / Markup</button>
+  <button class="tab" onclick="setTab(2,this)">% de variation</button>
+  <button class="tab" onclick="setTab(3,this)">Remise / Majoration</button>
 </div>
 <div id="t0">
-  <div class="row2"><div class="field"><label>Percentage (%)</label><input type="number" id="p0a" value="15" oninput="pct()"></div><div class="field"><label>Number</label><input type="number" id="p0b" value="200" oninput="pct()"></div></div>
+  <div class="row2"><div class="field"><label>Pourcentage (%)</label><input type="number" id="p0a" value="15" oninput="pct()"></div><div class="field"><label>Nombre</label><input type="number" id="p0b" value="200" oninput="pct()"></div></div>
 </div>
 <div id="t1" style="display:none">
-  <div class="row2"><div class="field"><label>Value (X)</label><input type="number" id="p1a" value="30" oninput="pct()"></div><div class="field"><label>Total (Y)</label><input type="number" id="p1b" value="200" oninput="pct()"></div></div>
+  <div class="row2"><div class="field"><label>Valeur (X)</label><input type="number" id="p1a" value="30" oninput="pct()"></div><div class="field"><label>Total (Y)</label><input type="number" id="p1b" value="200" oninput="pct()"></div></div>
 </div>
 <div id="t2" style="display:none">
-  <div class="row2"><div class="field"><label>From</label><input type="number" id="p2a" value="100" oninput="pct()"></div><div class="field"><label>To</label><input type="number" id="p2b" value="125" oninput="pct()"></div></div>
+  <div class="row2"><div class="field"><label>De</label><input type="number" id="p2a" value="100" oninput="pct()"></div><div class="field"><label>À</label><input type="number" id="p2b" value="125" oninput="pct()"></div></div>
 </div>
 <div id="t3" style="display:none">
-  <div class="row2"><div class="field"><label>Price</label><input type="number" id="p3a" value="100" oninput="pct()"></div><div class="field"><label>Percentage (%)</label><input type="number" id="p3b" value="20" oninput="pct()"></div></div>
+  <div class="row2"><div class="field"><label>Prix</label><input type="number" id="p3a" value="100" oninput="pct()"></div><div class="field"><label>Pourcentage (%)</label><input type="number" id="p3b" value="20" oninput="pct()"></div></div>
 </div>
 <div class="result" id="pctResult">30</div>
 <script>
@@ -190,18 +190,18 @@ function setTab(i,el){pctTab=i;document.querySelectorAll('.tab').forEach((t,j)=>
 function fmt(n){return parseFloat(n.toFixed(4)).toString();}
 function pct(){
   var r=document.getElementById('pctResult');
-  if(pctTab===0){var a=+document.getElementById('p0a').value||0,b=+document.getElementById('p0b').value||0;r.textContent=a+'% of '+b+' = '+fmt(b*a/100);}
+  if(pctTab===0){var a=+document.getElementById('p0a').value||0,b=+document.getElementById('p0b').value||0;r.textContent=a+'% de '+b+' = '+fmt(b*a/100);}
   else if(pctTab===1){var a=+document.getElementById('p1a').value||0,b=+document.getElementById('p1b').value||0;r.textContent=b?fmt(a/b*100)+'%':'—';}
   else if(pctTab===2){var a=+document.getElementById('p2a').value||0,b=+document.getElementById('p2b').value||0;if(!a){r.textContent='—';return;}var ch=(b-a)/a*100;r.textContent=(ch>=0?'+':'')+fmt(ch)+'% '+(ch>=0?'increase':'decrease');}
-  else{var a=+document.getElementById('p3a').value||0,b=+document.getElementById('p3b').value||0;r.innerHTML='Discounted: '+fmt(a*(1-b/100))+'<br>Marked up: '+fmt(a*(1+b/100));}
+  else{var a=+document.getElementById('p3a').value||0,b=+document.getElementById('p3b').value||0;r.innerHTML='Après remise : '+fmt(a*(1-b/100))+'<br>Après majoration : '+fmt(a*(1+b/100));}
 }
 pct();
 </script></div></div><div class="seo-section"><h2>Comment utiliser la calculatrice de pourcentage</h2><p>Cette calculatrice de pourcentages résout quatre problèmes courants instantanément. Calculez le pourcentage d'un nombre, la variation en pourcentage, les remises et les marges bénéficiaires.</p>
 <p><strong>Pourcentage d'un nombre :</strong> Saisissez le pourcentage et le nombre de base. Résultat immédiat. Exemple : 15% de 200 = 30. Utile pour calculer les taxes, les pourboires et les remises.</p>
 <p><strong>Variation en pourcentage :</strong> Entrez la valeur initiale et finale pour voir l'augmentation ou la diminution. Formule : ((Nouveau − Ancien) / Ancien) × 100.</p>
 <h2>Formules de pourcentage</h2>
-<ul><li><strong>X% de Y</strong> = Y × (X ÷ 100)</li><li><strong>X est quel % de Y</strong> = (X ÷ Y) × 100</li><li><strong>Variation %</strong> = ((Nouveau − Ancien) ÷ Ancien) × 100</li></ul></div><div class="seo-section"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Comment calculer 20% d'un nombre ?</span><span class="faq-arr">+</span></div><div class="faq-a">Multipliez le nombre par 0,20. Exemple : 20% de 150 = 30.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Quelle est la formule de variation en pourcentage ?</span><span class="faq-arr">+</span></div><div class="faq-a">Variation % = ((Nouvelle valeur − Ancienne valeur) / Ancienne valeur) × 100.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Comment trouver le prix original avant une remise ?</span><span class="faq-arr">+</span></div><div class="faq-a">Prix original = Prix final ÷ (1 − remise%). Si un article coûte 80€ après 20% de remise : 80 ÷ 0,80 = 100€.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Quelle est la différence entre points de pourcentage et pourcentage ?</span><span class="faq-arr">+</span></div><div class="faq-a">Si un taux passe de 4% à 5%, il a augmenté d'1 point de pourcentage mais de 25 pour cent.</div></div></div><div class="seo-section"><h2>Tous les Calculateurs</h2><div class="related"><a href="https://calculator-free.com/fr/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">Calculateur IMC</div></a><a href="https://calculator-free.com/fr/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">Calculateur de Prêt Immobilier</div></a><a href="https://calculator-free.com/fr/savings-calculator/" class="rel-card"><div class="rel-icon">💰</div><div class="rel-name">Calculateur d'Épargne</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
+<ul><li><strong>X% de Y</strong> = Y × (X ÷ 100)</li><li><strong>X est quel % de Y</strong> = (X ÷ Y) × 100</li><li><strong>Variation %</strong> = ((Nouveau − Ancien) ÷ Ancien) × 100</li></ul></div><div class="seo-section"><h2>Questions fréquentes</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Comment calculer 20% d'un nombre ?</span><span class="faq-arr">+</span></div><div class="faq-a">Multipliez le nombre par 0,20. Exemple : 20% de 150 = 30.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Quelle est la formule de variation en pourcentage ?</span><span class="faq-arr">+</span></div><div class="faq-a">Variation % = ((Nouvelle valeur − Ancienne valeur) / Ancienne valeur) × 100.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Comment trouver le prix original avant une remise ?</span><span class="faq-arr">+</span></div><div class="faq-a">Prix original = Prix final ÷ (1 − remise%). Si un article coûte 80€ après 20% de remise : 80 ÷ 0,80 = 100€.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Quelle est la différence entre points de pourcentage et pourcentage ?</span><span class="faq-arr">+</span></div><div class="faq-a">Si un taux passe de 4% à 5%, il a augmenté d'1 point de pourcentage mais de 25 pour cent.</div></div></div><div class="seo-section"><h2>Tous les Calculateurs</h2><div class="related"><a href="https://calculator-free.com/fr/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">Calculateur IMC</div></a><a href="https://calculator-free.com/fr/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">Calculateur de Prêt Immobilier</div></a><a href="https://calculator-free.com/fr/savings-calculator/" class="rel-card"><div class="rel-icon">💰</div><div class="rel-name">Calculateur d'Épargne</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">Publicité</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><footer><div class="wrap">
-<p>© 2026 calculator-free.com · <a href="https://calculator-free.com/fr/">Tous les Calculateurs</a> · <a href="https://calculator-free.com/about/">About</a> · <a href="https://calculator-free.com/privacy-policy/">Privacy Policy</a> · <a href="https://calculator-free.com/terms-of-use/">Terms of Use</a> · <a href="https://calculator-free.com/contact/">Contact</a></p>
+<p>© 2026 calculator-free.com · <a href="https://calculator-free.com/fr/">Tous les Calculateurs</a> · <a href="https://calculator-free.com/about/">À propos</a> · <a href="https://calculator-free.com/privacy-policy/">Politique de confidentialité</a> · <a href="https://calculator-free.com/terms-of-use/">Conditions d'utilisation</a> · <a href="https://calculator-free.com/contact/">Contact</a></p>
 </div></footer></body></html>

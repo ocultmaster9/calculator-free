@@ -183,8 +183,8 @@ function bmi(){
   if(unit==='metric'){var w=+document.getElementById('bw_kg').value,h=+document.getElementById('bh_cm').value/100;b=w/(h*h);}
   else{var w=+document.getElementById('bw_lb').value,h=+document.getElementById('bh_ft').value*12+(+document.getElementById('bh_in').value||0);b=703*w/(h*h);}
   if(!b||!isFinite(b)){document.getElementById('bmiResult').textContent='—';return;}
-  var cat=b<18.5?'Underweight':b<25?'Normal weight':b<30?'Overweight':'Obese';
-  var colors={Underweight:'#3b82f6','Normal weight':'#10b981',Overweight:'#f59e0b',Obese:'#ef4444'};
+  var cat=b<18.5?'Underweight':b<25?'Normalvikt':b<30?'Overweight':'Obese';
+  var colors={Underweight:'#3b82f6','Normalvikt':'#10b981',Overweight:'#f59e0b',Obese:'#ef4444'};
   document.getElementById('bmiResult').innerHTML='BMI: <strong style="color:'+(colors[cat]||'#10b981')+'">'+(Math.round(b*10)/10)+'</strong> — '+cat;
 }
 bmi();

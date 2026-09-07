@@ -177,18 +177,18 @@ function addDays(d,n){var r=new Date(d);r.setDate(r.getDate()+n);return r;}
 function ovCalc(){
   var lmp=new Date(document.getElementById('ovlmp').value);
   var cyc=+document.getElementById('ovcyc').value||28;
-  if(isNaN(lmp)){document.getElementById('ovResult').textContent='Enter a valid date';return;}
+  if(isNaN(lmp)){document.getElementById('ovResult').textContent='Ange ett giltigt datum';return;}
   var ovDay=addDays(lmp,cyc-14);
   var fertStart=addDays(ovDay,-5);
   var fertEnd=addDays(ovDay,1);
   var nextPeriod=addDays(lmp,cyc);
   var today=new Date();today.setHours(0,0,0,0);
   var daysToOv=Math.round((ovDay-today)/86400000);
-  var phase=daysToOv>0?'Ovulation in <strong>'+daysToOv+' days</strong>':daysToOv===0?'<strong>Ovulation day!</strong>':'Ovulation was '+Math.abs(daysToOv)+' days ago';
+  var phase=daysToOv>0?'Ägglossning om <strong>'+daysToOv+' dagar</strong>':daysToOv===0?'<strong>Ägglossning i dag!</strong>':'Ägglossning för '+Math.abs(daysToOv)+' dagar';
   document.getElementById('ovResult').innerHTML=
-    'Ovulation Date: <strong>'+fmtDate(ovDay)+'</strong><br>'+
-    'Fertile Window: '+fmtDate(fertStart)+' – '+fmtDate(fertEnd)+'<br>'+
-    'Next Period: '+fmtDate(nextPeriod)+'<br>'+phase;
+    'Ägglossningsdatum: <strong>'+fmtDate(ovDay)+'</strong><br>'+
+    'Fertilt fönster: '+fmtDate(fertStart)+' – '+fmtDate(fertEnd)+'<br>'+
+    'Nästa mens: '+fmtDate(nextPeriod)+'<br>'+phase;
 }
 </script></div></div><div class="seo-section"><h2>Så beräknar du din ägglossningsdag</h2><p>Ägglossning sker vanligtvis 14 dagar <em>före</em> din nästa mens — inte 14 dagar efter den förra. Vid en 28-dagarscykel infaller ägglossningen dag 14. Vid en 32-dagarscykel infaller den dag 18 (32 − 14 = 18). Det fertila fönstret omfattar de 5 dagarna före ägglossningen plus själva ägglossningsdagen, eftersom spermier kan överleva upp till 5 dagar i de kvinnliga könsorganen.</p>
 <p><strong>Så använder du kalkylatorn:</strong> Ange första dagen av din senaste mens och din genomsnittliga cykellängd. Kalkylatorn visar ditt beräknade ägglossningsdatum, ditt fertila fönster och när nästa mens väntas.</p>

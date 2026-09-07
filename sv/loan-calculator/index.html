@@ -180,7 +180,7 @@ function loan(){
   if(!P||!n){document.getElementById('loanResult').textContent='—';return;}
   var M=r?P*r/(1-Math.pow(1+r,-n)):P/n;
   var total=M*n;
-  document.getElementById('loanResult').innerHTML='Monthly payment: <strong>'+fmt$(M)+'</strong><br>Total paid: '+fmt$(total)+'<br>Total interest: '+fmt$(total-P);
+  document.getElementById('loanResult').innerHTML='Månadskostnad: <strong>'+fmt$(M)+'</strong><br>Totalt betalt: '+fmt$(total)+'<br>Total ränta: '+fmt$(total-P);
 }
 loan();
 </script></div></div><div class="seo-section"><h2>Så beräknar du månadskostnaden för ett lån</h2><p>Formeln för månadskostnaden på ett lån är: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong>, där P är lånebeloppet, r är månadsräntan (årsränta ÷ 12) och n är det totala antalet betalningar (år × 12).</p>

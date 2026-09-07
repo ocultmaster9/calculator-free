@@ -183,7 +183,7 @@ function ci(){
   var t=+document.getElementById('cit').value||0;
   var A=P*Math.pow(1+r/n,n*t);
   var gain=A-P;
-  document.getElementById('ciResult').innerHTML='Final amount: <strong>'+fmt$(A)+'</strong><br>Interest earned: '+fmt$(gain)+' ('+Math.round(gain/P*100)+'% gain)';
+  document.getElementById('ciResult').innerHTML='Slutbelopp: <strong>'+fmt$(A)+'</strong><br>Ränta intjänad: '+fmt$(gain)+' ('+Math.round(gain/P*100)+'% vinst)';
 }
 ci();
 </script></div></div><div class="seo-section"><h2>Formeln för ränta-på-ränta förklarad</h2><p>Formeln för ränta-på-ränta är: <strong>A = P(1 + r/n)^(nt)</strong>, där A är slutbeloppet, P är kapitalet, r är den årliga räntan (som decimaltal), n är antalet kapitaliseringar per år och t är tiden i år.</p>

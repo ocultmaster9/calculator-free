@@ -171,7 +171,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 function avg(){
   var raw=document.getElementById('avgnums').value;
   var nums=raw.split(/[,\s]+/).map(Number).filter(n=>!isNaN(n)&&n!==undefined&&raw.trim()!=='');
-  if(!nums.length){document.getElementById('avgResult').textContent='Enter numbers above';return;}
+  if(!nums.length){document.getElementById('avgResult').textContent='Angi tall ovenfor';return;}
   var sum=nums.reduce((a,b)=>a+b,0);
   var mean=sum/nums.length;
   var sorted=[...nums].sort((a,b)=>a-b);
@@ -180,7 +180,7 @@ function avg(){
   var variance=nums.reduce((a,b)=>a+(b-mean)**2,0)/nums.length;
   var std=Math.sqrt(variance);
   document.getElementById('avgResult').innerHTML=
-    'Mean: <strong>'+Math.round(mean*10000)/10000+'</strong> · Median: '+median+'<br>Sum: '+sum+' · Count: '+nums.length+'<br>Min: '+sorted[0]+' · Max: '+sorted[sorted.length-1]+'<br>Std Dev: '+Math.round(std*1000)/1000;
+    'Gjennomsnitt: <strong>'+Math.round(mean*10000)/10000+'</strong> · Median: '+median+'<br>Sum: '+sum+' · Antall: '+nums.length+'<br>Min: '+sorted[0]+' · Maks: '+sorted[sorted.length-1]+'<br>Standardavvik: '+Math.round(std*1000)/1000;
 }
 avg();
 </script></div></div><div class="seo-section"><h2>Gjennomsnitt, median, typetall og standardavvik forklart</h2><p>Det finnes tre vanlige mål på «gjennomsnitt» — hvert av dem forteller noe ulikt om dataene dine:</p>

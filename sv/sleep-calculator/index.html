@@ -187,14 +187,14 @@ function sleepCalc(){
     var parts=document.getElementById('slwake').value.split(':');
     var wakeMins=+parts[0]*60+(+parts[1]);
     var times=[];
-    for(var c=6;c>=2;c--){var bed=wakeMins-c*90-fallAsleep;times.push(fmtTime(bed)+' ('+c+' cycles = '+(c*90/60).toFixed(1)+' hrs)');}
-    r.innerHTML='To wake at '+fmtTime(wakeMins)+', go to sleep at:<br><strong>'+times.join('<br>')+'</strong><br><small>+14 min to fall asleep accounted for</small>';
+    for(var c=6;c>=2;c--){var bed=wakeMins-c*90-fallAsleep;times.push(fmtTime(bed)+' ('+c+' cykler = '+(c*90/60).toFixed(1)+' h)');}
+    r.innerHTML='Vakna klockan '+fmtTime(wakeMins)+', somna klockan:<br><strong>'+times.join('<br>')+'</strong><br><small>+14 min insomningstid inräknad</small>';
   } else {
     var parts=document.getElementById('slbed').value.split(':');
     var bedMins=+parts[0]*60+(+parts[1])+fallAsleep;
     var times=[];
-    for(var c=5;c<=7;c++){var wake=bedMins+c*90;times.push(fmtTime(wake)+' ('+c+' cycles = '+(c*90/60).toFixed(1)+' hrs)');}
-    r.innerHTML='Sleeping at '+fmtTime(bedMins-fallAsleep)+', best wake times:<br><strong>'+times.join('<br>')+'</strong><br><small>+14 min to fall asleep accounted for</small>';
+    for(var c=5;c<=7;c++){var wake=bedMins+c*90;times.push(fmtTime(wake)+' ('+c+' cykler = '+(c*90/60).toFixed(1)+' h)');}
+    r.innerHTML='Somna klockan '+fmtTime(bedMins-fallAsleep)+', bästa väckningstider:<br><strong>'+times.join('<br>')+'</strong><br><small>+14 min insomningstid inräknad</small>';
   }
 }
 sleepCalc();

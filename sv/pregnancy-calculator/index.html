@@ -176,20 +176,20 @@ function fmtDate(d){return d.toLocaleDateString('en-US',{month:'long',day:'numer
 function prgCalc(){
   var lmp=new Date(document.getElementById('prglmp').value);
   var cyc=+document.getElementById('prgcyc').value||28;
-  if(isNaN(lmp)){document.getElementById('prgResult').textContent='Enter a valid date';return;}
+  if(isNaN(lmp)){document.getElementById('prgResult').textContent='Ange ett giltigt datum';return;}
   var adj=cyc-28;
   var due=new Date(lmp);due.setDate(due.getDate()+280+adj);
   var today=new Date();today.setHours(0,0,0,0);
   var daysPreg=Math.round((today-lmp)/86400000);
   var weeksPreg=Math.floor(daysPreg/7);
   var daysMod=daysPreg%7;
-  var trimester=weeksPreg<14?'First (weeks 1–13)':weeksPreg<28?'Second (weeks 14–27)':'Third (weeks 28–40)';
+  var trimester=weeksPreg<14?'Första (vecka 1–13)':weeksPreg<28?'Andra (vecka 14–27)':'Tredje (vecka 28–40)';
   var daysLeft=Math.round((due-today)/86400000);
   document.getElementById('prgResult').innerHTML=
-    'Due Date: <strong>'+fmtDate(due)+'</strong><br>'+
-    'Currently: <strong>'+weeksPreg+' weeks, '+daysMod+' days</strong><br>'+
+    'Beräknat datum: <strong>'+fmtDate(due)+'</strong><br>'+
+    'Just nu: <strong>'+weeksPreg+' veckor, '+daysMod+' dagar</strong><br>'+
     'Trimester: '+trimester+'<br>'+
-    (daysLeft>0?daysLeft+' days until due date':'Congratulations — past due date!');
+    (daysLeft>0?daysLeft+' dagar till beräknat datum':'Grattis — datumet har passerat!');
 }
 </script></div></div><div class="seo-section"><h2>Så beräknar du ditt förlossningsdatum</h2><p>Standardmetoden för att beräkna förlossningsdatum är <strong>Naegeles regel</strong>: lägg 280 dagar (40 veckor) till första dagen av din senaste mens. Det förutsätter en 28-dagarscykel. Vid längre eller kortare cykler justerar du med skillnaden mot 28 dagar.</p>
 <p>Graviditeten delas in i tre trimestrar: <strong>Första trimestern</strong> (vecka 1–13), <strong>Andra trimestern</strong> (vecka 14–26) och <strong>Tredje trimestern</strong> (vecka 27–40). Fullgången graviditet räknas som 39–40 veckor, även om förlossningar mellan vecka 37 och 42 är normala. Ditt förlossningsdatum är en uppskattning — bara omkring 5 % av alla barn föds exakt på beräknat datum.</p>

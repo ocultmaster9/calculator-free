@@ -162,24 +162,24 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
   </div>
 </div>
-</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">⏱️</div></div><div><span class="badge">FREE CALCULATOR</span><h1>Calculadora de Tiempo</h1><p>Suma o resta duraciones de tiempo. Convierte entre horas, minutos y segundos.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
+</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">⏱️</div></div><div><span class="badge">CALCULADORA GRATIS</span><h1>Calculadora de Tiempo</h1><p>Suma o resta duraciones de tiempo. Convierte entre horas, minutos y segundos.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Publicidad</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">⏱️</span><span class="calc-title">Calculadora de Tiempo</span></div><div class="calc-body">
 <div class="tabs">
-  <button class="tab active" onclick="setTimeTab(0,this)">Add / Subtract</button>
-  <button class="tab" onclick="setTimeTab(1,this)">Convert</button>
+  <button class="tab active" onclick="setTimeTab(0,this)">Sumar / Restar</button>
+  <button class="tab" onclick="setTimeTab(1,this)">Convertir</button>
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>Time 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>Operation</label><select id="tmop" onchange="timecalc()"><option value="add">Add (+)</option><option value="sub">Subtract (−)</option></select></div>
+    <div class="field"><label>Hora 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label>Operación</label><select id="tmop" onchange="timecalc()"><option value="add">Sumar (+)</option><option value="sub">Restar (−)</option></select></div>
   </div>
-  <div class="field"><label>Time 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label>Hora 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>Value</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>From Unit</label><select id="tcf" onchange="timecalc()"><option value="s">Seconds</option><option value="m">Minutes</option><option value="h">Hours</option><option value="d">Days</option></select></div>
+    <div class="field"><label>Valor</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label>Unidad de origen</label><select id="tcf" onchange="timecalc()"><option value="s">Segundos</option><option value="m">Minutos</option><option value="h">Horas</option><option value="d">Días</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>
@@ -196,18 +196,18 @@ function timecalc(){
     var op=document.getElementById('tmop').value;
     var res=op==='add'?t1+t2:t1-t2;
     var s=Math.abs(res);
-    r.innerHTML='Result: <strong>'+fmtSec(res)+'</strong><br>'+Math.floor(s/3600)+' hours, '+Math.floor(s%3600/60)+' minutes, '+s%60+' seconds';
+    r.innerHTML='Resultado: <strong>'+fmtSec(res)+'</strong><br>'+Math.floor(s/3600)+' horas, '+Math.floor(s%3600/60)+' minutos, '+s%60+' segundos';
   } else {
     var v=+document.getElementById('tcv').value||0;
     var f=document.getElementById('tcf').value;
     var secs=f==='s'?v:f==='m'?v*60:f==='h'?v*3600:v*86400;
-    r.innerHTML=fmtSec(secs)+'<br>= '+Math.round(secs/3600*1000)/1000+' h = '+Math.round(secs/60*10)/10+' min = '+secs+' sec';
+    r.innerHTML=fmtSec(secs)+'<br>= '+Math.round(secs/3600*1000)/1000+' h = '+Math.round(secs/60*10)/10+' min = '+secs+' s';
   }
 }
 timecalc();
 </script></div></div><div class="seo-section"><h2>Cómo sumar y restar duraciones de tiempo</h2><p>Al sumar tiempo, los segundos desbordan en minutos (60 s = 1 min) y los minutos en horas (60 min = 1 h). Ejemplo: 2:45:30 + 1:30:45 = 4:16:15.</p>
-<p>Usos comunes: calcular horas totales de trabajo, sumar duraciones de reuniones, tiempo transcurrido en viajes, horas extra para nómina.</p></div><div class="seo-section"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>¿Cómo convierto horas y minutos a decimales?</span><span class="faq-arr">+</span></div><div class="faq-a">Divide los minutos entre 60 y suma a las horas. Ejemplo: 3 horas 45 minutos = 3 + (45/60) = 3,75 horas decimales. Útil para nómina y facturación.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>¿Qué es el formato de 24 horas?</span><span class="faq-arr">+</span></div><div class="faq-a">El tiempo de 24 horas va de 00:00 (medianoche) a 23:59. Para convertir PM: suma 12 a las horas después del mediodía (1:00 PM = 13:00).</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>¿Cuántos segundos tiene un día?</span><span class="faq-arr">+</span></div><div class="faq-a">1 día = 86.400 segundos · 1 semana = 604.800 segundos · 1 año = 31.536.000 segundos.</div></div></div><div class="seo-section"><h2>Todas las Calculadoras</h2><div class="related"><a href="https://calculator-free.com/es/percentage-calculator/" class="rel-card"><div class="rel-icon">%</div><div class="rel-name">Calculadora de Porcentaje</div></a><a href="https://calculator-free.com/es/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">Calculadora de IMC</div></a><a href="https://calculator-free.com/es/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">Calculadora de Hipoteca</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
+<p>Usos comunes: calcular horas totales de trabajo, sumar duraciones de reuniones, tiempo transcurrido en viajes, horas extra para nómina.</p></div><div class="seo-section"><h2>Preguntas frecuentes</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>¿Cómo convierto horas y minutos a decimales?</span><span class="faq-arr">+</span></div><div class="faq-a">Divide los minutos entre 60 y suma a las horas. Ejemplo: 3 horas 45 minutos = 3 + (45/60) = 3,75 horas decimales. Útil para nómina y facturación.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>¿Qué es el formato de 24 horas?</span><span class="faq-arr">+</span></div><div class="faq-a">El tiempo de 24 horas va de 00:00 (medianoche) a 23:59. Para convertir PM: suma 12 a las horas después del mediodía (1:00 PM = 13:00).</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>¿Cuántos segundos tiene un día?</span><span class="faq-arr">+</span></div><div class="faq-a">1 día = 86.400 segundos · 1 semana = 604.800 segundos · 1 año = 31.536.000 segundos.</div></div></div><div class="seo-section"><h2>Todas las Calculadoras</h2><div class="related"><a href="https://calculator-free.com/es/percentage-calculator/" class="rel-card"><div class="rel-icon">%</div><div class="rel-name">Calculadora de Porcentaje</div></a><a href="https://calculator-free.com/es/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">Calculadora de IMC</div></a><a href="https://calculator-free.com/es/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">Calculadora de Hipoteca</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">Publicidad</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2>Sumar y restar tiempo</h2><p>La aritmética del tiempo trabaja en base 60: segundos y minutos cambian a los 60, y las horas a las 24. Para sumar duraciones, suma cada unidad y arrastra el exceso hacia arriba; para restar, toma prestado de la unidad superior.</p><h3>Ejemplo resuelto</h3><p>Sumar 2 h 45 min y 1 h 38 min: los minutos suman 83, es decir 1 h 23 min, así que el resultado es 4 h 23 min. Restar 1 h 50 min de 3 h 15 min: toma prestada una hora para obtener 2 h 75 min y, al restar 1 h 50 min, quedan 1 h 25 min.</p><h3>Preguntas frecuentes</h3><p><strong>¿Cómo funcionan las horas decimales?</strong> Los sistemas de nóminas suelen usar decimales: 7,5 horas son 7 h 30 min. Divide los minutos entre 60 para convertirlos (25 min = 0,42 h).</p><p><strong>¿Husos horarios y horario de verano?</strong> Cuando un periodo cruza un cambio de hora, el cálculo por reloj puede desviarse una hora; haz las cuentas en UTC para mayor exactitud.</p></section><footer><div class="wrap">
-<p>© 2026 calculator-free.com · <a href="https://calculator-free.com/es/">Todas las Calculadoras</a> · <a href="https://calculator-free.com/about/">About</a> · <a href="https://calculator-free.com/privacy-policy/">Privacy Policy</a> · <a href="https://calculator-free.com/terms-of-use/">Terms of Use</a> · <a href="https://calculator-free.com/contact/">Contact</a></p>
+<p>© 2026 calculator-free.com · <a href="https://calculator-free.com/es/">Todas las Calculadoras</a> · <a href="https://calculator-free.com/about/">Acerca de</a> · <a href="https://calculator-free.com/privacy-policy/">Política de privacidad</a> · <a href="https://calculator-free.com/terms-of-use/">Términos de uso</a> · <a href="https://calculator-free.com/contact/">Contacto</a></p>
 </div></footer></body></html>

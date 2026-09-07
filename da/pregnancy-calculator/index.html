@@ -176,20 +176,20 @@ function fmtDate(d){return d.toLocaleDateString('en-US',{month:'long',day:'numer
 function prgCalc(){
   var lmp=new Date(document.getElementById('prglmp').value);
   var cyc=+document.getElementById('prgcyc').value||28;
-  if(isNaN(lmp)){document.getElementById('prgResult').textContent='Enter a valid date';return;}
+  if(isNaN(lmp)){document.getElementById('prgResult').textContent='Indtast en gyldig dato';return;}
   var adj=cyc-28;
   var due=new Date(lmp);due.setDate(due.getDate()+280+adj);
   var today=new Date();today.setHours(0,0,0,0);
   var daysPreg=Math.round((today-lmp)/86400000);
   var weeksPreg=Math.floor(daysPreg/7);
   var daysMod=daysPreg%7;
-  var trimester=weeksPreg<14?'First (weeks 1–13)':weeksPreg<28?'Second (weeks 14–27)':'Third (weeks 28–40)';
+  var trimester=weeksPreg<14?'Første (uge 1–13)':weeksPreg<28?'Anden (uge 14–27)':'Tredje (uge 28–40)';
   var daysLeft=Math.round((due-today)/86400000);
   document.getElementById('prgResult').innerHTML=
-    'Due Date: <strong>'+fmtDate(due)+'</strong><br>'+
-    'Currently: <strong>'+weeksPreg+' weeks, '+daysMod+' days</strong><br>'+
+    'Termin: <strong>'+fmtDate(due)+'</strong><br>'+
+    'Lige nu: <strong>'+weeksPreg+' uger, '+daysMod+' dage</strong><br>'+
     'Trimester: '+trimester+'<br>'+
-    (daysLeft>0?daysLeft+' days until due date':'Congratulations — past due date!');
+    (daysLeft>0?daysLeft+' dage til termin':'Tillykke — terminen er overskredet!');
 }
 </script></div></div><div class="seo-section"><h2>Sådan beregner du din termin</h2><p>Standardmetoden til at beregne en termin er <strong>Naegeles regel</strong>: læg 280 dage (40 uger) til første dag i din seneste menstruation. Det forudsætter en 28-dages cyklus. Ved længere eller kortere cyklusser justerer du med forskellen fra 28 dage.</p>
 <p>Graviditeten inddeles i tre trimestre: <strong>Første trimester</strong> (uge 1-13), <strong>Andet trimester</strong> (uge 14-26) og <strong>Tredje trimester</strong> (uge 27-40). Fuldbåren regnes som 39-40 uger, selvom fødsler mellem uge 37 og 42 er normale. Din termin er et estimat — kun cirka 5 % af alle børn fødes præcis på terminsdatoen.</p>

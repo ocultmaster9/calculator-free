@@ -183,15 +183,15 @@ function setDateTab(i,el){dateTab=i;document.querySelectorAll('.tab').forEach((t
 function datecalc(){
   if(dateTab===0){
     var d1=new Date(document.getElementById('dd1').value),d2=new Date(document.getElementById('dd2').value);
-    if(isNaN(d1)||isNaN(d2)){document.getElementById('dateResult').textContent='Select valid dates';return;}
+    if(isNaN(d1)||isNaN(d2)){document.getElementById('dateResult').textContent='Vælg gyldige datoer';return;}
     var diff=Math.round((d2-d1)/86400000);
     var weeks=Math.round(diff/7*10)/10,months=Math.round(diff/30.44*10)/10,years=Math.round(diff/365.25*10)/10;
-    document.getElementById('dateResult').innerHTML='<strong>'+Math.abs(diff)+' days</strong> · '+Math.abs(weeks)+' weeks · '+Math.abs(months)+' months · '+Math.abs(years)+' years'+(diff<0?' (end before start)':'');
+    document.getElementById('dateResult').innerHTML='<strong>'+Math.abs(diff)+' dage</strong> · '+Math.abs(weeks)+' uger · '+Math.abs(months)+' måneder · '+Math.abs(years)+' år'+(diff<0?' (slut før start)':'');
   } else {
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
-    if(isNaN(d)){document.getElementById('dateResult').textContent='Select a valid date';return;}
+    if(isNaN(d)){document.getElementById('dateResult').textContent='Vælg en gyldig dato';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Result: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Resultat: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>How to Calculate Days Between Two Dates</h2><p>The simplest way to find days between dates is to convert both dates to a day count from a fixed reference point, then subtract. Our calculator does this automatically for any pair of dates.</p>

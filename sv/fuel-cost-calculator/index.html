@@ -184,7 +184,7 @@ function fuel(){
   var fuelNeeded=unit==='mpg'?dist/eff:dist*eff/100;
   var cost=fuelNeeded*price;
   var distLabel=unit==='mpg'?'miles':'km',effLabel=unit==='mpg'?'MPG':'L/100km',volLabel=unit==='mpg'?'gallons':'liters';
-  document.getElementById('fuelResult').innerHTML='Fuel needed: <strong>'+fuelNeeded.toFixed(2)+' '+volLabel+'</strong><br>Total cost: $'+cost.toFixed(2)+'<br>Cost per '+distLabel+': $'+(cost/dist).toFixed(3);
+  document.getElementById('fuelResult').innerHTML='Bränslebehov: <strong>'+fuelNeeded.toFixed(2)+' '+volLabel+'</strong><br>Total kostnad: $'+cost.toFixed(2)+'<br>Kostnad per '+distLabel+': $'+(cost/dist).toFixed(3);
 }
 fuel();
 </script></div></div><div class="seo-section"><h2>Så beräknar du bränslekostnaden för valfri resa</h2><p>Beräkningen av bränslekostnaden är enkel: <strong>Bränslebehov = sträcka / bränsleförbrukning</strong>, sedan <strong>Kostnad = bränslebehov × pris per enhet</strong>.</p>

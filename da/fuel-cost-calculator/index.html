@@ -184,7 +184,7 @@ function fuel(){
   var fuelNeeded=unit==='mpg'?dist/eff:dist*eff/100;
   var cost=fuelNeeded*price;
   var distLabel=unit==='mpg'?'miles':'km',effLabel=unit==='mpg'?'MPG':'L/100km',volLabel=unit==='mpg'?'gallons':'liters';
-  document.getElementById('fuelResult').innerHTML='Fuel needed: <strong>'+fuelNeeded.toFixed(2)+' '+volLabel+'</strong><br>Total cost: $'+cost.toFixed(2)+'<br>Cost per '+distLabel+': $'+(cost/dist).toFixed(3);
+  document.getElementById('fuelResult').innerHTML='Brændstofbehov: <strong>'+fuelNeeded.toFixed(2)+' '+volLabel+'</strong><br>Samlede omkostninger: $'+cost.toFixed(2)+'<br>Pris pr. '+distLabel+': $'+(cost/dist).toFixed(3);
 }
 fuel();
 </script></div></div><div class="seo-section"><h2>Sådan beregner du brændstofudgiften for enhver tur</h2><p>Beregningen af brændstofudgiften er ligetil: <strong>Brændstofbehov = distance / brændstofforbrug</strong>, derefter <strong>Pris = brændstofbehov × pris pr. enhed</strong>.</p>

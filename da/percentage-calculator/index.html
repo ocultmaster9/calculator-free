@@ -197,10 +197,10 @@ function setTab(i,el){pctTab=i;document.querySelectorAll('.tab').forEach((t,j)=>
 function fmt(n){return parseFloat(n.toFixed(4)).toString();}
 function pct(){
   var r=document.getElementById('pctResult');
-  if(pctTab===0){var a=+document.getElementById('p0a').value||0,b=+document.getElementById('p0b').value||0;r.textContent=a+'% of '+b+' = '+fmt(b*a/100);}
+  if(pctTab===0){var a=+document.getElementById('p0a').value||0,b=+document.getElementById('p0b').value||0;r.textContent=a+'% af '+b+' = '+fmt(b*a/100);}
   else if(pctTab===1){var a=+document.getElementById('p1a').value||0,b=+document.getElementById('p1b').value||0;r.textContent=b?fmt(a/b*100)+'%':'—';}
   else if(pctTab===2){var a=+document.getElementById('p2a').value||0,b=+document.getElementById('p2b').value||0;if(!a){r.textContent='—';return;}var ch=(b-a)/a*100;r.textContent=(ch>=0?'+':'')+fmt(ch)+'% '+(ch>=0?'increase':'decrease');}
-  else{var a=+document.getElementById('p3a').value||0,b=+document.getElementById('p3b').value||0;r.innerHTML='Discounted: '+fmt(a*(1-b/100))+'<br>Marked up: '+fmt(a*(1+b/100));}
+  else{var a=+document.getElementById('p3a').value||0,b=+document.getElementById('p3b').value||0;r.innerHTML='Efter rabat: '+fmt(a*(1-b/100))+'<br>Med avance: '+fmt(a*(1+b/100));}
 }
 pct();
 </script></div></div><div class="seo-section"><h2>Sådan bruger du procentberegneren</h2><p>Vores procentberegner løser fire af de mest almindelige procentopgaver med det samme. Uanset om du vil vide, hvad 15 % af 200 er, hvor mange procent 30 er af 200, den procentvise ændring mellem to værdier eller en rabat eller avance — alle fire værktøjer findes på denne side.</p>

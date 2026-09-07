@@ -184,7 +184,7 @@ function sav(){
   if(!n){document.getElementById('savResult').textContent='—';return;}
   var A=r?P*Math.pow(1+r,n)+m*(Math.pow(1+r,n)-1)/r:P+m*n;
   var dep=P+m*n;
-  document.getElementById('savResult').innerHTML='Final balance: <strong>'+fmt$(A)+'</strong><br>Total deposited: '+fmt$(dep)+'<br>Interest earned: '+fmt$(A-dep);
+  document.getElementById('savResult').innerHTML='Slutsaldo: <strong>'+fmt$(A)+'</strong><br>Totalt insatt: '+fmt$(dep)+'<br>Ränta intjänad: '+fmt$(A-dep);
 }
 sav();
 </script></div></div><div class="seo-section"><h2>Så växer ditt sparande med ränta-på-ränta</h2><p>Formeln för ränta-på-ränta är: <strong>A = P(1 + r/n)^(nt) + PMT × ((1 + r/n)^(nt) − 1) / (r/n)</strong>, där P är den första insättningen, r är den årliga räntan, n är antalet kapitaliseringsperioder per år, t är antalet år och PMT är den månatliga insättningen.</p>

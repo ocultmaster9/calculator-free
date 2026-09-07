@@ -183,7 +183,7 @@ function mort(){
   if(!P||!r||!n){document.getElementById('mortResult').textContent='—';return;}
   var M=P*r/(1-Math.pow(1+r,-n));
   var total=M*n;
-  document.getElementById('mortResult').innerHTML='Monthly payment: <strong>'+fmt$(M)+'</strong><br>Total paid: '+fmt$(total)+'<br>Total interest: '+fmt$(total-P);
+  document.getElementById('mortResult').innerHTML='Månadskostnad: <strong>'+fmt$(M)+'</strong><br>Totalt betalt: '+fmt$(total)+'<br>Total ränta: '+fmt$(total-P);
 }
 mort();
 </script></div></div><div class="seo-section"><h2>Så beräknar du din månadskostnad för bolånet</h2><p>Din månadskostnad för bolånet beräknas med den här formeln: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong>, där P är lånekapitalet, r är månadsräntan (årsränta ÷ 12) och n är antalet betalningar (år × 12).</p>

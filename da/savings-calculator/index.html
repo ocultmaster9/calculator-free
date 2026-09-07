@@ -184,7 +184,7 @@ function sav(){
   if(!n){document.getElementById('savResult').textContent='—';return;}
   var A=r?P*Math.pow(1+r,n)+m*(Math.pow(1+r,n)-1)/r:P+m*n;
   var dep=P+m*n;
-  document.getElementById('savResult').innerHTML='Final balance: <strong>'+fmt$(A)+'</strong><br>Total deposited: '+fmt$(dep)+'<br>Interest earned: '+fmt$(A-dep);
+  document.getElementById('savResult').innerHTML='Slutsaldo: <strong>'+fmt$(A)+'</strong><br>Indsat i alt: '+fmt$(dep)+'<br>Renter optjent: '+fmt$(A-dep);
 }
 sav();
 </script></div></div><div class="seo-section"><h2>Sådan vokser din opsparing med renters rente</h2><p>Formlen for renters rente er: <strong>A = P(1 + r/n)^(nt) + PMT × ((1 + r/n)^(nt) − 1) / (r/n)</strong>, hvor P er den første indbetaling, r er den årlige rente, n er antallet af tilskrivningsperioder pr. år, t er antallet af år, og PMT er den månedlige indbetaling.</p>

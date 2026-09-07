@@ -196,12 +196,12 @@ function timecalc(){
     var op=document.getElementById('tmop').value;
     var res=op==='add'?t1+t2:t1-t2;
     var s=Math.abs(res);
-    r.innerHTML='Result: <strong>'+fmtSec(res)+'</strong><br>'+Math.floor(s/3600)+' hours, '+Math.floor(s%3600/60)+' minutes, '+s%60+' seconds';
+    r.innerHTML='Resultat: <strong>'+fmtSec(res)+'</strong><br>'+Math.floor(s/3600)+' timer, '+Math.floor(s%3600/60)+' minutter, '+s%60+' sekunder';
   } else {
     var v=+document.getElementById('tcv').value||0;
     var f=document.getElementById('tcf').value;
     var secs=f==='s'?v:f==='m'?v*60:f==='h'?v*3600:v*86400;
-    r.innerHTML=fmtSec(secs)+'<br>= '+Math.round(secs/3600*1000)/1000+' h = '+Math.round(secs/60*10)/10+' min = '+secs+' sec';
+    r.innerHTML=fmtSec(secs)+'<br>= '+Math.round(secs/3600*1000)/1000+' h = '+Math.round(secs/60*10)/10+' min = '+secs+' sek';
   }
 }
 timecalc();

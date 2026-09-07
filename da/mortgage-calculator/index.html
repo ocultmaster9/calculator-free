@@ -183,7 +183,7 @@ function mort(){
   if(!P||!r||!n){document.getElementById('mortResult').textContent='—';return;}
   var M=P*r/(1-Math.pow(1+r,-n));
   var total=M*n;
-  document.getElementById('mortResult').innerHTML='Monthly payment: <strong>'+fmt$(M)+'</strong><br>Total paid: '+fmt$(total)+'<br>Total interest: '+fmt$(total-P);
+  document.getElementById('mortResult').innerHTML='Månedlig ydelse: <strong>'+fmt$(M)+'</strong><br>Betalt i alt: '+fmt$(total)+'<br>Renter i alt: '+fmt$(total-P);
 }
 mort();
 </script></div></div><div class="seo-section"><h2>Sådan beregner du din månedlige boliglånsydelse</h2><p>Din månedlige boliglånsydelse beregnes med denne formel: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong>, hvor P er lånets hovedstol, r er den månedlige rente (årlig rente ÷ 12), og n er antallet af ydelser (år × 12).</p>

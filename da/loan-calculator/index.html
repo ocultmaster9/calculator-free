@@ -180,7 +180,7 @@ function loan(){
   if(!P||!n){document.getElementById('loanResult').textContent='—';return;}
   var M=r?P*r/(1-Math.pow(1+r,-n)):P/n;
   var total=M*n;
-  document.getElementById('loanResult').innerHTML='Monthly payment: <strong>'+fmt$(M)+'</strong><br>Total paid: '+fmt$(total)+'<br>Total interest: '+fmt$(total-P);
+  document.getElementById('loanResult').innerHTML='Månedlig ydelse: <strong>'+fmt$(M)+'</strong><br>Betalt i alt: '+fmt$(total)+'<br>Renter i alt: '+fmt$(total-P);
 }
 loan();
 </script></div></div><div class="seo-section"><h2>Sådan beregner du den månedlige låneydelse</h2><p>Formlen for den månedlige låneydelse er: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong>, hvor P er lånebeløbet, r er den månedlige rente (årlig rente ÷ 12), og n er det samlede antal ydelser (år × 12).</p>

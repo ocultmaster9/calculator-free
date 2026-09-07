@@ -177,18 +177,18 @@ function addDays(d,n){var r=new Date(d);r.setDate(r.getDate()+n);return r;}
 function ovCalc(){
   var lmp=new Date(document.getElementById('ovlmp').value);
   var cyc=+document.getElementById('ovcyc').value||28;
-  if(isNaN(lmp)){document.getElementById('ovResult').textContent='Enter a valid date';return;}
+  if(isNaN(lmp)){document.getElementById('ovResult').textContent='Angi en gyldig dato';return;}
   var ovDay=addDays(lmp,cyc-14);
   var fertStart=addDays(ovDay,-5);
   var fertEnd=addDays(ovDay,1);
   var nextPeriod=addDays(lmp,cyc);
   var today=new Date();today.setHours(0,0,0,0);
   var daysToOv=Math.round((ovDay-today)/86400000);
-  var phase=daysToOv>0?'Ovulation in <strong>'+daysToOv+' days</strong>':daysToOv===0?'<strong>Ovulation day!</strong>':'Ovulation was '+Math.abs(daysToOv)+' days ago';
+  var phase=daysToOv>0?'Eggløsning om <strong>'+daysToOv+' dager</strong>':daysToOv===0?'<strong>Eggløsning i dag!</strong>':'Eggløsning for '+Math.abs(daysToOv)+' dager';
   document.getElementById('ovResult').innerHTML=
-    'Ovulation Date: <strong>'+fmtDate(ovDay)+'</strong><br>'+
-    'Fertile Window: '+fmtDate(fertStart)+' – '+fmtDate(fertEnd)+'<br>'+
-    'Next Period: '+fmtDate(nextPeriod)+'<br>'+phase;
+    'Eggløsningsdato: <strong>'+fmtDate(ovDay)+'</strong><br>'+
+    'Fruktbart vindu: '+fmtDate(fertStart)+' – '+fmtDate(fertEnd)+'<br>'+
+    'Neste menstruasjon: '+fmtDate(nextPeriod)+'<br>'+phase;
 }
 </script></div></div><div class="seo-section"><h2>Slik beregner du eggløsningsdagen din</h2><p>Eggløsning skjer vanligvis 14 dager <em>før</em> neste menstruasjon — ikke 14 dager etter den forrige. Ved en 28-dagers syklus faller eggløsningen på dag 14. Ved en 32-dagers syklus faller den på dag 18 (32 − 14 = 18). Det fruktbare vinduet omfatter de 5 dagene før eggløsningen pluss selve eggløsningsdagen, siden sædceller kan overleve opptil 5 dager i de kvinnelige kjønnsorganene.</p>
 <p><strong>Slik bruker du kalkulatoren:</strong> Legg inn første dag i siste menstruasjon og gjennomsnittlig syklonlengde. Kalkulatoren viser din anslåtte eggløsningsdato, det fruktbare vinduet ditt og når neste menstruasjon ventes.</p>

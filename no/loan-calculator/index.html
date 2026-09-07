@@ -180,7 +180,7 @@ function loan(){
   if(!P||!n){document.getElementById('loanResult').textContent='—';return;}
   var M=r?P*r/(1-Math.pow(1+r,-n)):P/n;
   var total=M*n;
-  document.getElementById('loanResult').innerHTML='Monthly payment: <strong>'+fmt$(M)+'</strong><br>Total paid: '+fmt$(total)+'<br>Total interest: '+fmt$(total-P);
+  document.getElementById('loanResult').innerHTML='Månedlig terminbeløp: <strong>'+fmt$(M)+'</strong><br>Betalt totalt: '+fmt$(total)+'<br>Renter totalt: '+fmt$(total-P);
 }
 loan();
 </script></div></div><div class="seo-section"><h2>Slik beregner du det månedlige terminbeløpet på lånet</h2><p>Formelen for det månedlige terminbeløpet på lånet er: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong>, der P er lånebeløpet, r er månedsrenten (årsrente ÷ 12), og n er totalt antall terminbeløp (år × 12).</p>

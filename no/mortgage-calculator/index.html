@@ -183,7 +183,7 @@ function mort(){
   if(!P||!r||!n){document.getElementById('mortResult').textContent='—';return;}
   var M=P*r/(1-Math.pow(1+r,-n));
   var total=M*n;
-  document.getElementById('mortResult').innerHTML='Monthly payment: <strong>'+fmt$(M)+'</strong><br>Total paid: '+fmt$(total)+'<br>Total interest: '+fmt$(total-P);
+  document.getElementById('mortResult').innerHTML='Månedlig terminbeløp: <strong>'+fmt$(M)+'</strong><br>Betalt totalt: '+fmt$(total)+'<br>Renter totalt: '+fmt$(total-P);
 }
 mort();
 </script></div></div><div class="seo-section"><h2>Slik beregner du det månedlige terminbeløpet på boliglånet</h2><p>Det månedlige terminbeløpet på boliglånet beregnes med denne formelen: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong>, der P er lånets hovedstol, r er månedsrenten (årsrente ÷ 12), og n er antall terminbeløp (år × 12).</p>

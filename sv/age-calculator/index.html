@@ -175,7 +175,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 function agecalc(){
   var dob=new Date(document.getElementById('adob').value);
   var aod=new Date(document.getElementById('aaod').value);
-  if(isNaN(dob)||isNaN(aod)){document.getElementById('ageResult').textContent='Please enter valid dates';return;}
+  if(isNaN(dob)||isNaN(aod)){document.getElementById('ageResult').textContent='Ange giltiga datum';return;}
   var y=aod.getFullYear()-dob.getFullYear(),mo=aod.getMonth()-dob.getMonth(),d=aod.getDate()-dob.getDate();
   if(d<0){mo--;d+=new Date(aod.getFullYear(),aod.getMonth(),0).getDate();}
   if(mo<0){y--;mo+=12;}
@@ -183,7 +183,7 @@ function agecalc(){
   var nb=new Date(aod.getFullYear(),dob.getMonth(),dob.getDate());
   if(nb<=aod)nb.setFullYear(aod.getFullYear()+1);
   var daysLeft=Math.floor((nb-aod)/86400000);
-  document.getElementById('ageResult').innerHTML='<strong>'+y+' years, '+mo+' months, '+d+' days</strong><br>'+totalDays.toLocaleString()+' days lived · '+daysLeft+' days until next birthday';
+  document.getElementById('ageResult').innerHTML='<strong>'+y+' år, '+mo+' månader, '+d+' dagar</strong><br>'+totalDays.toLocaleString()+' dagar levda · '+daysLeft+' dagar till nästa födelsedag';
 }
 </script></div></div><div class="seo-section"><h2>Så beräknar du din exakta ålder</h2><p>Åldersberäkning verkar enkel men har sina finesser — månader är olika långa och skottår lägger till en extra dag vart fjärde år. Rätt metod räknar först hela avslutade år, sedan återstående månader och till sist återstående dagar.</p>
 <p>Exempel: om du är född den 15 mars 1990 och det i dag är den 8 maj 2026 har du fyllt 36 hela år (15 mars 1990 → 15 mars 2026), sedan 1 hel månad (15 mars → 15 april) och därefter 23 dagar (15 april → 8 maj) = <strong>36 år, 1 månad, 23 dagar</strong>.</p>

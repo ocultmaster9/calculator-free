@@ -184,8 +184,8 @@ function calcGpa(){
   var rows=document.querySelectorAll('#gpaBody tr');
   var pts=0,cred=0;
   rows.forEach(r=>{var g=gpaScale[r.cells[1].querySelector('select').value];var c=+r.cells[2].querySelector('input').value||0;pts+=g*c;cred+=c;});
-  if(!cred){document.getElementById('gpaResult').textContent='Add courses above';return;}
-  document.getElementById('gpaResult').textContent='GPA: '+(pts/cred).toFixed(2)+' / 4.00  ('+cred+' credit hours)';
+  if(!cred){document.getElementById('gpaResult').textContent='Legg til emner ovenfor';return;}
+  document.getElementById('gpaResult').textContent='GPA: '+(pts/cred).toFixed(2)+' / 4.00  ('+cred+' studiepoeng)';
 }
 addRow();addRow();addRow();
 </script></div></div><div class="seo-section"><h2>Slik beregner du GPA på en 4,0-skala</h2><p>GPA (karaktersnitt) beregnes ved å gange hvert emnes karakterpoeng med emnets studiepoeng, summere alle karakterpoeng og deretter dele på totalt antall studiepoeng. Formel: <strong>GPA = Σ(karakterpoeng × studiepoeng) / Σ studiepoeng</strong>.</p>

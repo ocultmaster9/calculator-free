@@ -197,10 +197,10 @@ function setTab(i,el){pctTab=i;document.querySelectorAll('.tab').forEach((t,j)=>
 function fmt(n){return parseFloat(n.toFixed(4)).toString();}
 function pct(){
   var r=document.getElementById('pctResult');
-  if(pctTab===0){var a=+document.getElementById('p0a').value||0,b=+document.getElementById('p0b').value||0;r.textContent=a+'% of '+b+' = '+fmt(b*a/100);}
+  if(pctTab===0){var a=+document.getElementById('p0a').value||0,b=+document.getElementById('p0b').value||0;r.textContent=a+'% av '+b+' = '+fmt(b*a/100);}
   else if(pctTab===1){var a=+document.getElementById('p1a').value||0,b=+document.getElementById('p1b').value||0;r.textContent=b?fmt(a/b*100)+'%':'—';}
   else if(pctTab===2){var a=+document.getElementById('p2a').value||0,b=+document.getElementById('p2b').value||0;if(!a){r.textContent='—';return;}var ch=(b-a)/a*100;r.textContent=(ch>=0?'+':'')+fmt(ch)+'% '+(ch>=0?'increase':'decrease');}
-  else{var a=+document.getElementById('p3a').value||0,b=+document.getElementById('p3b').value||0;r.innerHTML='Discounted: '+fmt(a*(1-b/100))+'<br>Marked up: '+fmt(a*(1+b/100));}
+  else{var a=+document.getElementById('p3a').value||0,b=+document.getElementById('p3b').value||0;r.innerHTML='Etter rabatt: '+fmt(a*(1-b/100))+'<br>Med påslag: '+fmt(a*(1+b/100));}
 }
 pct();
 </script></div></div><div class="seo-section"><h2>Slik bruker du prosentkalkulatoren</h2><p>Prosentkalkulatoren vår løser fire av de vanligste prosentoppgavene umiddelbart. Enten du vil vite hva 15 % av 200 er, hvor mange prosent 30 er av 200, den prosentvise endringen mellom to verdier eller en rabatt eller et påslag — alle fire verktøyene finnes på denne siden.</p>

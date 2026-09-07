@@ -191,7 +191,7 @@ function kcal(){
   if(!age||!w||!h){document.getElementById('kcalResult').textContent='—';return;}
   var bmr=g==='male'?10*w+6.25*h-5*age+5:10*w+6.25*h-5*age-161;
   var tdee=Math.round(bmr*act);bmr=Math.round(bmr);
-  document.getElementById('kcalResult').innerHTML='BMR: <strong>'+bmr+'</strong> cal/day<br>Maintenance (TDEE): <strong>'+tdee+'</strong> cal/day<br>Weight loss (−500): '+(tdee-500)+' cal/day<br>Weight gain (+500): '+(tdee+500)+' cal/day';
+  document.getElementById('kcalResult').innerHTML='Basalmetabolism: <strong>'+bmr+'</strong> kcal/dag<br>Underhåll (TDEE): <strong>'+tdee+'</strong> kcal/dag<br>Viktnedgång (−500): '+(tdee-500)+' kcal/dag<br>Viktuppgång (+500): '+(tdee+500)+' kcal/dag';
 }
 kcal();
 </script></div></div><div class="seo-section"><h2>Hur många kalorier bör du äta per dag?</h2><p>Ditt dagliga kaloribehov beror på din basalmetabolism (BMR) — de kalorier kroppen behöver i fullständig vila — multiplicerad med en aktivitetsfaktor för att ge din totala dagliga energiförbrukning (TDEE). Vi använder <strong>Mifflin-St Jeor-ekvationen</strong>, den mest träffsäkra formeln för de flesta:</p>

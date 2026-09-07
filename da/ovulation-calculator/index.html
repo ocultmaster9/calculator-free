@@ -177,18 +177,18 @@ function addDays(d,n){var r=new Date(d);r.setDate(r.getDate()+n);return r;}
 function ovCalc(){
   var lmp=new Date(document.getElementById('ovlmp').value);
   var cyc=+document.getElementById('ovcyc').value||28;
-  if(isNaN(lmp)){document.getElementById('ovResult').textContent='Enter a valid date';return;}
+  if(isNaN(lmp)){document.getElementById('ovResult').textContent='Indtast en gyldig dato';return;}
   var ovDay=addDays(lmp,cyc-14);
   var fertStart=addDays(ovDay,-5);
   var fertEnd=addDays(ovDay,1);
   var nextPeriod=addDays(lmp,cyc);
   var today=new Date();today.setHours(0,0,0,0);
   var daysToOv=Math.round((ovDay-today)/86400000);
-  var phase=daysToOv>0?'Ovulation in <strong>'+daysToOv+' days</strong>':daysToOv===0?'<strong>Ovulation day!</strong>':'Ovulation was '+Math.abs(daysToOv)+' days ago';
+  var phase=daysToOv>0?'Ægløsning om <strong>'+daysToOv+' dage</strong>':daysToOv===0?'<strong>Ægløsning i dag!</strong>':'Ægløsning for '+Math.abs(daysToOv)+' dage';
   document.getElementById('ovResult').innerHTML=
-    'Ovulation Date: <strong>'+fmtDate(ovDay)+'</strong><br>'+
-    'Fertile Window: '+fmtDate(fertStart)+' – '+fmtDate(fertEnd)+'<br>'+
-    'Next Period: '+fmtDate(nextPeriod)+'<br>'+phase;
+    'Ægløsningsdato: <strong>'+fmtDate(ovDay)+'</strong><br>'+
+    'Frugtbart vindue: '+fmtDate(fertStart)+' – '+fmtDate(fertEnd)+'<br>'+
+    'Næste menstruation: '+fmtDate(nextPeriod)+'<br>'+phase;
 }
 </script></div></div><div class="seo-section"><h2>Sådan beregner du din ægløsningsdag</h2><p>Ægløsning sker typisk 14 dage <em>før</em> din næste menstruation — ikke 14 dage efter den forrige. Ved en 28-dages cyklus falder ægløsningen på dag 14. Ved en 32-dages cyklus falder den på dag 18 (32 − 14 = 18). Det frugtbare vindue omfatter de 5 dage før ægløsningen plus selve ægløsningsdagen, da sædceller kan overleve op til 5 dage i de kvindelige kønsorganer.</p>
 <p><strong>Sådan bruger du beregneren:</strong> Indtast første dag i din seneste menstruation og din gennemsnitlige cykluslængde. Beregneren viser din anslåede ægløsningsdato, dit frugtbare vindue, og hvornår din næste menstruation forventes.</p>

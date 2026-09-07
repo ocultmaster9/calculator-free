@@ -184,8 +184,8 @@ function calcGpa(){
   var rows=document.querySelectorAll('#gpaBody tr');
   var pts=0,cred=0;
   rows.forEach(r=>{var g=gpaScale[r.cells[1].querySelector('select').value];var c=+r.cells[2].querySelector('input').value||0;pts+=g*c;cred+=c;});
-  if(!cred){document.getElementById('gpaResult').textContent='Add courses above';return;}
-  document.getElementById('gpaResult').textContent='GPA: '+(pts/cred).toFixed(2)+' / 4.00  ('+cred+' credit hours)';
+  if(!cred){document.getElementById('gpaResult').textContent='Tilføj kurser ovenfor';return;}
+  document.getElementById('gpaResult').textContent='GPA: '+(pts/cred).toFixed(2)+' / 4.00  ('+cred+' point)';
 }
 addRow();addRow();addRow();
 </script></div></div><div class="seo-section"><h2>Sådan beregner du GPA på en 4,0-skala</h2><p>GPA (karaktergennemsnit) beregnes ved at gange hver kursus' karakterpoint med kursets point, lægge alle karakterpoint sammen og derefter dele med det samlede antal point. Formel: <strong>GPA = Σ(karakterpoint × point) / Σ point</strong>.</p>
