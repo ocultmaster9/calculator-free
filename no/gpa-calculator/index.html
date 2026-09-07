@@ -177,7 +177,7 @@ var rowCount=0;
 function addRow(){
   var tr=document.createElement('tr');
   var id=rowCount++;
-  tr.innerHTML='<td><input type="text" placeholder="Emne '+id+'" style="width:100%"></td><td><select onchange="calcGpa()" style="width:100%">'+Object.keys(gpaScale).map(g=>'<option value="'+g+'">'+g+' ('+gpaScale[g].toFixed(1)+')</option>').join('')+'</select></td><td><input type="number" value="3" min="0.5" step="0.5" oninput="calcGpa()" style="width:100%"></td><td><button onclick="this.closest('tr').remove();calcGpa()" style="background:none;border:none;cursor:pointer;color:#ef4444;font-size:1rem">✕</button></td>';
+  tr.innerHTML='<td><input type="text" placeholder="Emne '+id+'" style="width:100%"></td><td><select onchange="calcGpa()" style="width:100%">'+Object.keys(gpaScale).map(g=>'<option value="'+g+'">'+g+' ('+gpaScale[g].toFixed(1)+')</option>').join('')+'</select></td><td><input type="number" value="3" min="0.5" step="0.5" oninput="calcGpa()" style="width:100%"></td><td><button onclick="this.closest(\'tr\').remove();calcGpa()" style="background:none;border:none;cursor:pointer;color:#ef4444;font-size:1rem">✕</button></td>';
   document.getElementById('gpaBody').appendChild(tr);calcGpa();
 }
 function calcGpa(){

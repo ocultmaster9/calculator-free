@@ -4,7 +4,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7VYR4L8Z7"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q7VYR4L8Z7');</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Calculadora de IMC — Free Online | calculator-free.com</title>
+<title>Calculadora de IMC — Grátis online | calculator-free.com</title>
 <meta name="description" content="Calcule seu Índice de Massa Corporal (IMC) com unidades métricas ou imperiais.">
 <meta name="robots" content="index,follow">
 <meta name="google-site-verification" content="l2eoJIHgEtt274NDwwaALjifXoAxRKjO74ZtcYzypaw">
@@ -28,7 +28,7 @@
 <link rel="alternate" hreflang="es" href="https://calculator-free.com/es/bmi-calculator/">
 <link rel="alternate" hreflang="sv" href="https://calculator-free.com/sv/bmi-calculator/">
 <link rel="alternate" hreflang="tr" href="https://calculator-free.com/tr/bmi-calculator/">
-<meta property="og:title" content="Calculadora de IMC — Free Online | calculator-free.com">
+<meta property="og:title" content="Calculadora de IMC — Grátis online | calculator-free.com">
 <meta property="og:description" content="Calcule seu Índice de Massa Corporal (IMC) com unidades métricas ou imperiais.">
 <meta property="og:url" content="https://calculator-free.com/pt/bmi-calculator/">
 <meta property="og:type" content="website">
@@ -184,8 +184,8 @@ function bmi(){
   else{var w=+document.getElementById('bw_lb').value,h=+document.getElementById('bh_ft').value*12+(+document.getElementById('bh_in').value||0);b=703*w/(h*h);}
   if(!b||!isFinite(b)){document.getElementById('bmiResult').textContent='—';return;}
   var cat=b<18.5?'Underweight':b<25?'Normal weight':b<30?'Overweight':'Obese';
-  var colors={Underweight:'#3b82f6',\'Normal weight\':\'#10b981\',Overweight:\'#f59e0b\',Obese:\'#ef4444\'};
-  document.getElementById('bmiResult').innerHTML=\'BMI: <strong style="color:\'+(colors[cat]||\'#10b981\')+\'">\'+(Math.round(b*10)/10)+\'</strong> — \'+cat;
+  var colors={Underweight:'#3b82f6','Normal weight':'#10b981',Overweight:'#f59e0b',Obese:'#ef4444'};
+  document.getElementById('bmiResult').innerHTML='BMI: <strong style="color:'+(colors[cat]||'#10b981')+'">'+(Math.round(b*10)/10)+'</strong> — '+cat;
 }
 bmi();
 </script></div></div><div class="seo-section"><h2>O que é IMC e como calcular?</h2><p>O Índice de Massa Corporal (IMC) é calculado dividindo o peso em quilogramas pelo quadrado da altura em metros: <strong>IMC = peso(kg) / altura(m)²</strong>. A OMS define: <strong>Abaixo do peso</strong> (menos de 18,5), <strong>Peso normal</strong> (18,5–24,9), <strong>Sobrepeso</strong> (25–29,9) e <strong>Obesidade</strong> (30 ou mais).</p>

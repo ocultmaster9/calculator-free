@@ -4,7 +4,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7VYR4L8Z7"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q7VYR4L8Z7');</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Zeitrechner — Free Online | calculator-free.com</title>
+<title>Zeitrechner — Kostenlos online | calculator-free.com</title>
 <meta name="description" content="Addieren oder subtrahieren Sie Zeitdauern. Konvertieren Sie zwischen Stunden, Minuten und Sekunden.">
 <meta name="robots" content="index,follow">
 <meta name="google-site-verification" content="l2eoJIHgEtt274NDwwaALjifXoAxRKjO74ZtcYzypaw">
@@ -28,7 +28,7 @@
 <link rel="alternate" hreflang="es" href="https://calculator-free.com/es/time-calculator/">
 <link rel="alternate" hreflang="sv" href="https://calculator-free.com/sv/time-calculator/">
 <link rel="alternate" hreflang="tr" href="https://calculator-free.com/tr/time-calculator/">
-<meta property="og:title" content="Zeitrechner — Free Online | calculator-free.com">
+<meta property="og:title" content="Zeitrechner — Kostenlos online | calculator-free.com">
 <meta property="og:description" content="Addieren oder subtrahieren Sie Zeitdauern. Konvertieren Sie zwischen Stunden, Minuten und Sekunden.">
 <meta property="og:url" content="https://calculator-free.com/de/time-calculator/">
 <meta property="og:type" content="website">
@@ -162,24 +162,24 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
   </div>
 </div>
-</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">⏱️</div></div><div><span class="badge">FREE CALCULATOR</span><h1>Zeitrechner</h1><p>Addieren oder subtrahieren Sie Zeitdauern. Konvertieren Sie zwischen Stunden, Minuten und Sekunden.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
+</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">⏱️</div></div><div><span class="badge">KOSTENLOSER RECHNER</span><h1>Zeitrechner</h1><p>Addieren oder subtrahieren Sie Zeitdauern. Konvertieren Sie zwischen Stunden, Minuten und Sekunden.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Werbung</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">⏱️</span><span class="calc-title">Zeitrechner</span></div><div class="calc-body">
 <div class="tabs">
-  <button class="tab active" onclick="setTimeTab(0,this)">Add / Subtract</button>
-  <button class="tab" onclick="setTimeTab(1,this)">Convert</button>
+  <button class="tab active" onclick="setTimeTab(0,this)">Addieren / Subtrahieren</button>
+  <button class="tab" onclick="setTimeTab(1,this)">Umrechnen</button>
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>Time 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>Operation</label><select id="tmop" onchange="timecalc()"><option value="add">Add (+)</option><option value="sub">Subtract (−)</option></select></div>
+    <div class="field"><label>Zeit 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label>Rechenart</label><select id="tmop" onchange="timecalc()"><option value="add">Addieren (+)</option><option value="sub">Subtrahieren (−)</option></select></div>
   </div>
-  <div class="field"><label>Time 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label>Zeit 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>Value</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>From Unit</label><select id="tcf" onchange="timecalc()"><option value="s">Seconds</option><option value="m">Minutes</option><option value="h">Hours</option><option value="d">Days</option></select></div>
+    <div class="field"><label>Wert</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label>Von Einheit</label><select id="tcf" onchange="timecalc()"><option value="s">Sekunden</option><option value="m">Minuten</option><option value="h">Stunden</option><option value="d">Tage</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>
@@ -196,19 +196,19 @@ function timecalc(){
     var op=document.getElementById('tmop').value;
     var res=op==='add'?t1+t2:t1-t2;
     var s=Math.abs(res);
-    r.innerHTML='Result: <strong>'+fmtSec(res)+'</strong><br>'+Math.floor(s/3600)+' hours, '+Math.floor(s%3600/60)+' minutes, '+s%60+' seconds';
+    r.innerHTML='Ergebnis: <strong>'+fmtSec(res)+'</strong><br>'+Math.floor(s/3600)+' Stunden, '+Math.floor(s%3600/60)+' Minuten, '+s%60+' Sekunden';
   } else {
     var v=+document.getElementById('tcv').value||0;
     var f=document.getElementById('tcf').value;
     var secs=f==='s'?v:f==='m'?v*60:f==='h'?v*3600:v*86400;
-    r.innerHTML=fmtSec(secs)+'<br>= '+Math.round(secs/3600*1000)/1000+' h = '+Math.round(secs/60*10)/10+' min = '+secs+' sec';
+    r.innerHTML=fmtSec(secs)+'<br>= '+Math.round(secs/3600*1000)/1000+' h = '+Math.round(secs/60*10)/10+' Min. = '+secs+' Sek.';
   }
 }
 timecalc();
 </script></div></div><div class="seo-section"><h2>So addieren und subtrahieren Sie Zeitdauern</h2><p>Beim Addieren von Zeiten muss der Übertrag beachtet werden: 60 Sekunden ergeben 1 Minute, 60 Minuten ergeben 1 Stunde. Beispiel: 2:45:30 + 1:30:45 = 4:16:15 (die 75 Sekunden werden zu 1 Minute 15 Sekunden, die 76 Minuten dann zu 1 Stunde 16 Minuten).</p>
 <p>Umrechnung der Zeiteinheiten: 1 Stunde = 60 Minuten = 3.600 Sekunden. 1 Tag = 24 Stunden = 1.440 Minuten = 86.400 Sekunden. 1 Woche = 604.800 Sekunden. Das sind die Grundlagen jeder Zeitrechnung.</p>
-<p>Typische Anwendungen: Arbeitszeiten summieren, Besprechungsdauern addieren, Reisezeiten ermitteln und Überstunden berechnen. Für die Lohnabrechnung rechnet man Stunden und Minuten in Dezimalstunden um (7 Stunden 30 Minuten = 7,5 Stunden).</p></div><div class="seo-section"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Wie rechne ich Stunden und Minuten in Dezimalzahlen um?</span><span class="faq-arr">+</span></div><div class="faq-a">Teilen Sie die Minuten durch 60 und addieren Sie das Ergebnis zu den Stunden. Beispiel: 3 Stunden 45 Minuten = 3 + (45/60) = 3,75 Stunden. Das ist praktisch für Lohn- und Rechnungsstellung mit Stundensätzen.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Was ist das 24-Stunden-Format?</span><span class="faq-arr">+</span></div><div class="faq-a">Das 24-Stunden-Format läuft von 00:00 (Mitternacht) bis 23:59. Zur Umrechnung der Nachmittagszeiten addiert man 12 Stunden (1:00 PM = 13:00, 11:30 PM = 23:30). Mitternacht ist 00:00 bzw. 24:00, 12:00 PM (Mittag) bleibt 12:00.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Wie berechne ich eine Zeitspanne über Mitternacht hinweg?</span><span class="faq-arr">+</span></div><div class="faq-a">Liegt die Endzeit vor der Startzeit, addieren Sie vor dem Subtrahieren 24 Stunden zur Endzeit. Beispiel: Start um 22:30, Ende um 2:15 → 2:15 + 24:00 = 26:15 − 22:30 = 3 Stunden 45 Minuten.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Wie viele Sekunden hat ein Tag, eine Woche, ein Monat, ein Jahr?</span><span class="faq-arr">+</span></div><div class="faq-a">1 Tag = 86.400 Sekunden · 1 Woche = 604.800 Sekunden · 1 Monat (im Mittel) ≈ 2.629.746 Sekunden · 1 Jahr = 31.536.000 Sekunden (bzw. 31.622.400 im Schaltjahr).</div></div></div><div class="seo-section"><h2>Alle Rechner</h2><div class="related"><a href="https://calculator-free.com/de/percentage-calculator/" class="rel-card"><div class="rel-icon">%</div><div class="rel-name">Prozentrechner</div></a><a href="https://calculator-free.com/de/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">BMI Rechner</div></a><a href="https://calculator-free.com/de/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">Hypothekenrechner</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
+<p>Typische Anwendungen: Arbeitszeiten summieren, Besprechungsdauern addieren, Reisezeiten ermitteln und Überstunden berechnen. Für die Lohnabrechnung rechnet man Stunden und Minuten in Dezimalstunden um (7 Stunden 30 Minuten = 7,5 Stunden).</p></div><div class="seo-section"><h2>Häufig gestellte Fragen</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Wie rechne ich Stunden und Minuten in Dezimalzahlen um?</span><span class="faq-arr">+</span></div><div class="faq-a">Teilen Sie die Minuten durch 60 und addieren Sie das Ergebnis zu den Stunden. Beispiel: 3 Stunden 45 Minuten = 3 + (45/60) = 3,75 Stunden. Das ist praktisch für Lohn- und Rechnungsstellung mit Stundensätzen.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Was ist das 24-Stunden-Format?</span><span class="faq-arr">+</span></div><div class="faq-a">Das 24-Stunden-Format läuft von 00:00 (Mitternacht) bis 23:59. Zur Umrechnung der Nachmittagszeiten addiert man 12 Stunden (1:00 PM = 13:00, 11:30 PM = 23:30). Mitternacht ist 00:00 bzw. 24:00, 12:00 PM (Mittag) bleibt 12:00.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Wie berechne ich eine Zeitspanne über Mitternacht hinweg?</span><span class="faq-arr">+</span></div><div class="faq-a">Liegt die Endzeit vor der Startzeit, addieren Sie vor dem Subtrahieren 24 Stunden zur Endzeit. Beispiel: Start um 22:30, Ende um 2:15 → 2:15 + 24:00 = 26:15 − 22:30 = 3 Stunden 45 Minuten.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Wie viele Sekunden hat ein Tag, eine Woche, ein Monat, ein Jahr?</span><span class="faq-arr">+</span></div><div class="faq-a">1 Tag = 86.400 Sekunden · 1 Woche = 604.800 Sekunden · 1 Monat (im Mittel) ≈ 2.629.746 Sekunden · 1 Jahr = 31.536.000 Sekunden (bzw. 31.622.400 im Schaltjahr).</div></div></div><div class="seo-section"><h2>Alle Rechner</h2><div class="related"><a href="https://calculator-free.com/de/percentage-calculator/" class="rel-card"><div class="rel-icon">%</div><div class="rel-name">Prozentrechner</div></a><a href="https://calculator-free.com/de/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">BMI Rechner</div></a><a href="https://calculator-free.com/de/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">Hypothekenrechner</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">Werbung</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2>Zeiten addieren und subtrahieren</h2><p>Zeitrechnung arbeitet zur Basis 60: Sekunden und Minuten springen bei 60 um, Stunden bei 24. Beim Addieren summiert man jede Einheit und überträgt den Überlauf nach oben, beim Subtrahieren borgt man von der nächsthöheren Einheit.</p><h3>Rechenbeispiel</h3><p>2 Std. 45 Min. plus 1 Std. 38 Min.: Die Minuten ergeben 83, also 1 Std. 23 Min., das Ergebnis lautet 4 Std. 23 Min. 1 Std. 50 Min. von 3 Std. 15 Min. abziehen: Eine Stunde borgen ergibt 2 Std. 75 Min., abzüglich 1 Std. 50 Min. bleiben 1 Std. 25 Min.</p><h3>Häufige Fragen</h3><p><strong>Wie funktionieren Dezimalstunden?</strong> Lohnsysteme rechnen oft dezimal: 7,5 Stunden sind 7 Std. 30 Min. Zum Umrechnen teilt man die Minuten durch 60 (25 Min. = 0,42 Std.).</p><p><strong>Zeitzonen und Sommerzeit?</strong> Fällt ein Zeitraum über die Zeitumstellung, kann die Rechnung nach der Uhr um eine Stunde danebenliegen – rechnen Sie zur Sicherheit in UTC.</p></section><footer><div class="wrap">
-<p>© 2026 calculator-free.com · <a href="https://calculator-free.com/de/">Alle Rechner</a> · <a href="https://calculator-free.com/about/">About</a> · <a href="https://calculator-free.com/privacy-policy/">Privacy Policy</a> · <a href="https://calculator-free.com/terms-of-use/">Terms of Use</a> · <a href="https://calculator-free.com/contact/">Contact</a></p>
+<p>© 2026 calculator-free.com · <a href="https://calculator-free.com/de/">Alle Rechner</a> · <a href="https://calculator-free.com/about/">Über uns</a> · <a href="https://calculator-free.com/privacy-policy/">Datenschutzerklärung</a> · <a href="https://calculator-free.com/terms-of-use/">Nutzungsbedingungen</a> · <a href="https://calculator-free.com/contact/">Kontakt</a></p>
 </div></footer></body></html>
