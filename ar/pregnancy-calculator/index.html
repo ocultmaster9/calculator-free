@@ -172,7 +172,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <div class="result" id="prgResult">Enter your last period date above</div>
 <script>
 (function(){var d=new Date();d.setDate(d.getDate()-42);document.getElementById('prglmp').value=d.toISOString().split('T')[0];prgCalc();})();
-function fmtDate(d){return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}
+function fmtDate(d){return d.toLocaleDateString('ar',{month:'long',day:'numeric',year:'numeric'});}
 function prgCalc(){
   var lmp=new Date(document.getElementById('prglmp').value);
   var cyc=+document.getElementById('prgcyc').value||28;

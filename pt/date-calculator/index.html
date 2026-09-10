@@ -191,7 +191,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Selecione uma data válida';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Resultado: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Resultado: '+d.toLocaleDateString('pt-BR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Como calcular dias entre duas datas</h2><p>Para calcular os dias entre duas datas, converta ambas para uma contagem de dias a partir de um ponto de referência fixo e subtraia. Nossa calculadora faz isso automaticamente.</p>

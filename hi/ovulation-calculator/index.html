@@ -172,7 +172,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <div class="result" id="ovResult">अपनी पिछली माहवारी की तारीख ऊपर दर्ज करें</div>
 <script>
 (function(){var d=new Date();d.setDate(d.getDate()-14);document.getElementById('ovlmp').value=d.toISOString().split('T')[0];ovCalc();})();
-function fmtDate(d){return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}
+function fmtDate(d){return d.toLocaleDateString('hi',{month:'long',day:'numeric',year:'numeric'});}
 function addDays(d,n){var r=new Date(d);r.setDate(r.getDate()+n);return r;}
 function ovCalc(){
   var lmp=new Date(document.getElementById('ovlmp').value);

@@ -191,7 +191,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Selecteer een geldige datum';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Resultaat: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Resultaat: '+d.toLocaleDateString('nl',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>How to Calculate Days Between Two Dates</h2><p>The simplest way to find days between dates is to convert both dates to a day count from a fixed reference point, then subtract. Our calculator does this automatically for any pair of dates.</p>
