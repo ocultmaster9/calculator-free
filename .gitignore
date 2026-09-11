@@ -6,3 +6,6 @@ node_modules/
 Thumbs.db
 .cf-credentials.ps1
 *.log
+
+# Thai scaffold: English placeholder pages, not ready to publish
+/th/
