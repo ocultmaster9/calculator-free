@@ -4,13 +4,13 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7VYR4L8Z7"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q7VYR4L8Z7');</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Калькулятор Процентов — бесплатно онлайн | calculator-free.com</title>
+<title>Калькулятор процентов — бесплатно онлайн | calculator-free.com</title>
 <meta name="description" content="Мгновенный расчёт процентов — процент от числа, изменение, скидки.">
 <meta name="robots" content="index,follow">
 <meta name="google-site-verification" content="l2eoJIHgEtt274NDwwaALjifXoAxRKjO74ZtcYzypaw">
 <link rel="canonical" href="https://calculator-free.com/ru/percentage-calculator/">
-<link rel="alternate" hreflang="x-default" href="https://calculator-free.com/percentage-calculator/">
-<link rel="alternate" hreflang="en" href="https://calculator-free.com/percentage-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calculator-free.com/ru/percentage-calculator/">
+<link rel="alternate" hreflang="en" href="https://calculator-free.com/ru/percentage-calculator/">
 <link rel="alternate" hreflang="ar" href="https://calculator-free.com/ar/percentage-calculator/">
 <link rel="alternate" hreflang="zh" href="https://calculator-free.com/zh/percentage-calculator/">
 <link rel="alternate" hreflang="da" href="https://calculator-free.com/da/percentage-calculator/">
@@ -29,12 +29,12 @@
 <link rel="alternate" hreflang="es" href="https://calculator-free.com/es/percentage-calculator/">
 <link rel="alternate" hreflang="sv" href="https://calculator-free.com/sv/percentage-calculator/">
 <link rel="alternate" hreflang="tr" href="https://calculator-free.com/tr/percentage-calculator/">
-<meta property="og:title" content="Калькулятор Процентов — бесплатно онлайн | calculator-free.com">
+<meta property="og:title" content="Калькулятор процентов — бесплатно онлайн | calculator-free.com">
 <meta property="og:description" content="Мгновенный расчёт процентов — процент от числа, изменение, скидки.">
 <meta property="og:url" content="https://calculator-free.com/ru/percentage-calculator/">
 <meta property="og:type" content="website">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Калькулятор Процентов", "url": "https://calculator-free.com/ru/percentage-calculator/", "description": "Мгновенный расчёт процентов — процент от числа, изменение, скидки.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Калькулятор процентов", "url": "https://calculator-free.com/ru/percentage-calculator/", "description": "Мгновенный расчёт процентов — процент от числа, изменение, скидки.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как посчитать 20 % от числа?", "acceptedAnswer": {"@type": "Answer", "text": "Умножьте число на 0,20. Пример: 20 % от 150 = 150 × 0,20 = 30. Или разделите на 5, ведь 100/20 = 5."}}, {"@type": "Question", "name": "Какова формула процентного изменения?", "acceptedAnswer": {"@type": "Answer", "text": "Процентное изменение = ((новое значение − старое значение) / старое значение) × 100. Положительный результат означает рост, отрицательный — снижение."}}, {"@type": "Question", "name": "Как посчитать процент в обратную сторону (найти исходную цену)?", "acceptedAnswer": {"@type": "Answer", "text": "Исходная цена = итоговая ÷ (1 − скидка в %). Если товар стоит 80 $ после скидки 20 %: 80 $ ÷ 0,80 = 100 $ исходной цены."}}, {"@type": "Question", "name": "Чем процентные пункты отличаются от процентов?", "acceptedAnswer": {"@type": "Answer", "text": "Если ставка выросла с 4 % до 5 %, она поднялась на 1 процентный пункт, но увеличилась на 25 процентов. Это разные величины."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -64,6 +64,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.9);backdrop-filter
 .hero{padding:48px 0 32px;border-bottom:1px solid var(--border);margin-bottom:32px}
 .hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:10px;line-height:1.2}
 .hero p{color:var(--text-dim);font-size:.95rem;max-width:560px}
+.spin-hero{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.spin-ring{position:relative;width:112px;height:112px;flex-shrink:0}
+.spin-ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),#06b6d4,#34d399,var(--accent));animation:cfspin 7s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px))}
+.spin-core{position:absolute;inset:14px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;line-height:1}
+@keyframes cfspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spin-ring::before{animation:none}}
+.logo{display:inline-flex;align-items:center;gap:8px}
 .badge{display:inline-block;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:var(--accent);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:14px;letter-spacing:.5px}
 .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
 @media(max-width:680px){.bento{grid-template-columns:repeat(2,1fr)}}
@@ -124,7 +131,7 @@ footer a:hover{color:var(--accent)}
 .gpa-table input{padding:8px 10px}
 .add-row-btn{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;color:var(--text-dim);font-size:.82rem;cursor:pointer;font-family:var(--font);margin-bottom:14px}
 .add-row-btn:hover{color:var(--text)}
-.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}.spin-hero{display:flex;align-items:center;gap:30px;flex-wrap:wrap}.spin-ring{position:relative;width:112px;height:112px;flex-shrink:0}.spin-ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),#06b6d4,#34d399,var(--accent));animation:cfspin 7s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px))}.spin-core{position:absolute;inset:14px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;line-height:1}@keyframes cfspin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.spin-ring::before{animation:none}}.logo{display:inline-flex;align-items:center;gap:8px}</style>
+.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}</style>
 <script>
 (function(){var t=localStorage.getItem('cft');if(t==='light')document.documentElement.classList.add('light');}());
 function toggleTheme(){var l=document.documentElement.classList.toggle('light');localStorage.setItem('cft',l?'light':'dark');document.getElementById('themeBtn').textContent=l?'☀️':'🌙';}
@@ -135,12 +142,12 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </head>
 <body><nav>
 <div class="wrap nav-inner">
-  <a href="https://calculator-free.com/ru/" class="logo">calculator-free.com</a>
+  <a href="https://calculator-free.com/ru/" class="logo"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><rect x="9" y="3" width="30" height="42" rx="7" fill="#10b981"/><rect x="14" y="8" width="20" height="8.5" rx="2" fill="#fff"/><g fill="#fff"><circle cx="17.5" cy="25" r="2.3"/><circle cx="24" cy="25" r="2.3"/><circle cx="30.5" cy="25" r="2.3"/><circle cx="17.5" cy="33" r="2.3"/><circle cx="24" cy="33" r="2.3"/><circle cx="30.5" cy="33" r="2.3"/></g></svg>calculator-free.com</a>
   <div class="nav-right">
     <a href="https://calculator-free.com/ru/" class="nav-link">Все Калькуляторы</a>
     <div class="lang-wrap">
-      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/ru.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Русский ▾</button>
-      <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/percentage-calculator/"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
+      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Русский ▾</button>
+      <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/ru/percentage-calculator/" class="active"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
 <a href="https://calculator-free.com/ar/percentage-calculator/"><img src="https://flagcdn.com/20x15/sa.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> العربية</a>
 <a href="https://calculator-free.com/zh/percentage-calculator/"><img src="https://flagcdn.com/20x15/cn.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 中文</a>
 <a href="https://calculator-free.com/da/percentage-calculator/"><img src="https://flagcdn.com/20x15/dk.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Dansk</a>
@@ -155,7 +162,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <a href="https://calculator-free.com/no/percentage-calculator/"><img src="https://flagcdn.com/20x15/no.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Norsk</a>
 <a href="https://calculator-free.com/pl/percentage-calculator/"><img src="https://flagcdn.com/20x15/pl.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Polski</a>
 <a href="https://calculator-free.com/pt/percentage-calculator/"><img src="https://flagcdn.com/20x15/br.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Português</a>
-<a href="https://calculator-free.com/ru/percentage-calculator/" class="active"><img src="https://flagcdn.com/20x15/ru.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Русский</a>
+<a href="https://calculator-free.com/ru/percentage-calculator/"><img src="https://flagcdn.com/20x15/ru.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Русский</a>
 <a href="https://calculator-free.com/es/percentage-calculator/"><img src="https://flagcdn.com/20x15/es.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Español</a>
 <a href="https://calculator-free.com/sv/percentage-calculator/"><img src="https://flagcdn.com/20x15/se.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Svenska</a>
 <a href="https://calculator-free.com/tr/percentage-calculator/"><img src="https://flagcdn.com/20x15/tr.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Türkçe</a>
@@ -164,9 +171,9 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
   </div>
 </div>
-</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">%</div></div><div><span class="badge">БЕСПЛАТНЫЙ КАЛЬКУЛЯТОР</span><h1>Калькулятор Процентов</h1><p>Мгновенный расчёт процентов — процент от числа, изменение, скидки.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Реклама</span>
+</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">%</div></div><div><span class="badge">БЕСПЛАТНЫЙ КАЛЬКУЛЯТОР</span><h1>Калькулятор процентов</h1><p>Мгновенный расчёт процентов — процент от числа, изменение, скидки.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Реклама</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">%</span><span class="calc-title">Калькулятор Процентов</span></div><div class="calc-body">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">%</span><span class="calc-title">Калькулятор процентов</span></div><div class="calc-body">
 <div class="tabs">
   <button class="tab active" onclick="setTab(0,this)">X % от Y</button>
   <button class="tab" onclick="setTab(1,this)">X — это ? % от Y</button>
@@ -205,6 +212,6 @@ pct();
 <h2>Справочник формул процентов</h2>
 <ul><li><strong>X % от Y</strong> = Y × (X ÷ 100)</li><li><strong>Сколько % от Y составляет X</strong> = (X ÷ Y) × 100</li><li><strong>% изменения</strong> = ((новое − старое) ÷ старое) × 100</li><li><strong>После скидки</strong> = цена × (1 − ставка/100)</li><li><strong>После наценки</strong> = себестоимость × (1 + ставка/100)</li></ul></div><div class="seo-section"><h2>Часто задаваемые вопросы</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Как посчитать 20 % от числа?</span><span class="faq-arr">+</span></div><div class="faq-a">Умножьте число на 0,20. Пример: 20 % от 150 = 150 × 0,20 = 30. Или разделите на 5, ведь 100/20 = 5.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Какова формула процентного изменения?</span><span class="faq-arr">+</span></div><div class="faq-a">Процентное изменение = ((новое значение − старое значение) / старое значение) × 100. Положительный результат означает рост, отрицательный — снижение.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Как посчитать процент в обратную сторону (найти исходную цену)?</span><span class="faq-arr">+</span></div><div class="faq-a">Исходная цена = итоговая ÷ (1 − скидка в %). Если товар стоит 80 $ после скидки 20 %: 80 $ ÷ 0,80 = 100 $ исходной цены.</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Чем процентные пункты отличаются от процентов?</span><span class="faq-arr">+</span></div><div class="faq-a">Если ставка выросла с 4 % до 5 %, она поднялась на 1 процентный пункт, но увеличилась на 25 процентов. Это разные величины.</div></div></div><div class="seo-section"><h2>Все Калькуляторы</h2><div class="related"><a href="https://calculator-free.com/ru/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">Калькулятор ИМТ</div></a><a href="https://calculator-free.com/ru/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">Калькулятор Ипотеки</div></a><a href="https://calculator-free.com/ru/savings-calculator/" class="rel-card"><div class="rel-icon">💰</div><div class="rel-name">Калькулятор Сбережений</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">Реклама</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><footer><div class="wrap">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2>Как работают расчёты процентов</h2><p>Любой вопрос о процентах сводится к одному из четырёх расчётов. <strong>Процент от числа</strong> умножает: X% от Y = Y × (X ÷ 100). <strong>Какой процент</strong> делит: (X ÷ Y) × 100. <strong>Изменение в процентах</strong> сравнивает старое и новое: ((Новое − Старое) ÷ Старое) × 100. <strong>Скидка и наценка</strong> масштабирует цену: Цена × (1 − Ставка/100) или Стоимость × (1 + Ставка/100).</p><h3>Разбор примера</h3><p>20% от 150 = 150 × 0,20 = 30. Рост цены с 50 $ до 65 $ — это изменение ((65 − 50) ÷ 50) × 100 = увеличение на 30%. Куртка за 100 $ со скидкой 20% стоит 100 × 0,80 = 80 $.</p><h3>Обратный расчёт от цены со скидкой</h3><p>Чтобы восстановить исходную цену, скидку нужно не прибавлять, а делить: Исходная = Итоговая ÷ (1 − скидка%). Товар, стоящий 80 $ после скидки 20%, стоил 80 $ ÷ 0,80 = 100 $. Прибавление 20% к 80 $ даёт 96 $ — это распространённая ошибка.</p><h3>Процентные пункты — это не проценты</h3><p>Если ставка выросла с 4% до 5%, она поднялась на 1 процентный пункт, но увеличилась на 25 процентов. Это разные меры. Процентные ставки, налоговые ставки и результаты опросов обычно сравнивают в процентных пунктах, а рост выражают в процентах.</p><h3>Рост и снижение в процентах несимметричны</h3><p>Величина, упавшая на 50%, должна вырасти на 100%, чтобы вернуться к исходному значению. 200 $ при падении на 50% превращаются в 100 $; возврат со 100 $ к 200 $ — это рост на 100%. Эта асимметрия важна для доходности инвестиций, скидок поверх скидок и любой величины, выраженной как процентное изменение.</p></section><footer><div class="wrap">
 <p>© 2026 calculator-free.com · <a href="https://calculator-free.com/ru/">Все Калькуляторы</a> · <a href="https://calculator-free.com/about/">О нас</a> · <a href="https://calculator-free.com/privacy-policy/">Политика конфиденциальности</a> · <a href="https://calculator-free.com/terms-of-use/">Условия использования</a> · <a href="https://calculator-free.com/contact/">Контакты</a></p>
 </div></footer></body></html>

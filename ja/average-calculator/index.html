@@ -9,8 +9,8 @@
 <meta name="robots" content="index,follow">
 <meta name="google-site-verification" content="l2eoJIHgEtt274NDwwaALjifXoAxRKjO74ZtcYzypaw">
 <link rel="canonical" href="https://calculator-free.com/ja/average-calculator/">
-<link rel="alternate" hreflang="x-default" href="https://calculator-free.com/average-calculator/">
-<link rel="alternate" hreflang="en" href="https://calculator-free.com/average-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calculator-free.com/ja/average-calculator/">
+<link rel="alternate" hreflang="en" href="https://calculator-free.com/ja/average-calculator/">
 <link rel="alternate" hreflang="ar" href="https://calculator-free.com/ar/average-calculator/">
 <link rel="alternate" hreflang="zh" href="https://calculator-free.com/zh/average-calculator/">
 <link rel="alternate" hreflang="da" href="https://calculator-free.com/da/average-calculator/">
@@ -135,12 +135,12 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </head>
 <body><nav>
 <div class="wrap nav-inner">
-  <a href="https://calculator-free.com/ja/" class="logo">calculator-free.com</a>
+  <a href="https://calculator-free.com/ja/" class="logo"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><rect x="9" y="3" width="30" height="42" rx="7" fill="#10b981"/><rect x="14" y="8" width="20" height="8.5" rx="2" fill="#fff"/><g fill="#fff"><circle cx="17.5" cy="25" r="2.3"/><circle cx="24" cy="25" r="2.3"/><circle cx="30.5" cy="25" r="2.3"/><circle cx="17.5" cy="33" r="2.3"/><circle cx="24" cy="33" r="2.3"/><circle cx="30.5" cy="33" r="2.3"/></g></svg>calculator-free.com</a>
   <div class="nav-right">
     <a href="https://calculator-free.com/ja/" class="nav-link">全計算機</a>
     <div class="lang-wrap">
-      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語 ▾</button>
-      <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/average-calculator/"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
+      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語 ▾</button>
+      <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/ja/average-calculator/" class="active"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
 <a href="https://calculator-free.com/ar/average-calculator/"><img src="https://flagcdn.com/20x15/sa.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> العربية</a>
 <a href="https://calculator-free.com/zh/average-calculator/"><img src="https://flagcdn.com/20x15/cn.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 中文</a>
 <a href="https://calculator-free.com/da/average-calculator/"><img src="https://flagcdn.com/20x15/dk.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Dansk</a>
@@ -150,7 +150,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <a href="https://calculator-free.com/hi/average-calculator/"><img src="https://flagcdn.com/20x15/in.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> हिन्दी</a>
 <a href="https://calculator-free.com/id/average-calculator/"><img src="https://flagcdn.com/20x15/id.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Indonesia</a>
 <a href="https://calculator-free.com/it/average-calculator/"><img src="https://flagcdn.com/20x15/it.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Italiano</a>
-<a href="https://calculator-free.com/ja/average-calculator/" class="active"><img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語</a>
+<a href="https://calculator-free.com/ja/average-calculator/"><img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語</a>
 <a href="https://calculator-free.com/ko/average-calculator/"><img src="https://flagcdn.com/20x15/kr.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 한국어</a>
 <a href="https://calculator-free.com/no/average-calculator/"><img src="https://flagcdn.com/20x15/no.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Norsk</a>
 <a href="https://calculator-free.com/pl/average-calculator/"><img src="https://flagcdn.com/20x15/pl.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Polski</a>
@@ -182,13 +182,13 @@ function avg(){
   var variance=nums.reduce((a,b)=>a+(b-mean)**2,0)/nums.length;
   var std=Math.sqrt(variance);
   document.getElementById('avgResult').innerHTML=
-    '平均: <strong>'+Math.round(mean*10000)/10000+'</strong> · 中央値: '+median+'<br>合計: '+sum+' · 個数: '+nums.length+'<br>最小: '+sorted[0]+' · 最大: '+sorted[sorted.length-1]+'<br>標準偏差: '+Math.round(std*1000)/1000;
+    '平均値: <strong>'+Math.round(mean*10000)/10000+'</strong> · 中央値: '+median+'<br>合計: '+sum+' · 個数: '+nums.length+'<br>最小: '+sorted[0]+' · 最大: '+sorted[sorted.length-1]+'<br>標準偏差: '+Math.round(std*1000)/1000;
 }
 avg();
 </script></div></div><div class="seo-section"><h2>平均値・中央値・最頻値・標準偏差の解説</h2><p>「平均」を表す指標は3つあり、それぞれデータについて違うことを教えてくれます:</p>
-<ul><li><strong>平均:</strong> すべての値の合計を個数で割った値。極端な外れ値のない左右対称なデータに最適です。例: [10, 20, 30] → 平均値 = 20。</li><li><strong>中央値:</strong> 並べ替えたときの中央の値。外れ値があるときは平均値より適しています。例: [10, 20, 100] → 中央値 = 20（平均値は43.3で、100に引っ張られます）。</li><li><strong>最頻値:</strong> 最も多く現れる値。カテゴリーデータに便利です。例: [1, 2, 2, 3, 4] → 最頻値 = 2。</li></ul>
+<ul><li><strong>平均値:</strong> すべての値の合計を個数で割った値。極端な外れ値のない左右対称なデータに最適です。例: [10, 20, 30] → 平均値 = 20。</li><li><strong>中央値:</strong> 並べ替えたときの中央の値。外れ値があるときは平均値より適しています。例: [10, 20, 100] → 中央値 = 20（平均値は43.3で、100に引っ張られます）。</li><li><strong>最頻値:</strong> 最も多く現れる値。カテゴリーデータに便利です。例: [1, 2, 2, 3, 4] → 最頻値 = 2。</li></ul>
 <p><strong>標準偏差</strong> は、値が平均からどれだけ散らばっているかを表します。標準偏差が小さいほど値は平均の近くに集まり、大きいほど広く散らばっています。データセット [10, 20, 30] の場合: 平均 = 20、標準偏差 = 8.16。</p></div><div class="seo-section"><h2>よくある質問</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>平均値ではなく中央値を使うのはどんなときですか？</span><span class="faq-arr">+</span></div><div class="faq-a">データに極端な外れ値があるときや分布が偏っているときは中央値を使います。たとえば世帯収入の平均を示す場合、ごく一部の富裕層が平均を大きく引き上げる一方で大多数の収入はずっと低いため、中央値のほうが役に立ちます。</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>標準偏差は何に使いますか？</span><span class="faq-arr">+</span></div><div class="faq-a">標準偏差はデータのばらつきを表します。金融では投資のボラティリティを測ります。試験では、点数が平均から大きく外れているかを判断するのに役立ちます。正規分布では、値の約68 %が平均から標準偏差1つ分の範囲に入ります。</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>母集団の標準偏差と標本標準偏差の違いは何ですか？</span><span class="faq-arr">+</span></div><div class="faq-a">母集団の標準偏差（σ）はnで割り、標本標準偏差（s）はn−1で割ります。集団全体のデータがあるときは母集団の標準偏差を、より大きな母集団から取った標本の場合は標本標準偏差を使います。</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>範囲とは何ですか？</span><span class="faq-arr">+</span></div><div class="faq-a">範囲はばらつきの最も単純な指標です: 最大値から最小値を引きます。[5, 10, 15, 20] なら: 範囲 = 20 − 5 = 15。外れ値の影響を受けますが、分かりやすい指標です。</div></div></div><div class="seo-section"><h2>全計算機</h2><div class="related"><a href="https://calculator-free.com/ja/percentage-calculator/" class="rel-card"><div class="rel-icon">%</div><div class="rel-name">パーセント計算機</div></a><a href="https://calculator-free.com/ja/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">BMI計算機</div></a><a href="https://calculator-free.com/ja/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">住宅ローン計算機</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">広告</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><footer><div class="wrap">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2>平均値・中央値・最頻値の違い</h2><p>算術平均は、すべての値を足して個数で割ったものです。中央値は値を並べたときの真ん中の値（個数が偶数の場合は中央の2つの値の平均）で、最頻値は最も多く現れる値です。それぞれがデータについて異なることを示します。</p><h3>計算例</h3><p>4、7、7、10、52 というデータでは、平均値は16、中央値は7、最頻値は7です。ひとつの外れ値（52）が、平均値を典型的な値よりはるかに高く引き上げてしまいます。住宅価格や所得が通常は中央値で報告されるのは、このためです。</p><h3>よくある質問</h3><p><strong>加重平均はどんなときに使いますか？</strong> 値ごとに重要度が異なるときに使います。単位数で重み付けした科目の成績や、保有額で重み付けしたポートフォリオのリターンなどです。</p><p><strong>幾何平均はどうですか？</strong> 成長率を扱うときに使います。+50%と−50%の幾何平均は全体として損失になることを正しく示しますが、算術平均では0%と誤解を招く結果になります。</p></section><footer><div class="wrap">
 <p>© 2026 calculator-free.com · <a href="https://calculator-free.com/ja/">全計算機</a> · <a href="https://calculator-free.com/about/">運営者について</a> · <a href="https://calculator-free.com/privacy-policy/">プライバシーポリシー</a> · <a href="https://calculator-free.com/terms-of-use/">利用規約</a> · <a href="https://calculator-free.com/contact/">お問い合わせ</a></p>
 </div></footer></body></html>

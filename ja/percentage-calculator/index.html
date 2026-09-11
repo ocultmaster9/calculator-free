@@ -5,12 +5,12 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q7VYR4L8Z7');</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>パーセント計算機 — 無料オンライン | calculator-free.com</title>
-<meta name="description" content="パーセントを瞬時に計算します。">
+<meta name="description" content="無料のパーセント計算ツール：ある数値の何パーセント、変化率、増加・減少、割引や値上げを計算します。登録不要で、どの端末でもすぐに結果がわかります。">
 <meta name="robots" content="index,follow">
 <meta name="google-site-verification" content="l2eoJIHgEtt274NDwwaALjifXoAxRKjO74ZtcYzypaw">
 <link rel="canonical" href="https://calculator-free.com/ja/percentage-calculator/">
-<link rel="alternate" hreflang="x-default" href="https://calculator-free.com/percentage-calculator/">
-<link rel="alternate" hreflang="en" href="https://calculator-free.com/percentage-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://calculator-free.com/ja/percentage-calculator/">
+<link rel="alternate" hreflang="en" href="https://calculator-free.com/ja/percentage-calculator/">
 <link rel="alternate" hreflang="ar" href="https://calculator-free.com/ar/percentage-calculator/">
 <link rel="alternate" hreflang="zh" href="https://calculator-free.com/zh/percentage-calculator/">
 <link rel="alternate" hreflang="da" href="https://calculator-free.com/da/percentage-calculator/">
@@ -30,11 +30,11 @@
 <link rel="alternate" hreflang="sv" href="https://calculator-free.com/sv/percentage-calculator/">
 <link rel="alternate" hreflang="tr" href="https://calculator-free.com/tr/percentage-calculator/">
 <meta property="og:title" content="パーセント計算機 — 無料オンライン | calculator-free.com">
-<meta property="og:description" content="パーセントを瞬時に計算します。">
+<meta property="og:description" content="無料のパーセント計算ツール：ある数値の何パーセント、変化率、増加・減少、割引や値上げを計算します。登録不要で、どの端末でもすぐに結果がわかります。">
 <meta property="og:url" content="https://calculator-free.com/ja/percentage-calculator/">
 <meta property="og:type" content="website">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "パーセント計算機", "url": "https://calculator-free.com/ja/percentage-calculator/", "description": "パーセントを瞬時に計算します。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "パーセント計算機", "url": "https://calculator-free.com/ja/percentage-calculator/", "description": "無料のパーセント計算ツール：ある数値の何パーセント、変化率、増加・減少、割引や値上げを計算します。登録不要で、どの端末でもすぐに結果がわかります。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ある数の20 %はどう計算しますか？", "acceptedAnswer": {"@type": "Answer", "text": "その数に0.20を掛けます。例: 150の20 % = 150 × 0.20 = 30。100/20 = 5なので、5で割っても同じです。"}}, {"@type": "Question", "name": "増減率の計算式は何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "増減率 = ((新しい値 − 古い値) / 古い値) × 100。結果がプラスなら増加、マイナスなら減少です。"}}, {"@type": "Question", "name": "割合から元の価格を逆算するには？", "acceptedAnswer": {"@type": "Answer", "text": "元の価格 = 割引後の価格 ÷ (1 − 割引率)。20 %引きで80ドルの商品なら: 80ドル ÷ 0.80 = 元の価格100ドル。"}}, {"@type": "Question", "name": "パーセントポイントとパーセントの違いは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "利率が4 %から5 %になった場合、上昇は1パーセントポイントですが、増加率は25 %です。これらは異なる指標です。"}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -64,6 +64,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.9);backdrop-filter
 .hero{padding:48px 0 32px;border-bottom:1px solid var(--border);margin-bottom:32px}
 .hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:10px;line-height:1.2}
 .hero p{color:var(--text-dim);font-size:.95rem;max-width:560px}
+.spin-hero{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.spin-ring{position:relative;width:112px;height:112px;flex-shrink:0}
+.spin-ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),#06b6d4,#34d399,var(--accent));animation:cfspin 7s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px))}
+.spin-core{position:absolute;inset:14px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;line-height:1}
+@keyframes cfspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spin-ring::before{animation:none}}
+.logo{display:inline-flex;align-items:center;gap:8px}
 .badge{display:inline-block;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:var(--accent);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:14px;letter-spacing:.5px}
 .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
 @media(max-width:680px){.bento{grid-template-columns:repeat(2,1fr)}}
@@ -124,7 +131,7 @@ footer a:hover{color:var(--accent)}
 .gpa-table input{padding:8px 10px}
 .add-row-btn{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;color:var(--text-dim);font-size:.82rem;cursor:pointer;font-family:var(--font);margin-bottom:14px}
 .add-row-btn:hover{color:var(--text)}
-.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}.spin-hero{display:flex;align-items:center;gap:30px;flex-wrap:wrap}.spin-ring{position:relative;width:112px;height:112px;flex-shrink:0}.spin-ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),#06b6d4,#34d399,var(--accent));animation:cfspin 7s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px))}.spin-core{position:absolute;inset:14px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;line-height:1}@keyframes cfspin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.spin-ring::before{animation:none}}.logo{display:inline-flex;align-items:center;gap:8px}</style>
+.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}</style>
 <script>
 (function(){var t=localStorage.getItem('cft');if(t==='light')document.documentElement.classList.add('light');}());
 function toggleTheme(){var l=document.documentElement.classList.toggle('light');localStorage.setItem('cft',l?'light':'dark');document.getElementById('themeBtn').textContent=l?'☀️':'🌙';}
@@ -135,12 +142,12 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </head>
 <body><nav>
 <div class="wrap nav-inner">
-  <a href="https://calculator-free.com/ja/" class="logo">calculator-free.com</a>
+  <a href="https://calculator-free.com/ja/" class="logo"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><rect x="9" y="3" width="30" height="42" rx="7" fill="#10b981"/><rect x="14" y="8" width="20" height="8.5" rx="2" fill="#fff"/><g fill="#fff"><circle cx="17.5" cy="25" r="2.3"/><circle cx="24" cy="25" r="2.3"/><circle cx="30.5" cy="25" r="2.3"/><circle cx="17.5" cy="33" r="2.3"/><circle cx="24" cy="33" r="2.3"/><circle cx="30.5" cy="33" r="2.3"/></g></svg>calculator-free.com</a>
   <div class="nav-right">
     <a href="https://calculator-free.com/ja/" class="nav-link">全計算機</a>
     <div class="lang-wrap">
-      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語 ▾</button>
-      <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/percentage-calculator/"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
+      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語 ▾</button>
+      <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/ja/percentage-calculator/" class="active"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
 <a href="https://calculator-free.com/ar/percentage-calculator/"><img src="https://flagcdn.com/20x15/sa.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> العربية</a>
 <a href="https://calculator-free.com/zh/percentage-calculator/"><img src="https://flagcdn.com/20x15/cn.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 中文</a>
 <a href="https://calculator-free.com/da/percentage-calculator/"><img src="https://flagcdn.com/20x15/dk.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Dansk</a>
@@ -150,7 +157,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <a href="https://calculator-free.com/hi/percentage-calculator/"><img src="https://flagcdn.com/20x15/in.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> हिन्दी</a>
 <a href="https://calculator-free.com/id/percentage-calculator/"><img src="https://flagcdn.com/20x15/id.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Indonesia</a>
 <a href="https://calculator-free.com/it/percentage-calculator/"><img src="https://flagcdn.com/20x15/it.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Italiano</a>
-<a href="https://calculator-free.com/ja/percentage-calculator/" class="active"><img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語</a>
+<a href="https://calculator-free.com/ja/percentage-calculator/"><img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 日本語</a>
 <a href="https://calculator-free.com/ko/percentage-calculator/"><img src="https://flagcdn.com/20x15/kr.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> 한국어</a>
 <a href="https://calculator-free.com/no/percentage-calculator/"><img src="https://flagcdn.com/20x15/no.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Norsk</a>
 <a href="https://calculator-free.com/pl/percentage-calculator/"><img src="https://flagcdn.com/20x15/pl.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Polski</a>
@@ -164,7 +171,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
   </div>
 </div>
-</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">%</div></div><div><span class="badge">無料計算機</span><h1>パーセント計算機</h1><p>パーセントを瞬時に計算します。</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">広告</span>
+</nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">%</div></div><div><span class="badge">無料計算機</span><h1>パーセント計算機</h1><p>無料のパーセント計算ツール：ある数値の何パーセント、変化率、増加・減少、割引や値上げを計算します。登録不要で、どの端末でもすぐに結果がわかります。</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">広告</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">%</span><span class="calc-title">パーセント計算機</span></div><div class="calc-body">
 <div class="tabs">
@@ -205,6 +212,6 @@ pct();
 <h2>割合の計算式リファレンス</h2>
 <ul><li><strong>Yの X %</strong> = Y × (X ÷ 100)</li><li><strong>XはYの何 %</strong> = (X ÷ Y) × 100</li><li><strong>変化率 (%)</strong> = ((新しい値 − 古い値) ÷ 古い値) × 100</li><li><strong>割引後</strong> = 価格 × (1 − 率/100)</li><li><strong>値上げ後</strong> = 原価 × (1 + 率/100)</li></ul></div><div class="seo-section"><h2>よくある質問</h2><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>ある数の20 %はどう計算しますか？</span><span class="faq-arr">+</span></div><div class="faq-a">その数に0.20を掛けます。例: 150の20 % = 150 × 0.20 = 30。100/20 = 5なので、5で割っても同じです。</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>増減率の計算式は何ですか？</span><span class="faq-arr">+</span></div><div class="faq-a">増減率 = ((新しい値 − 古い値) / 古い値) × 100。結果がプラスなら増加、マイナスなら減少です。</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>割合から元の価格を逆算するには？</span><span class="faq-arr">+</span></div><div class="faq-a">元の価格 = 割引後の価格 ÷ (1 − 割引率)。20 %引きで80ドルの商品なら: 80ドル ÷ 0.80 = 元の価格100ドル。</div></div><div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>パーセントポイントとパーセントの違いは何ですか？</span><span class="faq-arr">+</span></div><div class="faq-a">利率が4 %から5 %になった場合、上昇は1パーセントポイントですが、増加率は25 %です。これらは異なる指標です。</div></div></div><div class="seo-section"><h2>全計算機</h2><div class="related"><a href="https://calculator-free.com/ja/bmi-calculator/" class="rel-card"><div class="rel-icon">⚖️</div><div class="rel-name">BMI計算機</div></a><a href="https://calculator-free.com/ja/mortgage-calculator/" class="rel-card"><div class="rel-icon">🏠</div><div class="rel-name">住宅ローン計算機</div></a><a href="https://calculator-free.com/ja/savings-calculator/" class="rel-card"><div class="rel-icon">💰</div><div class="rel-name">貯蓄計算機</div></a></div></div><div class="ad-wrap"><span class="ad-lbl">広告</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><footer><div class="wrap">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2>パーセント計算の仕組み</h2><p>パーセントに関する問題は、いずれも4つの計算のどれかに当てはまります。 <strong>ある数値の何パーセント</strong> は掛け算をします：YのX% = Y × (X ÷ 100)。 <strong>何パーセントか</strong> は割り算をします：(X ÷ Y) × 100。 <strong>変化率</strong> は新旧を比較します：((New − Old) ÷ Old) × 100。 <strong>割引と値上げ</strong> 価格を調整します：価格 × (1 − 率/100) または 原価 × (1 + 率/100)。</p><h3>計算例</h3><p>150の20%は 150 × 0.20 = 30 です。価格が50ドルから65ドルに上がった場合の変化は ((65 − 50) ÷ 50) × 100 = 30% の増加です。100ドルのジャケットが20%引きなら 100 × 0.80 = 80ドルになります。</p><h3>セール価格から元の価格を求める</h3><p>元の価格を求めるには、割引分を足し戻すのではなく、割り算をします：元の価格 = 割引後の価格 ÷ (1 − 割引率%)。20%割引後に80ドルの商品は、80 ÷ 0.80 = 100ドルでした。80ドルに20%を足して96ドルとするのが、よくある間違いです。</p><h3>パーセントポイントはパーセントではありません</h3><p>利率が4%から5%になった場合、1パーセントポイント上昇したことになりますが、増加率でいえば25パーセントの上昇です。これらは別の尺度です。金利、税率、世論調査の結果は通常パーセントポイントで比較し、成長率はパーセントで表します。</p><h3>増加率と減少率は対称ではありません</h3><p>50%下落した値がもとの水準に戻るには、100%の上昇が必要です。200ドルが50%下がると100ドルになり、100ドルから200ドルに戻すには100%の増加が必要です。この非対称性は、投資リターン、割引に重ねた割引、パーセントで示されるあらゆる変動を考えるうえで重要です。</p></section><footer><div class="wrap">
 <p>© 2026 calculator-free.com · <a href="https://calculator-free.com/ja/">全計算機</a> · <a href="https://calculator-free.com/about/">運営者について</a> · <a href="https://calculator-free.com/privacy-policy/">プライバシーポリシー</a> · <a href="https://calculator-free.com/terms-of-use/">利用規約</a> · <a href="https://calculator-free.com/contact/">お問い合わせ</a></p>
 </div></footer></body></html>
