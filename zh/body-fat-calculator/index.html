@@ -11,6 +11,11 @@
 <link rel="canonical" href="https://calculator-free.com/zh/body-fat-calculator/">
 <link rel="alternate" hreflang="x-default" href="https://calculator-free.com/body-fat-calculator/">
 <link rel="alternate" hreflang="en" href="https://calculator-free.com/body-fat-calculator/">
+<link rel="alternate" hreflang="en-GB" href="https://calculator-free.com/body-fat-calculator/">
+<link rel="alternate" hreflang="en-US" href="https://calculator-free.com/body-fat-calculator/">
+<link rel="alternate" hreflang="en-AU" href="https://calculator-free.com/body-fat-calculator/">
+<link rel="alternate" hreflang="en-CA" href="https://calculator-free.com/body-fat-calculator/">
+<link rel="alternate" hreflang="en-IE" href="https://calculator-free.com/body-fat-calculator/">
 <link rel="alternate" hreflang="ar" href="https://calculator-free.com/ar/body-fat-calculator/">
 <link rel="alternate" hreflang="zh" href="https://calculator-free.com/zh/body-fat-calculator/">
 <link rel="alternate" hreflang="da" href="https://calculator-free.com/da/body-fat-calculator/">
@@ -191,8 +196,8 @@ function bfCalc(){
   if(isNaN(bf)||!isFinite(bf)||bf<0){document.getElementById('bfResult').textContent='请检查测量值';return;}
   bf=Math.round(bf*10)/10;
   var cat,col;
-  if(g==='male'){cat=bf<6?'必需脂肪':bf<14?'Athletic':bf<18?'Fitness':bf<25?'Average':'Obese';col=bf<6?'#3b82f6':bf<14?'#10b981':bf<18?'#84cc16':bf<25?'#f59e0b':'#ef4444';}
-  else{cat=bf<14?'必需脂肪':bf<21?'Athletic':bf<25?'Fitness':bf<32?'Average':'Obese';col=bf<14?'#3b82f6':bf<21?'#10b981':bf<25?'#84cc16':bf<32?'#f59e0b':'#ef4444';}
+  if(g==='male'){cat=bf<6?'必需脂肪':bf<14?'运动员':bf<18?'健身水平':bf<25?'平均值':'肥胖';col=bf<6?'#3b82f6':bf<14?'#10b981':bf<18?'#84cc16':bf<25?'#f59e0b':'#ef4444';}
+  else{cat=bf<14?'必需脂肪':bf<21?'运动员':bf<25?'健身水平':bf<32?'平均值':'肥胖';col=bf<14?'#3b82f6':bf<21?'#10b981':bf<25?'#84cc16':bf<32?'#f59e0b':'#ef4444';}
   document.getElementById('bfResult').innerHTML='体脂率: <strong style="color:'+col+'">'+bf+'%</strong> — '+cat;
 }
 bfCalc();
