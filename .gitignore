@@ -7,9 +7,6 @@ Thumbs.db
 .cf-credentials.ps1
 *.log
 
-# Thai scaffold: English placeholder pages, not ready to publish
-/th/
-
 # python bytecode from .github/scripts
 __pycache__/
 *.pyc
