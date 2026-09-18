@@ -29,8 +29,11 @@ LANG_META = [
     ("pl", "pl", "Polski"), ("pt", "br", "Português"), ("ro", "ro", "Română"),
     ("ru", "ru", "Русский"), ("sk", "sk", "Slovenčina"), ("sl", "si", "Slovenščina"), ("sv", "se", "Svenska"),
     ("tr", "tr", "Türkçe"), ("uk", "ua", "Українська"), ("vi", "vn", "Tiếng Việt"),
+    ("af", "za", "Afrikaans"), ("fa", "ir", "فارسی"), ("he", "il", "עברית"), ("mk", "mk", "Македонски"),
+    ("ms", "my", "Bahasa Melayu"), ("sq", "al", "Shqip"), ("sr", "rs", "Srpski"), ("sw", "ke", "Kiswahili"),
+    ("th", "th", "ไทย"), ("tl", "ph", "Tagalog"),
 ]
-RTL = {"ar"}
+RTL = {"ar", "he", "fa"}
 
 DROP_RE = re.compile(r'(<div class="lang-drop" id="langDrop">).*?(</div>)\s*(</div>)', re.S)
 BTN_RE = re.compile(r'<button class="lang-btn" onclick="toggleLang\(\)">.*?</button>', re.S)
