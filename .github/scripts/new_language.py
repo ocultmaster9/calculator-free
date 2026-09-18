@@ -20,14 +20,14 @@ IMG = ('<img src="' + FLAG + '" width="20" height="15" loading="lazy" alt="" '
 
 # switcher order -> (flag cc, native name).  'en' is always first.
 LANG_META = [
-    ("en", "gb", "English"), ("ar", "sa", "العربية"), ("zh", "cn", "中文"),
+    ("en", "gb", "English"), ("ar", "sa", "العربية"), ("bg", "bg", "Български"), ("zh", "cn", "中文"),
     ("cs", "cz", "Čeština"), ("da", "dk", "Dansk"), ("de", "de", "Deutsch"),
-    ("el", "gr", "Ελληνικά"), ("es", "es", "Español"), ("fi", "fi", "Suomi"),
-    ("fr", "fr", "Français"), ("hi", "in", "हिन्दी"), ("hu", "hu", "Magyar"),
+    ("el", "gr", "Ελληνικά"), ("es", "es", "Español"), ("et", "ee", "Eesti"), ("fi", "fi", "Suomi"),
+    ("fr", "fr", "Français"), ("ga", "ie", "Gaeilge"), ("hi", "in", "हिन्दी"), ("hr", "hr", "Hrvatski"), ("hu", "hu", "Magyar"),
     ("id", "id", "Indonesia"), ("it", "it", "Italiano"), ("ja", "jp", "日本語"),
-    ("ko", "kr", "한국어"), ("nl", "nl", "Nederlands"), ("no", "no", "Norsk"),
+    ("ko", "kr", "한국어"), ("lt", "lt", "Lietuvių"), ("lv", "lv", "Latviešu"), ("mt", "mt", "Malti"), ("nl", "nl", "Nederlands"), ("no", "no", "Norsk"),
     ("pl", "pl", "Polski"), ("pt", "br", "Português"), ("ro", "ro", "Română"),
-    ("ru", "ru", "Русский"), ("sk", "sk", "Slovenčina"), ("sv", "se", "Svenska"),
+    ("ru", "ru", "Русский"), ("sk", "sk", "Slovenčina"), ("sl", "si", "Slovenščina"), ("sv", "se", "Svenska"),
     ("tr", "tr", "Türkçe"), ("uk", "ua", "Українська"), ("vi", "vn", "Tiếng Việt"),
 ]
 RTL = {"ar"}
@@ -202,28 +202,12 @@ def main(lang):
         made += 1
     print("  %s: %d pages written" % (lang, made))
 
-    # refresh the switcher on every page now that the language exists
-    langs = live_langs()
-    touched = 0
-    for dp, dn, fn in os.walk("."):
-        dn[:] = [d for d in dn if d not in {".git", "_stage", "node_modules",
-                                            ".wrangler", ".github", "cdn-cgi", "th"}]
-        for f in fn:
-            if f != "index.html":
-                continue
-            p = os.path.join(dp, f)[2:]
-            rel = os.path.dirname(p).replace(os.sep, "/")
-            parts = rel.split("/") if rel else []
-            if parts and parts[0] in langs and parts[0] != "en":
-                l, key = parts[0], "/".join(parts[1:])
-            else:
-                l, key = "en", rel
-            h = open(p, encoding="utf-8").read()
-            n = set_switcher(h, l, key, langs)
-            if n != h:
-                open(p, "w", encoding="utf-8", newline="").write(n)
-                touched += 1
-    print("  switcher updated in %d pages (%d languages)" % (touched, len(langs)))
+    # The switcher is rebuilt by switcher.py, which links a language to its own
+    # copy of the page when one exists and to that language's homepage when it
+    # does not. Doing it here unconditionally shipped 640 dead links once.
+    import subprocess
+    subprocess.check_call([sys.executable,
+                           os.path.join(os.path.dirname(os.path.abspath(__file__)), "switcher.py")])
 
 
 if __name__ == "__main__":

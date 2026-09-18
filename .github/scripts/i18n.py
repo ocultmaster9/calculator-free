@@ -13,8 +13,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 BASE = "https://calculator-free.com"
 
 # Switcher / hreflang order. Keep in sync with LANG_META below.
-LANGS = ["ar","zh","cs","da","de","el","es","fi","fr","hi","hu","id","it","ja",
-         "ko","nl","no","pl","pt","ro","ru","sk","sv","tr","uk","vi"]
+LANGS = ["ar","bg","zh","cs","da","de","el","es","et","fi","fr","ga","hi","hr","hu",
+         "id","it","ja","ko","lt","lv","mt","nl","no","pl","pt","ro","ru","sk","sl",
+         "sv","tr","uk","vi"]
 EN_REGIONS = ["en-GB","en-US","en-AU","en-CA","en-IE"]
 
 # Dirs that are not languages / not deployable.

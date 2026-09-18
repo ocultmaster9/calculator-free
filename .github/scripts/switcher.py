@@ -15,14 +15,14 @@ FLAG = "https://flagcdn.com/20x15/%s.png"
 IMG = ('<img src="' + FLAG + '" width="20" height="15" loading="lazy" alt="" '
        'style="vertical-align:-2px;margin-right:5px;border-radius:2px">')
 LANG_META = [
-    ("en", "gb", "English"), ("ar", "sa", "العربية"), ("zh", "cn", "中文"),
+    ("en", "gb", "English"), ("ar", "sa", "العربية"), ("bg", "bg", "Български"), ("zh", "cn", "中文"),
     ("cs", "cz", "Čeština"), ("da", "dk", "Dansk"), ("de", "de", "Deutsch"),
-    ("el", "gr", "Ελληνικά"), ("es", "es", "Español"), ("fi", "fi", "Suomi"),
-    ("fr", "fr", "Français"), ("hi", "in", "हिन्दी"), ("hu", "hu", "Magyar"),
+    ("el", "gr", "Ελληνικά"), ("es", "es", "Español"), ("et", "ee", "Eesti"), ("fi", "fi", "Suomi"),
+    ("fr", "fr", "Français"), ("ga", "ie", "Gaeilge"), ("hi", "in", "हिन्दी"), ("hr", "hr", "Hrvatski"), ("hu", "hu", "Magyar"),
     ("id", "id", "Indonesia"), ("it", "it", "Italiano"), ("ja", "jp", "日本語"),
-    ("ko", "kr", "한국어"), ("nl", "nl", "Nederlands"), ("no", "no", "Norsk"),
+    ("ko", "kr", "한국어"), ("lt", "lt", "Lietuvių"), ("lv", "lv", "Latviešu"), ("mt", "mt", "Malti"), ("nl", "nl", "Nederlands"), ("no", "no", "Norsk"),
     ("pl", "pl", "Polski"), ("pt", "br", "Português"), ("ro", "ro", "Română"),
-    ("ru", "ru", "Русский"), ("sk", "sk", "Slovenčina"), ("sv", "se", "Svenska"),
+    ("ru", "ru", "Русский"), ("sk", "sk", "Slovenčina"), ("sl", "si", "Slovenščina"), ("sv", "se", "Svenska"),
     ("tr", "tr", "Türkçe"), ("uk", "ua", "Українська"), ("vi", "vn", "Tiếng Việt"),
 ]
 META = dict((c, (cc, n)) for c, cc, n in LANG_META)
