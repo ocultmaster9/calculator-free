@@ -114,7 +114,24 @@ footer a:hover{color:var(--accent)}
 .spin-ring span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.6rem}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.spin-ring::before{animation:none}}
-.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}</style>
+.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}/*cf-fix-v1*/
+html{overflow-x:clip}
+.ad-wrap ins.adsbygoogle{min-height:280px}
+.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]) ins.adsbygoogle{min-height:0}
+.nav-inner{min-width:0}
+.logo{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.nav-right{flex:0 0 auto}
+@media(max-width:620px){
+.ad-wrap ins.adsbygoogle{min-height:300px}
+.nav-link{display:none}
+.nav-right{gap:6px}
+.logo{font-size:.85rem}
+.lang-btn{padding:6px 8px}
+.theme-btn{padding:6px 8px}
+.lang-name{display:none}
+.lang-drop{max-height:70vh;overflow-y:auto}
+}
+</style>
 <script>
 (function(){var t=localStorage.getItem('cft');if(t==='light')document.documentElement.classList.add('light');}());
 function toggleTheme(){var l=document.documentElement.classList.toggle('light');localStorage.setItem('cft',l?'light':'dark');document.getElementById('themeBtn').textContent=l?'\u2600\ufe0f':'\ud83c\udf19';}
@@ -122,6 +139,21 @@ function toggleLang(){document.getElementById('langDrop').classList.toggle('open
 document.addEventListener('click',function(e){var w=document.querySelector('.lang-wrap');if(w&&!w.contains(e.target))document.getElementById('langDrop').classList.remove('open');});
 function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.querySelector('.faq-arr').textContent=a.classList.contains('open')?'\u2212':'+';}
 </script>
+<!--cf-meta-v1-->
+<meta property="og:site_name" content="calculator-free.com">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://calculator-free.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="calculator-free.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kelly Criterion Calculator — Optimal Bet Size | calculator-free.com">
+<meta name="twitter:description" content="Free Kelly criterion calculator. Enter the odds, your win probability and bankroll to find the optimal stake, with full, half and quarter Kelly options.">
+<meta name="twitter:image" content="https://calculator-free.com/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 </head><body>
 <nav>
 <div class="wrap nav-inner">
@@ -129,7 +161,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <div class="nav-right">
     <a href="https://calculator-free.com/bet-calculator/" class="nav-link">Bet Calculators</a>
     <div class="lang-wrap">
-      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English ▾</button>
+      <button class="lang-btn" onclick="toggleLang()" aria-label="Language"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"><span class="lang-name">English</span> ▾</button>
       <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/bet-calculator/kelly-criterion/" class="active"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
 <a href="https://calculator-free.com/ar/"><img src="https://flagcdn.com/20x15/sa.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> العربية</a>
 <a href="https://calculator-free.com/bg/"><img src="https://flagcdn.com/20x15/bg.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Български</a>
@@ -163,7 +195,18 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <a href="https://calculator-free.com/sl/"><img src="https://flagcdn.com/20x15/si.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Slovenščina</a>
 <a href="https://calculator-free.com/sv/"><img src="https://flagcdn.com/20x15/se.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Svenska</a>
 <a href="https://calculator-free.com/tr/"><img src="https://flagcdn.com/20x15/tr.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Türkçe</a>
+<a href="https://calculator-free.com/uk/"><img src="https://flagcdn.com/20x15/ua.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Українська</a>
 <a href="https://calculator-free.com/vi/"><img src="https://flagcdn.com/20x15/vn.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Tiếng Việt</a>
+<a href="https://calculator-free.com/af/"><img src="https://flagcdn.com/20x15/za.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Afrikaans</a>
+<a href="https://calculator-free.com/fa/"><img src="https://flagcdn.com/20x15/ir.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> فارسی</a>
+<a href="https://calculator-free.com/he/"><img src="https://flagcdn.com/20x15/il.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> עברית</a>
+<a href="https://calculator-free.com/mk/"><img src="https://flagcdn.com/20x15/mk.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Македонски</a>
+<a href="https://calculator-free.com/ms/"><img src="https://flagcdn.com/20x15/my.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Bahasa Melayu</a>
+<a href="https://calculator-free.com/sq/"><img src="https://flagcdn.com/20x15/al.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Shqip</a>
+<a href="https://calculator-free.com/sr/"><img src="https://flagcdn.com/20x15/rs.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Srpski</a>
+<a href="https://calculator-free.com/sw/"><img src="https://flagcdn.com/20x15/ke.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Kiswahili</a>
+<a href="https://calculator-free.com/th/"><img src="https://flagcdn.com/20x15/th.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> ไทย</a>
+<a href="https://calculator-free.com/tl/"><img src="https://flagcdn.com/20x15/ph.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Tagalog</a>
 </div></div>
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
   </div>

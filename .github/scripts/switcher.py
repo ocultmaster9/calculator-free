@@ -31,7 +31,7 @@ LANG_META = [
 META = dict((c, (cc, n)) for c, cc, n in LANG_META)
 SKIP = {".git", "_stage", "node_modules", ".wrangler", ".github", "cdn-cgi"}
 DROP_RE = re.compile(r'(<div class="lang-drop" id="langDrop">).*?(</div>)\s*(</div>)', re.S)
-BTN_RE = re.compile(r'<button class="lang-btn" onclick="toggleLang\(\)">.*?</button>', re.S)
+BTN_RE = re.compile(r'<button class="lang-btn" onclick="toggleLang\(\)"[^>]*>.*?</button>', re.S)
 
 
 def url(lang, key):
@@ -61,7 +61,10 @@ def main():
     have = set(pages.values())                      # (lang, key) pairs that exist
     langs = [c for c, _, _ in LANG_META if c == "en" or os.path.isdir(c)]
     changed = fallbacks = 0
+    only = tuple(sys.argv[1:])
     for p, (lang, key) in sorted(pages.items()):
+        if only and not p.startswith(only):
+            continue
         items = []
         for c in langs:
             cc, name = META[c]
@@ -71,7 +74,8 @@ def main():
             cls = ' class="active"' if c == lang else ""
             items.append('<a href="%s"%s>%s %s</a>' % (url(c, target), cls, IMG % cc, name))
         cc, name = META[lang]
-        btn = ('<button class="lang-btn" onclick="toggleLang()">%s %s ▾</button>'
+        btn = ('<button class="lang-btn" onclick="toggleLang()" aria-label="Language">'
+           '%s<span class="lang-name">%s</span> ▾</button>'
                % (IMG % cc, name))
         h = open(p, encoding="utf-8").read()
         n = BTN_RE.sub(lambda m: btn, h, count=1)

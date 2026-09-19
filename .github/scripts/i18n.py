@@ -13,13 +13,16 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 BASE = "https://calculator-free.com"
 
 # Switcher / hreflang order. Keep in sync with LANG_META below.
+# Switcher / hreflang order. MUST list every live language directory, or the
+# languages left out lose reciprocity and Google discards the whole pairing.
 LANGS = ["ar","bg","zh","cs","da","de","el","es","et","fi","fr","ga","hi","hr","hu",
          "id","it","ja","ko","lt","lv","mt","nl","no","pl","pt","ro","ru","sk","sl",
-         "sv","tr","uk","vi"]
+         "sv","tr","uk","vi",
+         "af","fa","he","mk","ms","sq","sr","sw","th","tl"]
 EN_REGIONS = ["en-GB","en-US","en-AU","en-CA","en-IE"]
 
 # Dirs that are not languages / not deployable.
-SKIP_DIRS = {".git","_stage","node_modules",".wrangler",".github","cdn-cgi","th"}
+SKIP_DIRS = {".git","_stage","node_modules",".wrangler",".github","cdn-cgi","functions"}
 SKIP_FILES = {"404.html"}
 
 ALT_RE = re.compile(r'^[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">[ \t]*\r?\n', re.M)
@@ -67,9 +70,11 @@ def alt_pairs(key, langs):
     return out
 
 
-def write_hreflang(pages, clusters):
+def write_hreflang(pages, clusters, only=()):
     changed = 0
     for ap, lang, key in pages:
+        if only and not os.path.relpath(ap, ROOT).replace(os.sep, "/").startswith(only):
+            continue
         pairs = alt_pairs(key, clusters[key])
         block = "".join('<link rel="alternate" hreflang="%s" href="%s">\n' % p for p in pairs)
         with open(ap, encoding="utf-8") as f:
@@ -135,5 +140,7 @@ def write_sitemap(pages, clusters):
 if __name__ == "__main__":
     pages, clusters = inventory()
     print("pages: %d   clusters: %d   languages: %d (+en)" % (len(pages), len(clusters), len(LANGS)))
-    print("hreflang rewritten in %d files" % write_hreflang(pages, clusters))
+    only = tuple(a for a in sys.argv[1:] if a != "--sitemap-only")
+    if "--sitemap-only" not in sys.argv:
+        print("hreflang rewritten in %d files" % write_hreflang(pages, clusters, only))
     print("sitemap urls: %d" % write_sitemap(pages, clusters))

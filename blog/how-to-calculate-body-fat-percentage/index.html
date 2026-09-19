@@ -111,7 +111,24 @@ footer a:hover{color:var(--accent)}
 .gpa-table input{padding:8px 10px}
 .add-row-btn{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;color:var(--text-dim);font-size:.82rem;cursor:pointer;font-family:var(--font);margin-bottom:14px}
 .add-row-btn:hover{color:var(--text)}
-.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}</style>
+.ad-lbl{display:none}.ad-wrap:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-lbl{display:block}ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){padding:0}/*cf-fix-v1*/
+html{overflow-x:clip}
+.ad-wrap ins.adsbygoogle{min-height:280px}
+.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]) ins.adsbygoogle{min-height:0}
+.nav-inner{min-width:0}
+.logo{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.nav-right{flex:0 0 auto}
+@media(max-width:620px){
+.ad-wrap ins.adsbygoogle{min-height:300px}
+.nav-link{display:none}
+.nav-right{gap:6px}
+.logo{font-size:.85rem}
+.lang-btn{padding:6px 8px}
+.theme-btn{padding:6px 8px}
+.lang-name{display:none}
+.lang-drop{max-height:70vh;overflow-y:auto}
+}
+</style>
 <script>
 (function(){var t=localStorage.getItem('cft');if(t==='light')document.documentElement.classList.add('light');}());
 function toggleTheme(){var l=document.documentElement.classList.toggle('light');localStorage.setItem('cft',l?'light':'dark');document.getElementById('themeBtn').textContent=l?'☀️':'🌙';}
@@ -119,6 +136,21 @@ function toggleLang(){document.getElementById('langDrop').classList.toggle('open
 document.addEventListener('click',function(e){var w=document.querySelector('.lang-wrap');if(w&&!w.contains(e.target))document.getElementById('langDrop').classList.remove('open');});
 function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.querySelector('.faq-arr').textContent=a.classList.contains('open')?'−':'+';}
 </script>
+<!--cf-meta-v1-->
+<meta property="og:site_name" content="calculator-free.com">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://calculator-free.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="calculator-free.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate Body Fat Percentage (Navy Method) | calculator-free.com">
+<meta name="twitter:description" content="Learn how to calculate body fat percentage using the US Navy formula. Step-by-step instructions for men and women, with body fat category charts.">
+<meta name="twitter:image" content="https://calculator-free.com/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 </head>
 <body><nav>
 <div class="wrap nav-inner">
@@ -126,7 +158,7 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <div class="nav-right">
     <a href="https://calculator-free.com/" class="nav-link">All Calculators</a>
     <div class="lang-wrap">
-      <button class="lang-btn" onclick="toggleLang()"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English ▾</button>
+      <button class="lang-btn" onclick="toggleLang()" aria-label="Language"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"><span class="lang-name">English</span> ▾</button>
       <div class="lang-drop" id="langDrop"><a href="https://calculator-free.com/blog/how-to-calculate-body-fat-percentage/" class="active"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> English</a>
 <a href="https://calculator-free.com/ar/"><img src="https://flagcdn.com/20x15/sa.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> العربية</a>
 <a href="https://calculator-free.com/bg/"><img src="https://flagcdn.com/20x15/bg.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Български</a>
@@ -160,7 +192,18 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <a href="https://calculator-free.com/sl/"><img src="https://flagcdn.com/20x15/si.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Slovenščina</a>
 <a href="https://calculator-free.com/sv/"><img src="https://flagcdn.com/20x15/se.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Svenska</a>
 <a href="https://calculator-free.com/tr/"><img src="https://flagcdn.com/20x15/tr.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Türkçe</a>
+<a href="https://calculator-free.com/uk/"><img src="https://flagcdn.com/20x15/ua.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Українська</a>
 <a href="https://calculator-free.com/vi/"><img src="https://flagcdn.com/20x15/vn.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Tiếng Việt</a>
+<a href="https://calculator-free.com/af/"><img src="https://flagcdn.com/20x15/za.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Afrikaans</a>
+<a href="https://calculator-free.com/fa/"><img src="https://flagcdn.com/20x15/ir.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> فارسی</a>
+<a href="https://calculator-free.com/he/"><img src="https://flagcdn.com/20x15/il.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> עברית</a>
+<a href="https://calculator-free.com/mk/"><img src="https://flagcdn.com/20x15/mk.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Македонски</a>
+<a href="https://calculator-free.com/ms/"><img src="https://flagcdn.com/20x15/my.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Bahasa Melayu</a>
+<a href="https://calculator-free.com/sq/"><img src="https://flagcdn.com/20x15/al.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Shqip</a>
+<a href="https://calculator-free.com/sr/"><img src="https://flagcdn.com/20x15/rs.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Srpski</a>
+<a href="https://calculator-free.com/sw/"><img src="https://flagcdn.com/20x15/ke.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Kiswahili</a>
+<a href="https://calculator-free.com/th/"><img src="https://flagcdn.com/20x15/th.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> ไทย</a>
+<a href="https://calculator-free.com/tl/"><img src="https://flagcdn.com/20x15/ph.png" width="20" height="15" loading="lazy" alt="" style="vertical-align:-2px;margin-right:5px;border-radius:2px"> Tagalog</a>
 </div></div>
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
   </div>
@@ -187,19 +230,33 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 <p>Take each measurement 3 times and use the average. Measure at the same time of day (morning is best — before eating or drinking) for consistency.</p>
 
 <h2>The US Navy Formula</h2>
-<p><strong>Men:</strong><br>
+<p>The equation comes in two forms. They are not interchangeable: each set of
+constants is fixed to one unit of measurement, so using centimetre measurements
+in the inch version (or the reverse) gives a result that is wrong by several
+percentage points.</p>
+<p><strong>Metric — all measurements in centimetres:</strong></p>
+<p>Men:<br>
+Body Fat % = 495 ÷ (1.0324 − 0.19077 × log₁₀(waist − neck) + 0.15456 × log₁₀(height)) − 450</p>
+<p>Women:<br>
+Body Fat % = 495 ÷ (1.29579 − 0.35004 × log₁₀(waist + hip − neck) + 0.22100 × log₁₀(height)) − 450</p>
+<p><strong>Imperial — all measurements in inches:</strong></p>
+<p>Men:<br>
 Body Fat % = 86.010 × log₁₀(waist − neck) − 70.041 × log₁₀(height) + 36.76</p>
-<p><strong>Women:</strong><br>
+<p>Women:<br>
 Body Fat % = 163.205 × log₁₀(waist + hip − neck) − 97.684 × log₁₀(height) − 78.387</p>
-<p>All measurements in the same unit (all cm or all inches).</p>
+<p>Both forms describe the same Hodgdon–Beckett equation and agree to within a
+few tenths of a percentage point when you convert the measurements properly.</p>
 
 <h2>Example Calculation (Man, Metric)</h2>
 <p>Height: 178 cm, Waist: 85 cm, Neck: 38 cm</p>
-<p>Body Fat % = 86.010 × log₁₀(85 − 38) − 70.041 × log₁₀(178) + 36.76<br>
-= 86.010 × log₁₀(47) − 70.041 × log₁₀(178) + 36.76<br>
-= 86.010 × 1.6721 − 70.041 × 2.2504 + 36.76<br>
-= 143.81 − 157.63 + 36.76<br>
-= <strong>22.9%</strong> — Average category</p>
+<p>Body Fat % = 495 ÷ (1.0324 − 0.19077 × log₁₀(85 − 38) + 0.15456 × log₁₀(178)) − 450<br>
+= 495 ÷ (1.0324 − 0.19077 × 1.6721 + 0.15456 × 2.2504) − 450<br>
+= 495 ÷ (1.0324 − 0.3190 + 0.3478) − 450<br>
+= 495 ÷ 1.0612 − 450<br>
+= 466.4 − 450<br>
+= <strong>16.4%</strong> — Fitness category</p>
+<p>The same man measured in inches (70.1 in tall, 33.5 in waist, 15.0 in neck)
+comes out at 16.5% through the imperial form — the same answer, as it should be.</p>
 
 <h2>Body Fat Percentage Categories</h2>
 <table style="width:100%;border-collapse:collapse;margin:16px 0">

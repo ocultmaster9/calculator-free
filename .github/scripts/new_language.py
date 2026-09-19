@@ -36,7 +36,7 @@ LANG_META = [
 RTL = {"ar", "he", "fa"}
 
 DROP_RE = re.compile(r'(<div class="lang-drop" id="langDrop">).*?(</div>)\s*(</div>)', re.S)
-BTN_RE = re.compile(r'<button class="lang-btn" onclick="toggleLang\(\)">.*?</button>', re.S)
+BTN_RE = re.compile(r'<button class="lang-btn" onclick="toggleLang\(\)"[^>]*>.*?</button>', re.S)
 SCRIPT_RE = re.compile(r'(?s)(<script(?![^>]*ld\+json)[^>]*>.*?</script>)')
 
 
@@ -63,7 +63,8 @@ def switcher(lang, key, langs):
         items.append('<a href="%s"%s>%s %s</a>' % (url(c, key), cls, IMG % cc, name))
     meta = dict((c, (cc, n)) for c, cc, n in LANG_META)
     cc, name = meta[lang]
-    btn = ('<button class="lang-btn" onclick="toggleLang()">%s %s ▾</button>'
+    btn = ('<button class="lang-btn" onclick="toggleLang()" aria-label="Language">'
+           '%s<span class="lang-name">%s</span> ▾</button>'
            % (IMG % cc, name))
     return btn, "\n".join(items)
 
