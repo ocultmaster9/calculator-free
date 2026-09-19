@@ -261,15 +261,15 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>זמן 1 (שע:דק:שנ)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>פעולה</label><select id="tmop" onchange="timecalc()"><option value="add">הוסף (+)</option><option value="sub">החסר (−)</option></select></div>
+    <div class="field"><label for="tm1">זמן 1 (שע:דק:שנ)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label for="tmop">פעולה</label><select id="tmop" onchange="timecalc()"><option value="add">הוסף (+)</option><option value="sub">החסר (−)</option></select></div>
   </div>
-  <div class="field"><label>זמן 2 (שע:דק:שנ)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label for="tm2">זמן 2 (שע:דק:שנ)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>ערך</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>מיחידה</label><select id="tcf" onchange="timecalc()"><option value="s">שניות</option><option value="m">דקות</option><option value="h">שעות</option><option value="d">ימים</option></select></div>
+    <div class="field"><label for="tcv">ערך</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label for="tcf">מיחידה</label><select id="tcf" onchange="timecalc()"><option value="s">שניות</option><option value="m">דקות</option><option value="h">שעות</option><option value="d">ימים</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>

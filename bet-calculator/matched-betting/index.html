@@ -214,10 +214,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </nav><div class="wrap"><div class="hero"><span class="badge">FREE CALCULATOR</span><h1>🔄 Matched Betting Calculator</h1><p>Free matched betting calculator. Work out the exact lay stake, liability and locked-in profit for qualifying bets and free bets (SNR).</p></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">🔄</span><span class="calc-title">Matched Betting Calculator</span></div><div class="calc-body"><div class="tabs"><div class="tab active" id="mb_tabq" onclick="mbTab('q')">Qualifying bet</div><div class="tab" id="mb_tabf" onclick="mbTab('f')">Free bet (SNR)</div></div>
-<div class="row2"><div class="field"><label>Back stake</label><input type="number" id="mb_bs" value="10" min="0" step="0.01" oninput="mbC()"></div>
-<div class="field"><label>Back odds (bookmaker)</label><input type="number" id="mb_bo" value="3.00" min="1.01" step="0.01" oninput="mbC()"></div></div>
-<div class="row2"><div class="field"><label>Lay odds (exchange)</label><input type="number" id="mb_lo" value="3.20" min="1.01" step="0.01" oninput="mbC()"></div>
-<div class="field"><label>Exchange commission (%)</label><input type="number" id="mb_c" value="2" min="0" max="20" step="0.1" oninput="mbC()"></div></div>
+<div class="row2"><div class="field"><label for="mb_bs">Back stake</label><input type="number" id="mb_bs" value="10" min="0" step="0.01" oninput="mbC()"></div>
+<div class="field"><label for="mb_bo">Back odds (bookmaker)</label><input type="number" id="mb_bo" value="3.00" min="1.01" step="0.01" oninput="mbC()"></div></div>
+<div class="row2"><div class="field"><label for="mb_lo">Lay odds (exchange)</label><input type="number" id="mb_lo" value="3.20" min="1.01" step="0.01" oninput="mbC()"></div>
+<div class="field"><label for="mb_c">Exchange commission (%)</label><input type="number" id="mb_c" value="2" min="0" max="20" step="0.1" oninput="mbC()"></div></div>
 <div class="result" id="mb_r">—</div>
 <script>
 var mbMode="q";

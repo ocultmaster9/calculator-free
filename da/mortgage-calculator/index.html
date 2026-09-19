@@ -254,18 +254,32 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">🏠</div></div><div><span class="badge">GRATIS BEREGNER</span><h1>Boliglånsberegner</h1><p>Gratis boliglånsberegner: månedlig ydelse, samlede renter og en fuld amortiseringsplan for ethvert beløb, enhver rente og løbetid. Øjeblikkelige resultater, ingen tilmelding.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Annonce</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">🏠</span><span class="calc-title">Boliglånsberegner</span></div><div class="calc-body">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">🏠</span><span class="calc-title">Boliglånsberegner</span><select id="cfCurSel" aria-label="Currency" onchange="cfSetCur(this.value)" style="width:auto;margin-inline-start:auto;padding:5px 8px;font-size:.78rem;border-radius:8px"><option value="USD">$ USD</option><option value="EUR">€ EUR</option><option value="GBP">£ GBP</option><option value="CHF">CHF CHF</option><option value="CAD">C$ CAD</option><option value="AUD">A$ AUD</option><option value="JPY">¥ JPY</option><option value="CNY">¥ CNY</option><option value="INR">₹ INR</option><option value="KRW">₩ KRW</option><option value="BRL">R$ BRL</option><option value="MXN">MX$ MXN</option><option value="ZAR">R ZAR</option><option value="TRY">₺ TRY</option><option value="RUB">₽ RUB</option><option value="UAH">₴ UAH</option><option value="PLN">zł PLN</option><option value="CZK">Kč CZK</option><option value="HUF">Ft HUF</option><option value="RON">lei RON</option><option value="BGN">лв BGN</option><option value="HRK">kn HRK</option><option value="RSD">din RSD</option><option value="MKD">ден MKD</option><option value="ALL">L ALL</option><option value="SEK">kr SEK</option><option value="NOK">kr NOK</option><option value="DKK">kr DKK</option><option value="ILS">₪ ILS</option><option value="AED">د.إ AED</option><option value="SAR">ر.س SAR</option><option value="EGP">E£ EGP</option><option value="NGN">₦ NGN</option><option value="KES">KSh KES</option><option value="IDR">Rp IDR</option><option value="MYR">RM MYR</option><option value="THB">฿ THB</option><option value="PHP">₱ PHP</option><option value="VND">₫ VND</option><option value="SGD">S$ SGD</option></select></div><div class="calc-body">
 <div class="row2">
-  <div class="field"><label>Boligpris ($)</label><input type="number" id="mp" value="350000" oninput="mort()"></div>
-  <div class="field"><label>Udbetaling ($)</label><input type="number" id="mdp" value="70000" oninput="mort()"></div>
+  <div class="field"><label for="mp">Boligpris (<span class="cf-cur"></span>)</label><input type="number" id="mp" value="350000" oninput="mort()"></div>
+  <div class="field"><label for="mdp">Udbetaling (<span class="cf-cur"></span>)</label><input type="number" id="mdp" value="70000" oninput="mort()"></div>
 </div>
 <div class="row2">
-  <div class="field"><label>Rente (% pr. år)</label><input type="number" id="mr" value="6.5" step="0.01" oninput="mort()"></div>
-  <div class="field"><label>Løbetid (år)</label><input type="number" id="mt" value="30" oninput="mort()"></div>
+  <div class="field"><label for="mr">Rente (% pr. år)</label><input type="number" id="mr" value="6.5" step="0.01" oninput="mort()"></div>
+  <div class="field"><label for="mt">Løbetid (år)</label><input type="number" id="mt" value="30" oninput="mort()"></div>
 </div>
 <div class="result" id="mortResult"></div>
 <script>
-function fmt$(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmt$(n){return cfFmt(n);}
+/*cf-cur-v1*/
+var CFDEF='DKK';
+function cfCur(){try{var v=localStorage.getItem('cfcur');if(v)return v;}catch(e){}return CFDEF;}
+function cfFmt(n,dec){
+  var loc=document.documentElement.lang||'en',c=cfCur(),o={style:'currency',currency:c};
+  if(dec!=null){o.minimumFractionDigits=dec;o.maximumFractionDigits=dec;}
+  try{return new Intl.NumberFormat(loc,o).format(n);}
+  catch(e){return c+'\u00a0'+(dec!=null?n.toFixed(dec):Math.round(n));}
+}
+function cfCurLabels(){var c=cfCur();
+  Array.prototype.forEach.call(document.querySelectorAll('.cf-cur'),function(s){s.textContent=c;});
+  var sel=document.getElementById('cfCurSel');if(sel)sel.value=c;}
+function cfSetCur(v){try{localStorage.setItem('cfcur',v);}catch(e){}cfCurLabels();mort();}
+
 function mort(){
   var P=+document.getElementById('mp').value-(+document.getElementById('mdp').value||0);
   var r=+document.getElementById('mr').value/100/12;
@@ -275,6 +289,7 @@ function mort(){
   var total=M*n;
   document.getElementById('mortResult').innerHTML='Månedlig ydelse: <strong>'+fmt$(M)+'</strong><br>Betalt i alt: '+fmt$(total)+'<br>Renter i alt: '+fmt$(total-P);
 }
+cfCurLabels();
 mort();
 </script></div></div><div class="seo-section"><h2>Sådan beregner du din månedlige boliglånsydelse</h2><p>Din månedlige boliglånsydelse beregnes med denne formel: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong>, hvor P er lånets hovedstol, r er den månedlige rente (årlig rente ÷ 12), og n er antallet af ydelser (år × 12).</p>
 <p>Eksempel: et lån på 300.000 USD til 6,5 % over 30 år → månedlig rente = 0,065/12 = 0,005417, n = 360 ydelser → månedlig ydelse = <strong>$1,896</strong>. Samlet betalt = 682.560 USD. Samlede renter = 382.560 USD — mere end selve lånet.</p>

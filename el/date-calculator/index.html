@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Προσθήκη / Αφαίρεση Ημερών</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Ημερομηνία Έναρξης</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Ημερομηνία Λήξης</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Ημερομηνία Έναρξης</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Ημερομηνία Λήξης</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Ημερομηνία Έναρξης</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Ημέρες προς Προσθήκη (+) / Αφαίρεση (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Ημερομηνία Έναρξης</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Ημέρες προς Προσθήκη (+) / Αφαίρεση (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Επιλέξτε ημερομηνίες παραπάνω</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Επιλέξτε μια έγκυρη ημερομηνία';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Αποτέλεσμα: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Αποτέλεσμα: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Πώς να Υπολογίσετε τις Ημέρες Μεταξύ Δύο Ημερομηνιών</h2><p>Ο απλούστερος τρόπος για να βρείτε τις ημέρες μεταξύ ημερομηνιών είναι να μετατρέψετε και τις δύο ημερομηνίες σε αριθμό ημερών από ένα σταθερό σημείο αναφοράς, και μετά να αφαιρέσετε. Η αριθμομηχανή μας το κάνει αυτόματα για οποιοδήποτε ζεύγος ημερομηνιών.</p>

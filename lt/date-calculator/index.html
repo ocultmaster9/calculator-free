@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Pridėti / Atimti Dienas</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Pradžios Data</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Pabaigos Data</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Pradžios Data</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Pabaigos Data</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Pradžios Data</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Dienos Pridėjimui (+) / Atėmimui (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Pradžios Data</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Dienos Pridėjimui (+) / Atėmimui (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Pasirinkite datas aukščiau</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Pasirinkite galiojančią datą';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Rezultatas: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Rezultatas: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Kaip Apskaičiuoti Dienas Tarp Dviejų Datų</h2><p>Paprasčiausias būdas rasti dienas tarp datų yra konvertuoti abi datas į dienų skaičių nuo fiksuoto atskaitos taško, tada atimti. Mūsų skaičiuoklė tai daro automatiškai bet kuriai datų porai.</p>

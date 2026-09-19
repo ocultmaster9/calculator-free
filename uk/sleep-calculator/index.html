@@ -260,16 +260,16 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setSleepTab(1,this)">Я хочу лягти спати о...</button>
 </div>
 <div id="sl0">
-  <div class="field"><label>Час Пробудження</label><input type="time" id="slwake" value="07:00" oninput="sleepCalc()"></div>
+  <div class="field"><label for="slwake">Час Пробудження</label><input type="time" id="slwake" value="07:00" oninput="sleepCalc()"></div>
 </div>
 <div id="sl1" style="display:none">
-  <div class="field"><label>Час Сну</label><input type="time" id="slbed" value="23:00" oninput="sleepCalc()"></div>
+  <div class="field"><label for="slbed">Час Сну</label><input type="time" id="slbed" value="23:00" oninput="sleepCalc()"></div>
 </div>
 <div class="result" id="sleepResult"></div>
 <script>
 var sleepTab=0;
 function setSleepTab(i,el){sleepTab=i;document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));document.getElementById('sl0').style.display=i===0?'':'none';document.getElementById('sl1').style.display=i===1?'':'none';sleepCalc();}
-function fmtTime(mins){var h=Math.floor(((mins%1440)+1440)%1440/60),m=((mins%1440)+1440)%1440%60;var ampm=h>=12?'PM':'AM';h=h%12||12;return h+':'+(m<10?'0':'')+m+' '+ampm;}
+function fmtTime(mins){var t=((mins%1440)+1440)%1440,h=Math.floor(t/60),m=t%60;try{return new Date(2000,0,1,h,m).toLocaleTimeString((document.documentElement.lang||'en'),{hour:'numeric',minute:'2-digit'});}catch(e){return (h<10?'0':'')+h+':'+(m<10?'0':'')+m;}}
 function sleepCalc(){
   var r=document.getElementById('sleepResult');
   var fallAsleep=14;

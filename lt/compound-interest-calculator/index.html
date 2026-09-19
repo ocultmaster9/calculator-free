@@ -254,18 +254,32 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">📈</div></div><div><span class="badge">NEMOKAMA SKAIČIUOKLĖ</span><h1>Sudėtinių Palūkanų Skaičiuoklė</h1><p>Apskaičiuokite sudėtinių palūkanų augimą laikui bėgant. Pamatykite, kaip auga jūsų investicija su mėnesiniu, ketvirtiniu ar metiniu kapitalizavimu.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Reklama</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">📈</span><span class="calc-title">Sudėtinių Palūkanų Skaičiuoklė</span></div><div class="calc-body">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">📈</span><span class="calc-title">Sudėtinių Palūkanų Skaičiuoklė</span><select id="cfCurSel" aria-label="Currency" onchange="cfSetCur(this.value)" style="width:auto;margin-inline-start:auto;padding:5px 8px;font-size:.78rem;border-radius:8px"><option value="USD">$ USD</option><option value="EUR">€ EUR</option><option value="GBP">£ GBP</option><option value="CHF">CHF CHF</option><option value="CAD">C$ CAD</option><option value="AUD">A$ AUD</option><option value="JPY">¥ JPY</option><option value="CNY">¥ CNY</option><option value="INR">₹ INR</option><option value="KRW">₩ KRW</option><option value="BRL">R$ BRL</option><option value="MXN">MX$ MXN</option><option value="ZAR">R ZAR</option><option value="TRY">₺ TRY</option><option value="RUB">₽ RUB</option><option value="UAH">₴ UAH</option><option value="PLN">zł PLN</option><option value="CZK">Kč CZK</option><option value="HUF">Ft HUF</option><option value="RON">lei RON</option><option value="BGN">лв BGN</option><option value="HRK">kn HRK</option><option value="RSD">din RSD</option><option value="MKD">ден MKD</option><option value="ALL">L ALL</option><option value="SEK">kr SEK</option><option value="NOK">kr NOK</option><option value="DKK">kr DKK</option><option value="ILS">₪ ILS</option><option value="AED">د.إ AED</option><option value="SAR">ر.س SAR</option><option value="EGP">E£ EGP</option><option value="NGN">₦ NGN</option><option value="KES">KSh KES</option><option value="IDR">Rp IDR</option><option value="MYR">RM MYR</option><option value="THB">฿ THB</option><option value="PHP">₱ PHP</option><option value="VND">₫ VND</option><option value="SGD">S$ SGD</option></select></div><div class="calc-body">
 <div class="row2">
-  <div class="field"><label>Pagrindinė Suma ($)</label><input type="number" id="cip" value="10000" oninput="ci()"></div>
-  <div class="field"><label>Metinė Norma (%)</label><input type="number" id="cir" value="7" step="0.01" oninput="ci()"></div>
+  <div class="field"><label for="cip">Pagrindinė Suma (<span class="cf-cur"></span>)</label><input type="number" id="cip" value="10000" oninput="ci()"></div>
+  <div class="field"><label for="cir">Metinė Norma (%)</label><input type="number" id="cir" value="7" step="0.01" oninput="ci()"></div>
 </div>
 <div class="row2">
-  <div class="field"><label>Kapitalizavimai per Metus</label><select id="cin" onchange="ci()"><option value="365">Kasdien (365)</option><option value="12" selected>Kas Mėnesį (12)</option><option value="4">Kas Ketvirtį (4)</option><option value="2">Kas Pusmetį (2)</option><option value="1">Kasmet (1)</option></select></div>
-  <div class="field"><label>Metai</label><input type="number" id="cit" value="20" oninput="ci()"></div>
+  <div class="field"><label for="cin">Kapitalizavimai per Metus</label><select id="cin" onchange="ci()"><option value="365">Kasdien (365)</option><option value="12" selected>Kas Mėnesį (12)</option><option value="4">Kas Ketvirtį (4)</option><option value="2">Kas Pusmetį (2)</option><option value="1">Kasmet (1)</option></select></div>
+  <div class="field"><label for="cit">Metai</label><input type="number" id="cit" value="20" oninput="ci()"></div>
 </div>
 <div class="result" id="ciResult"></div>
 <script>
-function fmt$(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmt$(n){return cfFmt(n);}
+/*cf-cur-v1*/
+var CFDEF='EUR';
+function cfCur(){try{var v=localStorage.getItem('cfcur');if(v)return v;}catch(e){}return CFDEF;}
+function cfFmt(n,dec){
+  var loc=document.documentElement.lang||'en',c=cfCur(),o={style:'currency',currency:c};
+  if(dec!=null){o.minimumFractionDigits=dec;o.maximumFractionDigits=dec;}
+  try{return new Intl.NumberFormat(loc,o).format(n);}
+  catch(e){return c+'\u00a0'+(dec!=null?n.toFixed(dec):Math.round(n));}
+}
+function cfCurLabels(){var c=cfCur();
+  Array.prototype.forEach.call(document.querySelectorAll('.cf-cur'),function(s){s.textContent=c;});
+  var sel=document.getElementById('cfCurSel');if(sel)sel.value=c;}
+function cfSetCur(v){try{localStorage.setItem('cfcur',v);}catch(e){}cfCurLabels();ci();}
+
 function ci(){
   var P=+document.getElementById('cip').value||0;
   var r=+document.getElementById('cir').value/100;
@@ -275,6 +289,7 @@ function ci(){
   var gain=A-P;
   document.getElementById('ciResult').innerHTML='Galutinė suma: <strong>'+fmt$(A)+'</strong><br>Uždirbtos palūkanos: '+fmt$(gain)+(P>0?' ('+Math.round(gain/P*100)+'% pelnas)':'');
 }
+cfCurLabels();
 ci();
 </script></div></div><div class="seo-section"><h2>Sudėtinių Palūkanų Formulės Paaiškinimas</h2><p>Sudėtinių palūkanų formulė yra: <strong>A = P(1 + r/n)^(nt)</strong>, kur A yra galutinė suma, P yra pagrindinė suma, r yra metinė palūkanų norma (dešimtaine trupmena), n yra kartų, kai palūkanos kapitalizuojamos per metus, skaičius, o t yra laikas metais.</p>
 <p>Pavyzdys: 10 000 $, investuoti 7% palūkanomis su mėnesiniu kapitalizavimu 20 metų: A = 10 000 × (1 + 0,07/12)^(12×20) = 10 000 × (1,00583)^240 = <strong>$40,170</strong>. 30 170 $ pelnas yra grynas sudėtinis augimas nuo pradinių 10 000 $.</p>

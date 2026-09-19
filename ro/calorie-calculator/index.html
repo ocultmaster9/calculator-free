@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Femeie</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Vârstă (ani)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Greutate (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Înălțime (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Vârstă (ani)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Greutate (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Înălțime (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Nivel de activitate</label>
+<div class="field"><label for="cact">Nivel de activitate</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Sedentar (puțină mișcare sau deloc)</option>
     <option value="1.375">Ușor activ (1–3 zile/săptămână)</option>

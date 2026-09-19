@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Pievienot / Atņemt Dienas</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Sākuma Datums</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Beigu Datums</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Sākuma Datums</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Beigu Datums</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Sākuma Datums</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Pievienojamās (+) / Atņemamās (−) Dienas</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Sākuma Datums</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Pievienojamās (+) / Atņemamās (−) Dienas</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Izvēlieties datumus iepriekš</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Izvēlieties derīgu datumu';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Rezultāts: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Rezultāts: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Kā Aprēķināt Dienas Starp Divām Datumiem</h2><p>Vienkāršākais veids, kā atrast dienas starp datumiem, ir konvertēt abus datumus uz dienu skaitu no fiksēta atsauces punkta, tad atņemt. Mūsu kalkulators to dara automātiski jebkuram datumu pārim.</p>

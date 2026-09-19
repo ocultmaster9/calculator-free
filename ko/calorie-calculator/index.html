@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> 여성</label>
 </div>
 <div class="row3">
-  <div class="field"><label>나이 (세)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>몸무게 (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>키 (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">나이 (세)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">몸무게 (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">키 (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>활동량</label>
+<div class="field"><label for="cact">활동량</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">거의 안 움직임 (운동을 거의 하지 않음)</option>
     <option value="1.375">가벼운 활동 (주 1~3일)</option>

@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">הוסף / החסר ימים</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>תאריך התחלה</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>תאריך סיום</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">תאריך התחלה</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">תאריך סיום</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>תאריך התחלה</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>ימים להוסיף (+) / להחסיר (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">תאריך התחלה</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">ימים להוסיף (+) / להחסיר (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">בחר תאריכים למעלה</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='בחר תאריך תקף';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='תוצאה: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='תוצאה: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>כיצד לחשב ימים בין שני תאריכים</h2><p>הדרך הפשוטה ביותר למצוא ימים בין תאריכים היא להמיר את שני התאריכים לספירת ימים מנקודת ייחוס קבועה, ואז לחסר. המחשבון שלנו עושה זאת אוטומטית עבור כל זוג תאריכים.</p>

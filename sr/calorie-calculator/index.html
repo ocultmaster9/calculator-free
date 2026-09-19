@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Žensko</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Starost (godine)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Težina (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Visina (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Starost (godine)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Težina (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Visina (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Nivo aktivnosti</label>
+<div class="field"><label for="cact">Nivo aktivnosti</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Sedentaran (malo ili nimalo vežbanja)</option>
     <option value="1.375">Lako aktivan (1-3 dana/nedeljno)</option>

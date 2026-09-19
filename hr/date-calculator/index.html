@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Dodaj / Oduzmi Dane</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Početni Datum</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Krajnji Datum</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Početni Datum</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Krajnji Datum</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Početni Datum</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Dani za Dodati (+) / Oduzeti (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Početni Datum</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Dani za Dodati (+) / Oduzeti (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Odaberite datume iznad</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Odaberite valjan datum';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Rezultat: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Rezultat: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Kako Izračunati Dane Između Dva Datuma</h2><p>Najjednostavniji način pronalaženja dana između datuma je pretvoriti oba datuma u broj dana od fiksne referentne točke, a zatim oduzeti. Naš kalkulator to automatski radi za bilo koji par datuma.</p>

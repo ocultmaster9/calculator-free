@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Додај / Одземи денови</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Почетен датум</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Краен датум</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Почетен датум</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Краен датум</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Почетен датум</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Денови за додавање (+) / одземање (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Почетен датум</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Денови за додавање (+) / одземање (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Избери датуми погоре</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Изберете валиден датум';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Резултат: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Резултат: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Како да ги пресметаш деновите меѓу два датуми</h2><p>Наједноставниот начин да се најдат денови меѓу датуми е да се конвертираат двата датума во број на денови од фиксна референтна точка, а потоа да се одземе. Нашиот калкулатор го прави тоа автоматски за секој пар датуми.</p>

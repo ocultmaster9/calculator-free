@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Mujer</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Edad (años)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Peso (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Altura (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Edad (años)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Peso (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Altura (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Nivel de actividad</label>
+<div class="field"><label for="cact">Nivel de actividad</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Sedentario (poco o ningún ejercicio)</option>
     <option value="1.375">Poco activo (1–3 días por semana)</option>

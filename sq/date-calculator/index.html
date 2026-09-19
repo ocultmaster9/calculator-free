@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Shto / Zbrit Ditë</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Data e Fillimit</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Data e Përfundimit</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Data e Fillimit</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Data e Përfundimit</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Data e Fillimit</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Ditë për të Shtuar (+) / Zbritur (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Data e Fillimit</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Ditë për të Shtuar (+) / Zbritur (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Zgjidh datat më sipër</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Zgjidh një datë të vlefshme';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Rezultati: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Rezultati: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Si të Llogarisësh Ditët Midis Dy Datave</h2><p>Mënyra më e thjeshtë për të gjetur ditët midis datave është të konvertosh të dyja datat në një numërim ditësh nga një pikë referimi fikse, pastaj të zbresësh. Kalkulatori ynë e bën këtë automatikisht për çdo çift datash.</p>

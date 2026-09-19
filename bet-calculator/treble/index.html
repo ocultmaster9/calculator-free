@@ -213,10 +213,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><span class="badge">FREE CALCULATOR</span><h1>3️⃣ Treble Calculator</h1><p>Free treble bet calculator. Enter three selections and your stake to instantly work out total odds, returns and profit on a treble.</p></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">3️⃣</span><span class="calc-title">Treble Calculator</span></div><div class="calc-body"><div class="field"><label>Total Stake</label><input type="number" id="tr_s" value="10" min="0" step="0.01" oninput="trC()"></div>
-<div class="row3"><div class="field"><label>Odds 1</label><input type="number" class="tr_o" value="2.00" min="1" step="0.01" oninput="trC()"></div>
-<div class="field"><label>Odds 2</label><input type="number" class="tr_o" value="1.80" min="1" step="0.01" oninput="trC()"></div>
-<div class="field"><label>Odds 3</label><input type="number" class="tr_o" value="3.00" min="1" step="0.01" oninput="trC()"></div></div>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">3️⃣</span><span class="calc-title">Treble Calculator</span></div><div class="calc-body"><div class="field"><label for="tr_s">Total Stake</label><input type="number" id="tr_s" value="10" min="0" step="0.01" oninput="trC()"></div>
+<div class="row3"><div class="field"><label for="cf-f1">Odds 1</label><input id="cf-f1" type="number" class="tr_o" value="2.00" min="1" step="0.01" oninput="trC()"></div>
+<div class="field"><label for="cf-f2">Odds 2</label><input id="cf-f2" type="number" class="tr_o" value="1.80" min="1" step="0.01" oninput="trC()"></div>
+<div class="field"><label for="cf-f3">Odds 3</label><input id="cf-f3" type="number" class="tr_o" value="3.00" min="1" step="0.01" oninput="trC()"></div></div>
 <div class="result" id="tr_r">—</div>
 <script>
 function trC(){var s=+document.getElementById("tr_s").value||0;var o=[].map.call(document.querySelectorAll(".tr_o"),function(i){return +i.value||0;});var p=o[0]*o[1]*o[2];var ret=s*p;document.getElementById("tr_r").innerHTML="Total odds "+p.toFixed(2)+"<br>Returns $"+ret.toFixed(2)+" &middot; Profit $"+(ret-s).toFixed(2);}

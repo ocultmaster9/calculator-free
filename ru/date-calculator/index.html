@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Прибавить / вычесть дни</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Дата начала</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Дата окончания</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Дата начала</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Дата окончания</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Дата начала</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Дней прибавить (+) / вычесть (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Дата начала</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Дней прибавить (+) / вычесть (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Выберите даты выше</div>
 <script>

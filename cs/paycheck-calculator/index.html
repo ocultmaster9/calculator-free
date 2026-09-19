@@ -254,20 +254,34 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">💵</div></div><div><span class="badge">KALKULAČKA ZDARMA</span><h1>Kalkulačka čisté mzdy</h1><p>Bezplatná kalkulačka mzdy: čistý příjem po federální dani z příjmu, Social Security a Medicare. Zadejte hodinovou sazbu nebo roční plat pro okamžitý výsledek.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Reklama</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">💵</span><span class="calc-title">Kalkulačka čisté mzdy</span></div><div class="calc-body">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">💵</span><span class="calc-title">Kalkulačka čisté mzdy</span><select id="cfCurSel" aria-label="Currency" onchange="cfSetCur(this.value)" style="width:auto;margin-inline-start:auto;padding:5px 8px;font-size:.78rem;border-radius:8px"><option value="USD">$ USD</option><option value="EUR">€ EUR</option><option value="GBP">£ GBP</option><option value="CHF">CHF CHF</option><option value="CAD">C$ CAD</option><option value="AUD">A$ AUD</option><option value="JPY">¥ JPY</option><option value="CNY">¥ CNY</option><option value="INR">₹ INR</option><option value="KRW">₩ KRW</option><option value="BRL">R$ BRL</option><option value="MXN">MX$ MXN</option><option value="ZAR">R ZAR</option><option value="TRY">₺ TRY</option><option value="RUB">₽ RUB</option><option value="UAH">₴ UAH</option><option value="PLN">zł PLN</option><option value="CZK">Kč CZK</option><option value="HUF">Ft HUF</option><option value="RON">lei RON</option><option value="BGN">лв BGN</option><option value="HRK">kn HRK</option><option value="RSD">din RSD</option><option value="MKD">ден MKD</option><option value="ALL">L ALL</option><option value="SEK">kr SEK</option><option value="NOK">kr NOK</option><option value="DKK">kr DKK</option><option value="ILS">₪ ILS</option><option value="AED">د.إ AED</option><option value="SAR">ر.س SAR</option><option value="EGP">E£ EGP</option><option value="NGN">₦ NGN</option><option value="KES">KSh KES</option><option value="IDR">Rp IDR</option><option value="MYR">RM MYR</option><option value="THB">฿ THB</option><option value="PHP">₱ PHP</option><option value="VND">₫ VND</option><option value="SGD">S$ SGD</option></select></div><div class="calc-body">
 <div class="row2">
-  <div class="field"><label>Hrubá mzda ($)</label><input type="number" id="pcgross" value="3000" oninput="pcCalc()"></div>
-  <div class="field"><label>Výplatní období</label><select id="pcperiod" onchange="pcCalc()"><option value="26">Jednou za 2 týdny</option><option value="24">Dvakrát měsíčně</option><option value="12">Měsíčně</option><option value="52">Týdně</option></select></div>
+  <div class="field"><label for="pcgross">Hrubá mzda (<span class="cf-cur"></span>)</label><input type="number" id="pcgross" value="3000" oninput="pcCalc()"></div>
+  <div class="field"><label for="pcperiod">Výplatní období</label><select id="pcperiod" onchange="pcCalc()"><option value="26">Jednou za 2 týdny</option><option value="24">Dvakrát měsíčně</option><option value="12">Měsíčně</option><option value="52">Týdně</option></select></div>
 </div>
 <div class="row2">
-  <div class="field"><label>Daňový status</label><select id="pcfil" onchange="pcCalc()"><option value="single">Svobodný/á</option><option value="mfj">Manželé, společné přiznání</option></select></div>
-  <div class="field"><label>Odpočty před zdaněním ($)</label><input type="number" id="pcded" value="0" oninput="pcCalc()"></div>
+  <div class="field"><label for="pcfil">Daňový status</label><select id="pcfil" onchange="pcCalc()"><option value="single">Svobodný/á</option><option value="mfj">Manželé, společné přiznání</option></select></div>
+  <div class="field"><label for="pcded">Odpočty před zdaněním (<span class="cf-cur"></span>)</label><input type="number" id="pcded" value="0" oninput="pcCalc()"></div>
 </div>
 <div class="result" id="pcResult"></div>
 <script>
 var brackets={single:[[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]],mfj:[[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]]};
 var stdDed={single:16100,mfj:32200};
-function fmt$(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmt$(n){return cfFmt(n);}
+/*cf-cur-v1*/
+var CFDEF='CZK';
+function cfCur(){try{var v=localStorage.getItem('cfcur');if(v)return v;}catch(e){}return CFDEF;}
+function cfFmt(n,dec){
+  var loc=document.documentElement.lang||'en',c=cfCur(),o={style:'currency',currency:c};
+  if(dec!=null){o.minimumFractionDigits=dec;o.maximumFractionDigits=dec;}
+  try{return new Intl.NumberFormat(loc,o).format(n);}
+  catch(e){return c+'\u00a0'+(dec!=null?n.toFixed(dec):Math.round(n));}
+}
+function cfCurLabels(){var c=cfCur();
+  Array.prototype.forEach.call(document.querySelectorAll('.cf-cur'),function(s){s.textContent=c;});
+  var sel=document.getElementById('cfCurSel');if(sel)sel.value=c;}
+function cfSetCur(v){try{localStorage.setItem('cfcur',v);}catch(e){}cfCurLabels();pcCalc();}
+
 function pcCalc(){
   var gross=+document.getElementById('pcgross').value||0;
   var periods=+document.getElementById('pcperiod').value;
@@ -290,6 +304,7 @@ function pcCalc(){
     '<strong>Čistá mzda: '+fmt$(net)+'</strong> za období<br>'+
     'Ročně čistého: '+fmt$(net*periods);
 }
+cfCurLabels();
 pcCalc();
 </script></div></div><div class="seo-section"><h2>Jak spočítat čistou mzdu</h2><p>Vaše čistá mzda je hrubá mzda minus federální daň z příjmu, daň Social Security, daň Medicare, státní daň z příjmu a veškeré odpočty před zdaněním (zdravotní pojištění, příspěvky do 401k). Tato kalkulačka se zaměřuje na federální daně pro rok 2026.</p>
 <p><strong>Federální daň z příjmu (pásma 2026, svobodný/á):</strong></p>

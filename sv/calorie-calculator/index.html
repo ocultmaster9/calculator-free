@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Kvinna</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Ålder (år)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Vikt (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Längd (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Ålder (år)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Vikt (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Längd (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Aktivitetsnivå</label>
+<div class="field"><label for="cact">Aktivitetsnivå</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Stillasittande (lite eller ingen träning)</option>
     <option value="1.375">Lätt aktiv (1–3 dagar/vecka)</option>

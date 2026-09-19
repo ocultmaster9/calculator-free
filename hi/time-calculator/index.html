@@ -261,15 +261,15 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>समय 1 (घघ:मिमि:सेसे)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>संक्रिया</label><select id="tmop" onchange="timecalc()"><option value="add">जोड़ें (+)</option><option value="sub">घटाएँ (−)</option></select></div>
+    <div class="field"><label for="tm1">समय 1 (घघ:मिमि:सेसे)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label for="tmop">संक्रिया</label><select id="tmop" onchange="timecalc()"><option value="add">जोड़ें (+)</option><option value="sub">घटाएँ (−)</option></select></div>
   </div>
-  <div class="field"><label>समय 2 (घघ:मिमि:सेसे)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label for="tm2">समय 2 (घघ:मिमि:सेसे)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>मान</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>स्रोत इकाई</label><select id="tcf" onchange="timecalc()"><option value="s">सेकंड</option><option value="m">मिनट</option><option value="h">घंटे</option><option value="d">दिन</option></select></div>
+    <div class="field"><label for="tcv">मान</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label for="tcf">स्रोत इकाई</label><select id="tcf" onchange="timecalc()"><option value="s">सेकंड</option><option value="m">मिनट</option><option value="h">घंटे</option><option value="d">दिन</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>

@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">일수 더하기 / 빼기</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>시작일</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>종료일</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">시작일</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">종료일</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>시작일</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>더할 (+) / 뺄 (−) 일수</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">시작일</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">더할 (+) / 뺄 (−) 일수</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">위에서 날짜를 선택하세요</div>
 <script>

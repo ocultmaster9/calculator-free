@@ -261,15 +261,15 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>Време 1 (ЧЧ:ММ:СС)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>Операција</label><select id="tmop" onchange="timecalc()"><option value="add">Додади (+)</option><option value="sub">Одземи (−)</option></select></div>
+    <div class="field"><label for="tm1">Време 1 (ЧЧ:ММ:СС)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label for="tmop">Операција</label><select id="tmop" onchange="timecalc()"><option value="add">Додади (+)</option><option value="sub">Одземи (−)</option></select></div>
   </div>
-  <div class="field"><label>Време 2 (ЧЧ:ММ:СС)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label for="tm2">Време 2 (ЧЧ:ММ:СС)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>Вредност</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>Од единица</label><select id="tcf" onchange="timecalc()"><option value="s">Секунди</option><option value="m">Минути</option><option value="h">Часови</option><option value="d">Денови</option></select></div>
+    <div class="field"><label for="tcv">Вредност</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label for="tcf">Од единица</label><select id="tcf" onchange="timecalc()"><option value="s">Секунди</option><option value="m">Минути</option><option value="h">Часови</option><option value="d">Денови</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>

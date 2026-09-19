@@ -254,18 +254,32 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">📈</div></div><div><span class="badge">INGYENES KALKULÁTOR</span><h1>Kamatos Kamat Kalkulátor</h1><p>Számítsa ki a kamatos kamat növekedését az idő múlásával. Nézze meg, hogyan növekszik a befektetése havi, negyedéves vagy éves kamatozással.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Hirdetés</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">📈</span><span class="calc-title">Kamatos Kamat Kalkulátor</span></div><div class="calc-body">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">📈</span><span class="calc-title">Kamatos Kamat Kalkulátor</span><select id="cfCurSel" aria-label="Currency" onchange="cfSetCur(this.value)" style="width:auto;margin-inline-start:auto;padding:5px 8px;font-size:.78rem;border-radius:8px"><option value="USD">$ USD</option><option value="EUR">€ EUR</option><option value="GBP">£ GBP</option><option value="CHF">CHF CHF</option><option value="CAD">C$ CAD</option><option value="AUD">A$ AUD</option><option value="JPY">¥ JPY</option><option value="CNY">¥ CNY</option><option value="INR">₹ INR</option><option value="KRW">₩ KRW</option><option value="BRL">R$ BRL</option><option value="MXN">MX$ MXN</option><option value="ZAR">R ZAR</option><option value="TRY">₺ TRY</option><option value="RUB">₽ RUB</option><option value="UAH">₴ UAH</option><option value="PLN">zł PLN</option><option value="CZK">Kč CZK</option><option value="HUF">Ft HUF</option><option value="RON">lei RON</option><option value="BGN">лв BGN</option><option value="HRK">kn HRK</option><option value="RSD">din RSD</option><option value="MKD">ден MKD</option><option value="ALL">L ALL</option><option value="SEK">kr SEK</option><option value="NOK">kr NOK</option><option value="DKK">kr DKK</option><option value="ILS">₪ ILS</option><option value="AED">د.إ AED</option><option value="SAR">ر.س SAR</option><option value="EGP">E£ EGP</option><option value="NGN">₦ NGN</option><option value="KES">KSh KES</option><option value="IDR">Rp IDR</option><option value="MYR">RM MYR</option><option value="THB">฿ THB</option><option value="PHP">₱ PHP</option><option value="VND">₫ VND</option><option value="SGD">S$ SGD</option></select></div><div class="calc-body">
 <div class="row2">
-  <div class="field"><label>Tőke ($)</label><input type="number" id="cip" value="10000" oninput="ci()"></div>
-  <div class="field"><label>Éves Kamatláb (%)</label><input type="number" id="cir" value="7" step="0.01" oninput="ci()"></div>
+  <div class="field"><label for="cip">Tőke (<span class="cf-cur"></span>)</label><input type="number" id="cip" value="10000" oninput="ci()"></div>
+  <div class="field"><label for="cir">Éves Kamatláb (%)</label><input type="number" id="cir" value="7" step="0.01" oninput="ci()"></div>
 </div>
 <div class="row2">
-  <div class="field"><label>Kamatozás Évente</label><select id="cin" onchange="ci()"><option value="365">Napi (365)</option><option value="12" selected>Havi (12)</option><option value="4">Negyedéves (4)</option><option value="2">Féléves (2)</option><option value="1">Éves (1)</option></select></div>
-  <div class="field"><label>Évek</label><input type="number" id="cit" value="20" oninput="ci()"></div>
+  <div class="field"><label for="cin">Kamatozás Évente</label><select id="cin" onchange="ci()"><option value="365">Napi (365)</option><option value="12" selected>Havi (12)</option><option value="4">Negyedéves (4)</option><option value="2">Féléves (2)</option><option value="1">Éves (1)</option></select></div>
+  <div class="field"><label for="cit">Évek</label><input type="number" id="cit" value="20" oninput="ci()"></div>
 </div>
 <div class="result" id="ciResult"></div>
 <script>
-function fmt$(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmt$(n){return cfFmt(n);}
+/*cf-cur-v1*/
+var CFDEF='HUF';
+function cfCur(){try{var v=localStorage.getItem('cfcur');if(v)return v;}catch(e){}return CFDEF;}
+function cfFmt(n,dec){
+  var loc=document.documentElement.lang||'en',c=cfCur(),o={style:'currency',currency:c};
+  if(dec!=null){o.minimumFractionDigits=dec;o.maximumFractionDigits=dec;}
+  try{return new Intl.NumberFormat(loc,o).format(n);}
+  catch(e){return c+'\u00a0'+(dec!=null?n.toFixed(dec):Math.round(n));}
+}
+function cfCurLabels(){var c=cfCur();
+  Array.prototype.forEach.call(document.querySelectorAll('.cf-cur'),function(s){s.textContent=c;});
+  var sel=document.getElementById('cfCurSel');if(sel)sel.value=c;}
+function cfSetCur(v){try{localStorage.setItem('cfcur',v);}catch(e){}cfCurLabels();ci();}
+
 function ci(){
   var P=+document.getElementById('cip').value||0;
   var r=+document.getElementById('cir').value/100;
@@ -275,6 +289,7 @@ function ci(){
   var gain=A-P;
   document.getElementById('ciResult').innerHTML='Végösszeg: <strong>'+fmt$(A)+'</strong><br>Kamatozott összeg: '+fmt$(gain)+(P>0?' ('+Math.round(gain/P*100)+'% nyereség)':'');
 }
+cfCurLabels();
 ci();
 </script></div></div><div class="seo-section"><h2>A Kamatos Kamat Képlet Magyarázata</h2><p>A kamatos kamat képlete: <strong>A = P(1 + r/n)^(nt)</strong>, ahol A a végösszeg, P a tőke, r az éves kamatláb (tizedesként), n a kamatozás gyakorisága évente, és t az idő években.</p>
 <p>Példa: 10 000 $ befektetve 7%-on havi kamatozással 20 évre: A = 10 000 × (1 + 0,07/12)^(12×20) = 10 000 × (1,00583)^240 = <strong>$40,170</strong>. A 30 170 $ nyereség tiszta kamatos kamat növekedés az eredeti 10 000 $-on.</p>

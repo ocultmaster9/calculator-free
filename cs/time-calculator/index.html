@@ -261,15 +261,15 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>Čas 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>Operace</label><select id="tmop" onchange="timecalc()"><option value="add">Sčítání (+)</option><option value="sub">Odčítání (−)</option></select></div>
+    <div class="field"><label for="tm1">Čas 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label for="tmop">Operace</label><select id="tmop" onchange="timecalc()"><option value="add">Sčítání (+)</option><option value="sub">Odčítání (−)</option></select></div>
   </div>
-  <div class="field"><label>Čas 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label for="tm2">Čas 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>Hodnota</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>Z jednotky</label><select id="tcf" onchange="timecalc()"><option value="s">Sekundy</option><option value="m">Minuty</option><option value="h">Hodiny</option><option value="d">Dny</option></select></div>
+    <div class="field"><label for="tcv">Hodnota</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label for="tcf">Z jednotky</label><select id="tcf" onchange="timecalc()"><option value="s">Sekundy</option><option value="m">Minuty</option><option value="h">Hodiny</option><option value="d">Dny</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>

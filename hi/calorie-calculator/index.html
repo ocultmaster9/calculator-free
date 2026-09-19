@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> महिला</label>
 </div>
 <div class="row3">
-  <div class="field"><label>आयु (वर्ष)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>वज़न (किग्रा)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>लंबाई (सेमी)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">आयु (वर्ष)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">वज़न (किग्रा)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">लंबाई (सेमी)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>गतिविधि स्तर</label>
+<div class="field"><label for="cact">गतिविधि स्तर</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">गतिहीन (कम या कोई व्यायाम नहीं)</option>
     <option value="1.375">हल्का सक्रिय (सप्ताह में 1–3 दिन)</option>

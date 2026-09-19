@@ -261,15 +261,15 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>Am 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>Oibríocht</label><select id="tmop" onchange="timecalc()"><option value="add">Cuir Le (+)</option><option value="sub">Bain (−)</option></select></div>
+    <div class="field"><label for="tm1">Am 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label for="tmop">Oibríocht</label><select id="tmop" onchange="timecalc()"><option value="add">Cuir Le (+)</option><option value="sub">Bain (−)</option></select></div>
   </div>
-  <div class="field"><label>Am 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label for="tm2">Am 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>Luach</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>Ón Aonad</label><select id="tcf" onchange="timecalc()"><option value="s">Soicindí</option><option value="m">Nóiméid</option><option value="h">Uaireanta an Chloig</option><option value="d">Laethanta</option></select></div>
+    <div class="field"><label for="tcv">Luach</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label for="tcf">Ón Aonad</label><select id="tcf" onchange="timecalc()"><option value="s">Soicindí</option><option value="m">Nóiméid</option><option value="h">Uaireanta an Chloig</option><option value="d">Laethanta</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>

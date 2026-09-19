@@ -261,15 +261,15 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 <div id="tt0">
   <div class="row2">
-    <div class="field"><label>Hora 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
-    <div class="field"><label>Operação</label><select id="tmop" onchange="timecalc()"><option value="add">Somar (+)</option><option value="sub">Subtrair (−)</option></select></div>
+    <div class="field"><label for="tm1">Hora 1 (HH:MM:SS)</label><input type="text" id="tm1" value="02:30:00" oninput="timecalc()"></div>
+    <div class="field"><label for="tmop">Operação</label><select id="tmop" onchange="timecalc()"><option value="add">Somar (+)</option><option value="sub">Subtrair (−)</option></select></div>
   </div>
-  <div class="field"><label>Hora 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
+  <div class="field"><label for="tm2">Hora 2 (HH:MM:SS)</label><input type="text" id="tm2" value="01:45:30" oninput="timecalc()"></div>
 </div>
 <div id="tt1" style="display:none">
   <div class="row2">
-    <div class="field"><label>Valor</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
-    <div class="field"><label>Unidade de origem</label><select id="tcf" onchange="timecalc()"><option value="s">Segundos</option><option value="m">Minutos</option><option value="h">Horas</option><option value="d">Dias</option></select></div>
+    <div class="field"><label for="tcv">Valor</label><input type="number" id="tcv" value="3600" oninput="timecalc()"></div>
+    <div class="field"><label for="tcf">Unidade de origem</label><select id="tcf" onchange="timecalc()"><option value="s">Segundos</option><option value="m">Minutos</option><option value="h">Horas</option><option value="d">Dias</option></select></div>
   </div>
 </div>
 <div class="result" id="timeResult"></div>

@@ -213,10 +213,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><span class="badge">FREE CALCULATOR</span><h1>📈 Kelly Criterion Calculator</h1><p>Free Kelly criterion calculator. Enter the odds, your win probability and bankroll to find the optimal stake, with full, half and quarter Kelly options.</p></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">📈</span><span class="calc-title">Kelly Criterion Calculator</span></div><div class="calc-body"><div class="row2"><div class="field"><label>Decimal odds</label><input type="number" id="k_o" value="2.50" min="1.01" step="0.01" oninput="kC()"></div>
-<div class="field"><label>Your win probability (%)</label><input type="number" id="k_p" value="50" min="0" max="100" step="0.1" oninput="kC()"></div></div>
-<div class="row2"><div class="field"><label>Bankroll</label><input type="number" id="k_b" value="1000" min="0" step="1" oninput="kC()"></div>
-<div class="field"><label>Kelly fraction</label><select id="k_f" onchange="kC()"><option value="1">Full Kelly</option><option value="0.5" selected>Half Kelly (safer)</option><option value="0.25">Quarter Kelly</option></select></div></div>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">📈</span><span class="calc-title">Kelly Criterion Calculator</span></div><div class="calc-body"><div class="row2"><div class="field"><label for="k_o">Decimal odds</label><input type="number" id="k_o" value="2.50" min="1.01" step="0.01" oninput="kC()"></div>
+<div class="field"><label for="k_p">Your win probability (%)</label><input type="number" id="k_p" value="50" min="0" max="100" step="0.1" oninput="kC()"></div></div>
+<div class="row2"><div class="field"><label for="k_b">Bankroll</label><input type="number" id="k_b" value="1000" min="0" step="1" oninput="kC()"></div>
+<div class="field"><label for="k_f">Kelly fraction</label><select id="k_f" onchange="kC()"><option value="1">Full Kelly</option><option value="0.5" selected>Half Kelly (safer)</option><option value="0.25">Quarter Kelly</option></select></div></div>
 <div class="result" id="k_r">—</div>
 <script>
 function kC(){var o=+document.getElementById("k_o").value||0;var p=(+document.getElementById("k_p").value||0)/100;var bank=+document.getElementById("k_b").value||0;var frac=+document.getElementById("k_f").value||1;var b=o-1;var q=1-p;var f=b>0?(b*p-q)/b:0;var edge=o*p-1;

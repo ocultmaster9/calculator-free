@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <button class="tab" onclick="setDateTab(1,this)">Добавяне / Изваждане на Дни</button>
 </div>
 <div id="dt0">
-  <div class="row2"><div class="field"><label>Начална Дата</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label>Крайна Дата</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd1">Начална Дата</label><input type="date" id="dd1" oninput="datecalc()"></div><div class="field"><label for="dd2">Крайна Дата</label><input type="date" id="dd2" oninput="datecalc()"></div></div>
 </div>
 <div id="dt1" style="display:none">
-  <div class="row2"><div class="field"><label>Начална Дата</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label>Дни за Добавяне (+) / Изваждане (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
+  <div class="row2"><div class="field"><label for="dd3">Начална Дата</label><input type="date" id="dd3" oninput="datecalc()"></div><div class="field"><label for="dd4">Дни за Добавяне (+) / Изваждане (−)</label><input type="number" id="dd4" value="30" oninput="datecalc()"></div></div>
 </div>
 <div class="result" id="dateResult">Изберете дати по-горе</div>
 <script>
@@ -281,7 +281,7 @@ function datecalc(){
     var d=new Date(document.getElementById('dd3').value),n=+document.getElementById('dd4').value||0;
     if(isNaN(d)){document.getElementById('dateResult').textContent='Изберете валидна дата';return;}
     d.setDate(d.getDate()+n);
-    document.getElementById('dateResult').textContent='Резултат: '+d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('dateResult').textContent='Резултат: '+d.toLocaleDateString((document.documentElement.lang||'en'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   }
 }
 </script></div></div><div class="seo-section"><h2>Как да Изчислите Дни Между Две Дати</h2><p>Най-простият начин да намерите дни между дати е да конвертирате двете дати в брой дни от фиксирана референтна точка, после да извадите. Нашият калкулатор прави това автоматично за всяка двойка дати.</p>

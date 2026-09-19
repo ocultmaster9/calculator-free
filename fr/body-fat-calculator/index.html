@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="bfg" value="female" onchange="bfCalc()"> Femme</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Taille (cm)</label><input type="number" id="bfh" value="175" oninput="bfCalc()"></div>
-  <div class="field"><label>Cou (cm)</label><input type="number" id="bfn" value="38" step="0.1" oninput="bfCalc()"></div>
-  <div class="field"><label>Tour de taille (cm)</label><input type="number" id="bfw" value="85" step="0.1" oninput="bfCalc()"></div>
+  <div class="field"><label for="bfh">Taille (cm)</label><input type="number" id="bfh" value="175" oninput="bfCalc()"></div>
+  <div class="field"><label for="bfn">Cou (cm)</label><input type="number" id="bfn" value="38" step="0.1" oninput="bfCalc()"></div>
+  <div class="field"><label for="bfw">Tour de taille (cm)</label><input type="number" id="bfw" value="85" step="0.1" oninput="bfCalc()"></div>
 </div>
-<div id="bfHipField" style="display:none" class="field"><label>Hanches (cm) – femmes uniquement</label><input type="number" id="bfhip" value="95" step="0.1" oninput="bfCalc()"></div>
+<div id="bfHipField" style="display:none" class="field"><label for="bfhip">Hanches (cm) – femmes uniquement</label><input type="number" id="bfhip" value="95" step="0.1" oninput="bfCalc()"></div>
 <div class="result" id="bfResult"></div>
 <script>
 document.querySelectorAll('input[name="bfg"]').forEach(r=>r.addEventListener('change',function(){document.getElementById('bfHipField').style.display=this.value==='female'?'':'none';bfCalc();}));

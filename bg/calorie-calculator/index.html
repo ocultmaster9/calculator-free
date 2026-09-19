@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Жена</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Възраст (години)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Тегло (кг)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Ръст (см)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Възраст (години)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Тегло (кг)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Ръст (см)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Ниво на Активност</label>
+<div class="field"><label for="cact">Ниво на Активност</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Заседнал (малко или никакво упражнение)</option>
     <option value="1.375">Леко активен (1–3 дни/седмица)</option>

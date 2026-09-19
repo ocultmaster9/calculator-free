@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Žena</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Vek (roky)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Hmotnosť (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Výška (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Vek (roky)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Hmotnosť (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Výška (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Úroveň Aktivity</label>
+<div class="field"><label for="cact">Úroveň Aktivity</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Sedavý spôsob života (málo alebo žiadne cvičenie)</option>
     <option value="1.375">Mierne aktívny (1–3 dni/týždeň)</option>

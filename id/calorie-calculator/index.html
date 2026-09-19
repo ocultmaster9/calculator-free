@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Perempuan</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Usia (tahun)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Berat (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Tinggi (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Usia (tahun)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Berat (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Tinggi (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Tingkat Aktivitas</label>
+<div class="field"><label for="cact">Tingkat Aktivitas</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Jarang bergerak (sedikit atau tanpa olahraga)</option>
     <option value="1.375">Aktivitas ringan (1–3 hari/minggu)</option>

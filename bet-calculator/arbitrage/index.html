@@ -213,9 +213,9 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><span class="badge">FREE CALCULATOR</span><h1>⚖️ Arbitrage Calculator</h1><p>Free arbitrage (sure bet) calculator. Split your stake across two outcomes to lock in guaranteed profit, with the arb percentage shown.</p></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Advertisement</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">⚖️</span><span class="calc-title">Arbitrage / Sure Bet Calculator</span></div><div class="calc-body"><div class="field"><label>Total stake to split</label><input type="number" id="ar_t" value="100" min="0" step="0.01" oninput="arC()"></div>
-<div class="row2"><div class="field"><label>Outcome A odds (bookie 1)</label><input type="number" id="ar_a" value="2.10" min="1.01" step="0.01" oninput="arC()"></div>
-<div class="field"><label>Outcome B odds (bookie 2)</label><input type="number" id="ar_b" value="2.10" min="1.01" step="0.01" oninput="arC()"></div></div>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">⚖️</span><span class="calc-title">Arbitrage / Sure Bet Calculator</span></div><div class="calc-body"><div class="field"><label for="ar_t">Total stake to split</label><input type="number" id="ar_t" value="100" min="0" step="0.01" oninput="arC()"></div>
+<div class="row2"><div class="field"><label for="ar_a">Outcome A odds (bookie 1)</label><input type="number" id="ar_a" value="2.10" min="1.01" step="0.01" oninput="arC()"></div>
+<div class="field"><label for="ar_b">Outcome B odds (bookie 2)</label><input type="number" id="ar_b" value="2.10" min="1.01" step="0.01" oninput="arC()"></div></div>
 <div class="result" id="ar_r">—</div>
 <script>
 function arC(){var T=+document.getElementById("ar_t").value||0;var a=+document.getElementById("ar_a").value||0;var b=+document.getElementById("ar_b").value||0;if(a<=1||b<=1){document.getElementById("ar_r").innerHTML="Enter odds above 1.";return;}

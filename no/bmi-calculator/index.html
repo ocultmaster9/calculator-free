@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="bmi_unit" value="imperial" onchange="bmi()"> Britiske enheter (pund/fot+tommer)</label>
 </div>
 <div id="bmi_metric">
-  <div class="row2"><div class="field"><label>Vekt (kg)</label><input type="number" id="bw_kg" value="70" oninput="bmi()"></div><div class="field"><label>Høyde (cm)</label><input type="number" id="bh_cm" value="175" oninput="bmi()"></div></div>
+  <div class="row2"><div class="field"><label for="bw_kg">Vekt (kg)</label><input type="number" id="bw_kg" value="70" oninput="bmi()"></div><div class="field"><label for="bh_cm">Høyde (cm)</label><input type="number" id="bh_cm" value="175" oninput="bmi()"></div></div>
 </div>
 <div id="bmi_imperial" style="display:none">
-  <div class="row3"><div class="field"><label>Vekt (pund)</label><input type="number" id="bw_lb" value="154" oninput="bmi()"></div><div class="field"><label>Høyde (fot)</label><input type="number" id="bh_ft" value="5" oninput="bmi()"></div><div class="field"><label>Høyde (tommer)</label><input type="number" id="bh_in" value="9" oninput="bmi()"></div></div>
+  <div class="row3"><div class="field"><label for="bw_lb">Vekt (pund)</label><input type="number" id="bw_lb" value="154" oninput="bmi()"></div><div class="field"><label for="bh_ft">Høyde (fot)</label><input type="number" id="bh_ft" value="5" oninput="bmi()"></div><div class="field"><label for="bh_in">Høyde (tommer)</label><input type="number" id="bh_in" value="9" oninput="bmi()"></div></div>
 </div>
 <div class="result" id="bmiResult"></div>
 <script>

@@ -254,19 +254,33 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">🌴</div></div><div><span class="badge">DARMOWY KALKULATOR</span><h1>Kalkulator Emerytalny</h1><p>Zaplanuj emeryturę. Oblicz prognozowane oszczędności.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Reklama</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">🌴</span><span class="calc-title">Kalkulator Emerytalny</span></div><div class="calc-body">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">🌴</span><span class="calc-title">Kalkulator Emerytalny</span><select id="cfCurSel" aria-label="Currency" onchange="cfSetCur(this.value)" style="width:auto;margin-inline-start:auto;padding:5px 8px;font-size:.78rem;border-radius:8px"><option value="USD">$ USD</option><option value="EUR">€ EUR</option><option value="GBP">£ GBP</option><option value="CHF">CHF CHF</option><option value="CAD">C$ CAD</option><option value="AUD">A$ AUD</option><option value="JPY">¥ JPY</option><option value="CNY">¥ CNY</option><option value="INR">₹ INR</option><option value="KRW">₩ KRW</option><option value="BRL">R$ BRL</option><option value="MXN">MX$ MXN</option><option value="ZAR">R ZAR</option><option value="TRY">₺ TRY</option><option value="RUB">₽ RUB</option><option value="UAH">₴ UAH</option><option value="PLN">zł PLN</option><option value="CZK">Kč CZK</option><option value="HUF">Ft HUF</option><option value="RON">lei RON</option><option value="BGN">лв BGN</option><option value="HRK">kn HRK</option><option value="RSD">din RSD</option><option value="MKD">ден MKD</option><option value="ALL">L ALL</option><option value="SEK">kr SEK</option><option value="NOK">kr NOK</option><option value="DKK">kr DKK</option><option value="ILS">₪ ILS</option><option value="AED">د.إ AED</option><option value="SAR">ر.س SAR</option><option value="EGP">E£ EGP</option><option value="NGN">₦ NGN</option><option value="KES">KSh KES</option><option value="IDR">Rp IDR</option><option value="MYR">RM MYR</option><option value="THB">฿ THB</option><option value="PHP">₱ PHP</option><option value="VND">₫ VND</option><option value="SGD">S$ SGD</option></select></div><div class="calc-body">
 <div class="row2">
-  <div class="field"><label>Obecny wiek</label><input type="number" id="rage" value="30" oninput="ret()"></div>
-  <div class="field"><label>Wiek emerytalny</label><input type="number" id="rret" value="65" oninput="ret()"></div>
+  <div class="field"><label for="rage">Obecny wiek</label><input type="number" id="rage" value="30" oninput="ret()"></div>
+  <div class="field"><label for="rret">Wiek emerytalny</label><input type="number" id="rret" value="65" oninput="ret()"></div>
 </div>
 <div class="row2">
-  <div class="field"><label>Obecne oszczędności ($)</label><input type="number" id="rsvg" value="25000" oninput="ret()"></div>
-  <div class="field"><label>Wpłata miesięczna ($)</label><input type="number" id="rcon" value="500" oninput="ret()"></div>
+  <div class="field"><label for="rsvg">Obecne oszczędności (<span class="cf-cur"></span>)</label><input type="number" id="rsvg" value="25000" oninput="ret()"></div>
+  <div class="field"><label for="rcon">Wpłata miesięczna (<span class="cf-cur"></span>)</label><input type="number" id="rcon" value="500" oninput="ret()"></div>
 </div>
-<div class="field"><label>Oczekiwany zwrot roczny (%)</label><input type="number" id="rrate" value="7" step="0.1" oninput="ret()"></div>
+<div class="field"><label for="rrate">Oczekiwany zwrot roczny (%)</label><input type="number" id="rrate" value="7" step="0.1" oninput="ret()"></div>
 <div class="result" id="retResult"></div>
 <script>
-function fmt$(n){return'$'+Math.round(n).toLocaleString();}
+function fmt$(n){return cfFmt(n,0);}
+/*cf-cur-v1*/
+var CFDEF='PLN';
+function cfCur(){try{var v=localStorage.getItem('cfcur');if(v)return v;}catch(e){}return CFDEF;}
+function cfFmt(n,dec){
+  var loc=document.documentElement.lang||'en',c=cfCur(),o={style:'currency',currency:c};
+  if(dec!=null){o.minimumFractionDigits=dec;o.maximumFractionDigits=dec;}
+  try{return new Intl.NumberFormat(loc,o).format(n);}
+  catch(e){return c+'\u00a0'+(dec!=null?n.toFixed(dec):Math.round(n));}
+}
+function cfCurLabels(){var c=cfCur();
+  Array.prototype.forEach.call(document.querySelectorAll('.cf-cur'),function(s){s.textContent=c;});
+  var sel=document.getElementById('cfCurSel');if(sel)sel.value=c;}
+function cfSetCur(v){try{localStorage.setItem('cfcur',v);}catch(e){}cfCurLabels();ret();}
+
 function ret(){
   var age=+document.getElementById('rage').value||0,ret=+document.getElementById('rret').value||0;
   var svg=+document.getElementById('rsvg').value||0,con=+document.getElementById('rcon').value||0;
@@ -277,6 +291,7 @@ function ret(){
   var totalDep=svg+con*n;
   document.getElementById('retResult').innerHTML='Prognozowane oszczędności: <strong>'+fmt$(A)+'</strong><br>Wpłacono łącznie: '+fmt$(totalDep)+'<br>Zysk z inwestycji: '+fmt$(A-totalDep)+'<br>Miesięcznie przy wypłacie 4 %: '+fmt$(A*0.04/12);
 }
+cfCurLabels();
 ret();
 </script></div></div><div class="seo-section"><h2>Ile potrzebujesz, aby przejść na emeryturę?</h2><p>Najpowszechniej stosowana reguła to <strong>Reguła 4 %</strong>: po przejściu na emeryturę możesz bezpiecznie wypłacać 4 % portfela rocznie, a środki powinny wystarczyć na 30 lat lub dłużej. Aby żyć z 5000 $ miesięcznie (60 000 $ rocznie), potrzebujesz 25-krotności tej kwoty: <strong>$1,500,000</strong> odłożone na emeryturę.</p>
 <p>Ta <strong>siła wczesnego startu</strong> robi wrażenie. Inwestowanie 500 $ miesięcznie od 25. roku życia przy 7 % zwrotu daje w wieku 65 lat około 1,37 mln $. Rozpoczęcie w wieku 35 lat przy tej samej wpłacie daje jedynie 609 000 $ — mniej niż połowę, mimo że okres oszczędzania jest krótszy tylko o 10 lat.</p>

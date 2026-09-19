@@ -254,15 +254,29 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
 </div>
 </nav><div class="wrap"><div class="hero"><div class="spin-hero"><div class="spin-ring"><div class="spin-core">🍽️</div></div><div><span class="badge">GRATIS BEREGNER</span><h1>Drikkepengeberegner</h1><p>Beregn drikkepenge, den samlede regning og del regningen mellem flere personer med det samme.</p></div></div></div></div><div class="wrap"><div class="ad-wrap"><span class="ad-lbl">Annonce</span>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">🍽️</span><span class="calc-title">Drikkepengeberegner</span></div><div class="calc-body">
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="wrap"><div class="calc-card"><div class="calc-head"><span class="calc-icon">🍽️</span><span class="calc-title">Drikkepengeberegner</span><select id="cfCurSel" aria-label="Currency" onchange="cfSetCur(this.value)" style="width:auto;margin-inline-start:auto;padding:5px 8px;font-size:.78rem;border-radius:8px"><option value="USD">$ USD</option><option value="EUR">€ EUR</option><option value="GBP">£ GBP</option><option value="CHF">CHF CHF</option><option value="CAD">C$ CAD</option><option value="AUD">A$ AUD</option><option value="JPY">¥ JPY</option><option value="CNY">¥ CNY</option><option value="INR">₹ INR</option><option value="KRW">₩ KRW</option><option value="BRL">R$ BRL</option><option value="MXN">MX$ MXN</option><option value="ZAR">R ZAR</option><option value="TRY">₺ TRY</option><option value="RUB">₽ RUB</option><option value="UAH">₴ UAH</option><option value="PLN">zł PLN</option><option value="CZK">Kč CZK</option><option value="HUF">Ft HUF</option><option value="RON">lei RON</option><option value="BGN">лв BGN</option><option value="HRK">kn HRK</option><option value="RSD">din RSD</option><option value="MKD">ден MKD</option><option value="ALL">L ALL</option><option value="SEK">kr SEK</option><option value="NOK">kr NOK</option><option value="DKK">kr DKK</option><option value="ILS">₪ ILS</option><option value="AED">د.إ AED</option><option value="SAR">ر.س SAR</option><option value="EGP">E£ EGP</option><option value="NGN">₦ NGN</option><option value="KES">KSh KES</option><option value="IDR">Rp IDR</option><option value="MYR">RM MYR</option><option value="THB">฿ THB</option><option value="PHP">₱ PHP</option><option value="VND">₫ VND</option><option value="SGD">S$ SGD</option></select></div><div class="calc-body">
 <div class="row2">
-  <div class="field"><label>Regningens beløb ($)</label><input type="number" id="tb" value="50" oninput="tip()"></div>
-  <div class="field"><label>Drikkepenge (%)</label><input type="number" id="tp" value="18" oninput="tip()"></div>
+  <div class="field"><label for="tb">Regningens beløb (<span class="cf-cur"></span>)</label><input type="number" id="tb" value="50" oninput="tip()"></div>
+  <div class="field"><label for="tp">Drikkepenge (%)</label><input type="number" id="tp" value="18" oninput="tip()"></div>
 </div>
-<div class="field"><label>Deles mellem (personer)</label><input type="number" id="ts" value="2" oninput="tip()"></div>
+<div class="field"><label for="ts">Deles mellem (personer)</label><input type="number" id="ts" value="2" oninput="tip()"></div>
 <div class="result" id="tipResult"></div>
 <script>
-function fmt$(n){return'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmt$(n){return cfFmt(n);}
+/*cf-cur-v1*/
+var CFDEF='DKK';
+function cfCur(){try{var v=localStorage.getItem('cfcur');if(v)return v;}catch(e){}return CFDEF;}
+function cfFmt(n,dec){
+  var loc=document.documentElement.lang||'en',c=cfCur(),o={style:'currency',currency:c};
+  if(dec!=null){o.minimumFractionDigits=dec;o.maximumFractionDigits=dec;}
+  try{return new Intl.NumberFormat(loc,o).format(n);}
+  catch(e){return c+'\u00a0'+(dec!=null?n.toFixed(dec):Math.round(n));}
+}
+function cfCurLabels(){var c=cfCur();
+  Array.prototype.forEach.call(document.querySelectorAll('.cf-cur'),function(s){s.textContent=c;});
+  var sel=document.getElementById('cfCurSel');if(sel)sel.value=c;}
+function cfSetCur(v){try{localStorage.setItem('cfcur',v);}catch(e){}cfCurLabels();tip();}
+
 function tip(){
   var b=+document.getElementById('tb').value||0;
   var p=+document.getElementById('tp').value||0;
@@ -272,6 +286,7 @@ function tip(){
   var per=total/s;
   document.getElementById('tipResult').innerHTML='Drikkepenge: <strong>'+fmt$(tipAmt)+'</strong><br>I alt: '+fmt$(total)+'<br>Pr. person: '+fmt$(per);
 }
+cfCurLabels();
 tip();
 </script></div></div><div class="seo-section"><h2>Hvor mange drikkepenge bør du give?</h2><p>Drikkepengekulturen varierer fra land til land og efter servicetype. I USA forventes der drikkepenge for de fleste ydelser: <strong>15–20%</strong> for restaurantservice, <strong>15–18%</strong> for taxi og samkørsel, <strong>1-2 USD pr. drink</strong> til bartendere, <strong>15–20%</strong> for frisør og skønhedsbehandlinger, og <strong>2-5 USD pr. nat</strong> til hotelrengøring.</p>
 <p>Sådan regner du drikkepengene i hovedet: ved 20 % deler du simpelthen regningen med 5. Ved 15 % deler du med 10 (hvilket giver 10 %) og lægger halvdelen af det til. På en regning på 60 USD: 20 % = 12 USD, 15 % = 6 USD + 3 USD = 9 USD. For at dele regningen ligeligt deler du totalen (regning + drikkepenge) med antallet af personer.</p>

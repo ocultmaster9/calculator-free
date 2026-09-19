@@ -260,11 +260,11 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="cg" value="female" onchange="kcal()"> Γυναίκα</label>
 </div>
 <div class="row3">
-  <div class="field"><label>Ηλικία (έτη)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
-  <div class="field"><label>Βάρος (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
-  <div class="field"><label>Ύψος (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
+  <div class="field"><label for="cage">Ηλικία (έτη)</label><input type="number" id="cage" value="30" oninput="kcal()"></div>
+  <div class="field"><label for="cwt">Βάρος (kg)</label><input type="number" id="cwt" value="70" oninput="kcal()"></div>
+  <div class="field"><label for="cht">Ύψος (cm)</label><input type="number" id="cht" value="175" oninput="kcal()"></div>
 </div>
-<div class="field"><label>Επίπεδο Δραστηριότητας</label>
+<div class="field"><label for="cact">Επίπεδο Δραστηριότητας</label>
   <select id="cact" onchange="kcal()">
     <option value="1.2">Καθιστική ζωή (καθόλου ή ελάχιστη άσκηση)</option>
     <option value="1.375">Ελαφρά δραστήριος (1–3 ημέρες/εβδομάδα)</option>

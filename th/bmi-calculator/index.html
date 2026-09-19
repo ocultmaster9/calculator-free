@@ -260,10 +260,10 @@ function faq(el){var a=el.nextElementSibling;a.classList.toggle('open');el.query
   <label class="radio-label"><input type="radio" name="bmi_unit" value="imperial" onchange="bmi()"> อิมพีเรียล (ปอนด์/ฟุต+นิ้ว)</label>
 </div>
 <div id="bmi_metric">
-  <div class="row2"><div class="field"><label>น้ำหนัก (กก.)</label><input type="number" id="bw_kg" value="70" oninput="bmi()"></div><div class="field"><label>ส่วนสูง (ซม.)</label><input type="number" id="bh_cm" value="175" oninput="bmi()"></div></div>
+  <div class="row2"><div class="field"><label for="bw_kg">น้ำหนัก (กก.)</label><input type="number" id="bw_kg" value="70" oninput="bmi()"></div><div class="field"><label for="bh_cm">ส่วนสูง (ซม.)</label><input type="number" id="bh_cm" value="175" oninput="bmi()"></div></div>
 </div>
 <div id="bmi_imperial" style="display:none">
-  <div class="row3"><div class="field"><label>น้ำหนัก (ปอนด์)</label><input type="number" id="bw_lb" value="154" oninput="bmi()"></div><div class="field"><label>ส่วนสูง (ฟุต)</label><input type="number" id="bh_ft" value="5" oninput="bmi()"></div><div class="field"><label>ส่วนสูง (นิ้ว)</label><input type="number" id="bh_in" value="9" oninput="bmi()"></div></div>
+  <div class="row3"><div class="field"><label for="bw_lb">น้ำหนัก (ปอนด์)</label><input type="number" id="bw_lb" value="154" oninput="bmi()"></div><div class="field"><label for="bh_ft">ส่วนสูง (ฟุต)</label><input type="number" id="bh_ft" value="5" oninput="bmi()"></div><div class="field"><label for="bh_in">ส่วนสูง (นิ้ว)</label><input type="number" id="bh_in" value="9" oninput="bmi()"></div></div>
 </div>
 <div class="result" id="bmiResult"></div>
 <script>
