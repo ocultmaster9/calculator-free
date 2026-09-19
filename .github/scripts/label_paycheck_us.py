@@ -15,7 +15,7 @@ for lang, us in US.items():
     if lang in SKIP: continue
     p = root/lang/'paycheck-calculator'/'index.html'
     s = p.read_text(encoding='utf-8')
-    if 'data-cf-us="1"' in s: continue
+    if 'data-cf-us="1"' in s or 'paycheck-engine.js' in s: continue
     title = re.search(r'<title>([^<]*)</title>', s).group(1)
     new_title = re.sub(r' (2026|۲۰۲۶) — ', lambda m: f' {m.group(1)} ({us}) — ', title, count=1)
     assert new_title != title, lang
